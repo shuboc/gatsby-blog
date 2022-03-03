@@ -9,10 +9,9 @@ date: "2019-03-21"
 Quick Sort (快速排序) 演算法是一種「各個擊破」的 divide andconquer 方法，這篇文章將會教你 Quick Sort (快速排序) 演算法的原理，並教你如何用程式實作 Quick Sort，最後介紹其進階應用: Quick Select (快速選擇演算法)。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ![Sort](/images/sort.jpg)
 

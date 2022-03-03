@@ -8,10 +8,9 @@ date: "2019-12-14"
 在JavaScript中，取得DOM元素的寬度或高度，可以利用clientHeight/clientWidth/offSetHeight/offsetWidth/scrollHeight/scrollWidth/scrollTop/scrollLeft...等屬性，這篇文章整理了不同屬性之間的區別以及應用。下次遇到時再也不會分不清楚了！
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ![clientWidth/clientHeight](https://developer.mozilla.org/@api/deki/files/185/=Dimensions-client.png)
 ![offsetWidth/offsetHeight](https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png)

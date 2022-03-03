@@ -9,10 +9,9 @@ date: "2017-01-07"
 這篇教學介紹Redux如何用正規化(normalization)的方式，儲存從API取得的遠端資料。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ## TL;DR
 

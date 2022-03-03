@@ -10,10 +10,9 @@ date: "2016-04-23"
 這篇教學將介紹 JavaScript 中兩種建立物件的方法：使用 JavaScript new 及 Function Constructor (建構函式) 以及 ES5 `Object.create()`。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ## JavaScript new 和 Function Constructor (建構函式)
 

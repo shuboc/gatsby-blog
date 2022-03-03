@@ -9,10 +9,9 @@ date: "2018-02-25"
 這篇教學介紹瀏覽器事件的運作原理，包含event bubbling、event capturing。第二部分介紹event delegation的寫法及應用時機。教學內容主要參考[javacript.info](http://javascript.info/) 的 [Introduction into Events](http://javascript.info/events)。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 # Event Bubbling
 

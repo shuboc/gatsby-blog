@@ -10,10 +10,9 @@ date: "2016-03-05"
 這篇教學將介紹如何用Github Pages和Jekyll搭建部落格。其優點是快速、免費、免架站，相較於wordpress客製化彈性高，更支援用Markdown語法寫文章。推薦給廣大工程師朋友們！
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ## 簡介
 

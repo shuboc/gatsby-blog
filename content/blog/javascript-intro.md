@@ -8,10 +8,9 @@ date: "2020-11-27"
 這篇文章將會告訴你 JavaScript 是什麼，可以做到什麼事情，以及你為什麼應該學 JavaScript。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ## JavaScript 是什麼？
 

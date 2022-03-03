@@ -6,6 +6,11 @@ date: "2022-01-17"
 
 最近用 React Native 開發 app 時，又遇到了 provisioning profile 設定不對的問題。因為太常遇到這個問題，所以決定來好好整理一下到底什麼是 provisioning profile，以及要如何正確設定。Provisioning profile 是一組設定檔，主要有兩個用途：確保正確的簽署 app，和確保 app 能夠安全地在指定的裝置上運行。
 
+## 目錄
+
+```toc
+```
+
 ## Sign (簽署)
 
 首先，要上架到 App Store 的 app 都必須要經過簽署 (sign) 的程序，所謂的簽署程序會涉及一組public key/private key的組合。private key 是用來簽署 app 的，而 public key 用途則是讓其他人驗證 app 的簽署者確實是你本人。

@@ -9,10 +9,9 @@ date: "2017-04-27"
 這篇文章將會教你如何設定 img 的 srcset 屬性，依據螢幕的 pixel density 或是寬度載入適當解析度的圖片，達成圖片的 RWD 效果；另外也會教你如何使用 HTML5 picture 標籤設定不同解析度下的多組圖片。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ![coding](/images/coding.jpg)
 

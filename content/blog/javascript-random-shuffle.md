@@ -8,10 +8,9 @@ date: "2019-03-14"
 Array random shuffle 是一個很常使用的演算法，但你真的知道如何正確地實作它嗎？這篇文章將會討論各種用 JavaScript 實作 array random shuffle (亂數排序) 的方法，以及他們的優缺點。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ![Shuffle Poker Cards](/images/javascript-random-shuffle.jpg)
 

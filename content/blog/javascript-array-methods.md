@@ -9,10 +9,9 @@ date: "2020-08-23"
 本篇文章要教你 7 個好用的 JavaScript 的陣列方法：map(), forEach(), filter(), find(), every(), some() 以及 reduce()。這些陣列方法容易使用，能夠幫助你提升程式碼的可維護性並減少潛在的bug，身為 JavaScript 的開發者的你一定要會！
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ## 何謂宣告式編程：專注在「做什麼」，而非「如何做」
 

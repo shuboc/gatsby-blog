@@ -10,10 +10,9 @@ date: "2016-12-26"
 這篇教學主要是整理Redux middleware的原理，如何實作，以及如何理解middleware chain的順序。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ## Middleware
 

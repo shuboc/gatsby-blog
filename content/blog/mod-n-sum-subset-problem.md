@@ -9,10 +9,9 @@ date: "2017-03-27"
 Given a set of numbers {a1-an}, what is the best way to come up with a nonempty subset such that the sum of its elements is 0 mod n, where n is the size of the original set?
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ## 思路
 

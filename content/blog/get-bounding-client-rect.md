@@ -8,10 +8,9 @@ date: "2019-12-15"
 Element.getBoundingClientRect() 回傳元素的大小，以及其相對於可視範圍 (viewport) 的位置。這篇文章將會教你 getBoundingClientRect() 的用法，以及 left、top、right、bottom、width、height 等位置及大小的屬性，並教你如何搭配 window.pageXOffset 和 window.pageYOffset 轉換成絕對位置。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 <br>
 

@@ -8,10 +8,9 @@ date: "2020-06-19"
 這篇文章會介紹什麼是 cookie，教你如何用 JavaScript 讀取及設定 cookie 的方法，以及 Path、Domain、Max-Age、Expires、Secure、HttpOnly、SameSite 等參數的使用方法，最後介紹關於 cookie 的安全性議題。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 <br>
 

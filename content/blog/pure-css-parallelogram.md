@@ -17,10 +17,9 @@ date: "2016-06-30"
 （參考資料：[CSS Secrets](http://www.tenlong.com.tw/items/9863478741?item_id=1010373)）
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 # 用CSS transform製作長方形
 

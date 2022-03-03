@@ -8,10 +8,9 @@ date: "2019-12-28"
 Hot Module Replacement (HMR) 是 Webpack 提供方便開發過程的功能，讓你修改原始碼時不需要重新載入頁面，這篇文章將會教你如何設定 Webpack Config 使你的專案支援 HMR，增加團隊的開發效率。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 <img src="/images/webpack.jpg" style="
     width: 400px;

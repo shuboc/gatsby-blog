@@ -9,10 +9,9 @@ date: "2018-08-11"
 這篇教學會用3個JavaScript中運用到`apply()`和`call()`的例子，讓你快速了解`apply()`和`call()`的使用方法。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ## 範例應用1: Call Forwarding
 

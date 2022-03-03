@@ -12,10 +12,9 @@ date: "2016-05-08"
 前端元件hover的時候顯示氣泡提示框(tooltip/balloon)是常見的效果，也有許多現成的library如[Balloon.css](https://kazzkiq.github.io/balloon.css/)可用。這篇教學教你如何用純CSS手刻。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 ## 氣球的形狀
 

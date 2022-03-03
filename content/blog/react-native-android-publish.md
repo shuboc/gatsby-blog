@@ -11,10 +11,9 @@ date: "2019-01-02"
 React Native Android App 要打包成 apk 並 release 到 Google Play 有許多繁瑣的步驟，這篇文章將會教你如何設定 App Signing、建立 Keystore，設定 Release Config、產生簽署過的APK檔、上傳APK至Google Play Console，照著步驟做就能順利上架囉。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 接下來我們一步一步來看該怎麼做吧！
 

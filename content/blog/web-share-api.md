@@ -8,10 +8,9 @@ date: "2020-03-28"
 Web Share API 是現代瀏覽器提供的最新功能之一，它讓網頁的使用者能夠體驗到和原生 app 完全相同的分享體驗。這篇文章將會教你 navigator.share() 的使用方法。
 
 ## 目錄
-{: .no_toc}
 
-- TOC
-{:toc}
+```toc
+```
 
 <style>
   .share-image-section {
