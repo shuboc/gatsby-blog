@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Shubo 的程式教學筆記`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Shubo Chao`,
+      summary: `在台灣工作的軟體工程師, 喜歡研究前端效能優化等議題`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `程式設計筆記、教學和讀書心得`,
+    siteUrl: `https://shubo.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `shubo_tw`,
     },
   },
   plugins: [
