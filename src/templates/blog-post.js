@@ -60,6 +60,9 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v13.0&appId=1994883547264823&autoLogAppEvents=1" nonce="OhnhYoLm"></script>
+      <div class="fb-comments"></div>
     </Layout>
   )
 }
