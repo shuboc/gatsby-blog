@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import { kebabCase } from "lodash"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -24,6 +25,9 @@ const BlogPostTemplate = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
+          <p>
+            分類標籤：{post.frontmatter.tags.map(tag => <><Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>{' '}</>)}
+          </p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -86,6 +90,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
