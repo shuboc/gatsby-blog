@@ -13,8 +13,6 @@ Quick Sort (快速排序) 演算法是一種「各個擊破」的 divide andconq
 ```toc
 ```
 
-![Sort](/images/sort.jpg)
-
 ## 什麼是 Quick Sort？
 
 [Quick Sort (快速排序)](https://en.wikipedia.org/wiki/Quicksort)，是一種 divide and conquer 的排序方法，其過程如下：

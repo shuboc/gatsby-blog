@@ -12,10 +12,6 @@ date: "2020-07-03"
 ```toc
 ```
 
-![dog](/images/dog.jpg)
-
-<span>Photo by <a href="https://unsplash.com/@annadudkova?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Anna Dudkova</a> on <a href="https://unsplash.com/s/photos/dog?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-
 ## TL;DR
 
 只想知道有哪些東西要設定的話，可以直接跳到[總結](./#總結)的部分唷！

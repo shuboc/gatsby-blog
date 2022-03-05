@@ -12,10 +12,6 @@ date: "2020-07-10"
 ```toc
 ```
 
-![this](/images/this.jpg)
-
-<span>Photo by <a href="https://unsplash.com/@srz?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">sydney Rae</a> on <a href="https://unsplash.com/s/photos/this?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-
 ## 物件方法 (Object Method)
 
 物件通常對應到真實世界的事物，例如用戶、訂單、商品等。物件通常也會有自己的「動作」，可能是由一連串的資料操作、網路請求等構成的有意義的行為，例如用戶的登入登出、訂單結帳取消、商品加入購物車等。

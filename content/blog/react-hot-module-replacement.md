@@ -12,12 +12,6 @@ Hot Module Replacement (HMR) 是 Webpack 提供方便開發過程的功能，讓
 ```toc
 ```
 
-<img src="/images/webpack.jpg" style="
-    width: 400px;
-    margin: 0 auto;
-    display: block;
-" />
-
 註：本篇寫作時版本為 `webpack@4.41.5` 及 `react-hot-loader@4.12.18`。
 
 ## 開啟 Webpack HMR (Hot Module Replacement) 設定

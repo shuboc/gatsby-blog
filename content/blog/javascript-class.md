@@ -12,8 +12,6 @@ date: "2019-03-05"
 ```toc
 ```
 
-![Someone coding](/images/javascript-class.jpg)
-
 ## class 語法
 
 如果要建構新物件，傳統的Prototype-based的寫法會需要：

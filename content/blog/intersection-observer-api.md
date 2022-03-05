@@ -12,10 +12,6 @@ date: "2019-12-21"
 ```toc
 ```
 
-![Cat](/images/cat1.jpg)
-
-Photo by Nirzar Pangarkar on Unsplash
-
 ## Intersection Observer API
 
 前端經常會需要偵測某個元素是否出現在可視範圍內，像是：

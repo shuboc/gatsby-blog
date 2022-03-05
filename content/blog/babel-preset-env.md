@@ -12,10 +12,6 @@ date: "2020-06-07"
 ```toc
 ```
 
-![cat](/images/cat2.jpg)
-
-Photo by Timothy Meinberg on Unsplash
-
 ## @babel/preset-env 是什麼？
 
 `@babel/preset-env` 的主要功能有兩個：(1) 將尚未被大部分瀏覽器支援的 JavaScript 語法轉換成能被瀏覽器支援的語法，以及 (2) 讓較舊的瀏覽器也能支援大部分瀏覽器能支援的語法，例如 Promise、Map、Set等。

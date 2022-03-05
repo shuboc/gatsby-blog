@@ -12,8 +12,6 @@ JavaScript 在 ES6 let 和 const 問世之前，都是用 var 來定義變數，
 ```toc
 ```
 
-![Hoisting是什麼](/images/hoisting.jpg)
-
 ## TL;DR
 
 這篇文章的重點有兩個：

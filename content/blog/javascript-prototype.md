@@ -12,10 +12,6 @@ date: "2020-05-09"
 ```toc
 ```
 
-![Prototype](/images/javascript-prototype.jpg)
-
-Photo by Hal Gatewood on Unsplash
-
 ## JavaScript Prototype 原型
 
 JavaScript 中的每個物件都有一個隱藏的屬性 [[Prototype]]，我們稱它為 prototype (原型)。Prototype 只能是一個物件或是 `null`。我們有一個非標準的方法可以存取 prototype：`__proto__`。

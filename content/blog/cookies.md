@@ -14,8 +14,6 @@ date: "2020-06-19"
 
 <br>
 
-![Cookies](/images/cookies.jpg)
-
 ## Cookie 是什麼？
 
 Cookie 是儲存在瀏覽器的一小段文字資料，通常由伺服器透過 `Set-Cookie` header 傳遞給瀏覽器。瀏覽器收到後會將 cookie 儲存起來，並在之後的請求回傳 cookie 至同樣的伺服器。

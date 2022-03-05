@@ -13,8 +13,6 @@ date: "2017-04-27"
 ```toc
 ```
 
-![coding](/images/coding.jpg)
-
 ## TL;DR
 {: .no_toc}
 
