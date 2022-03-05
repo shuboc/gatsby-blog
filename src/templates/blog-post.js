@@ -26,7 +26,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
           <p>
-            分類標籤：{post.frontmatter.tags.map(tag => <><Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>{' '}</>)}
+            分類標籤：{post.frontmatter.tags.map((tag, i) => <React.Fragment key={i}><Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>{' '}</React.Fragment>)}
           </p>
         </header>
         <section
