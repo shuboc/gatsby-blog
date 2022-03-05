@@ -338,6 +338,6 @@ a:focus {
   }
 }
 
-.toc p {
+ul > li > p {
   display: inline;
 }
