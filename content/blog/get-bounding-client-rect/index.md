@@ -12,15 +12,11 @@ Element.getBoundingClientRect() 回傳元素的大小，以及其相對於可視
 ```toc
 ```
 
-<br>
-
-![Rect](https://mdn.mozillademos.org/files/15087/rect.png)
-
-## `getBoundingClientRect()` 用法
+## getBoundingClientRect() 的使用方法
 
 如果要取得元素 `elem` 「相對於視窗」的座標，我們可以使用 `elem.getBoundingClientRect()` 這個方法。他會量測元素包含 border 的大小，並回傳一個 [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) 物件，其中包含了 `x`/`y`/`width`/`height`/`top`/`right`/`bottom`/`left` 等屬性。
 
-## `getBoundingClientRect()` 屬性說明
+### getBoundingClientRect() 屬性說明 (left, top, right, bottom, width, height)
 
 * `x`/`left`：`elem` 左上角的 x 座標
 * `y`/`top`：`elem` 左上角的 y 座標
@@ -28,6 +24,10 @@ Element.getBoundingClientRect() 回傳元素的大小，以及其相對於可視
 * `height`：`elem` 的高度，通常等於 `offsetHeight`
 * `right`：`elem` 右下角的 x 座標
 * `bottom`：`elem` 右下角的 y 座標
+
+可參考下圖：
+
+![Rect](./element-box-diagram.png)
 
 這些屬性有一些需要注意的事項：
 
@@ -43,13 +43,11 @@ Element.getBoundingClientRect() 回傳元素的大小，以及其相對於可視
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-<br>
-
 想了解更多 `offsetWidth`/`offsetHeight` 細節可以看這篇：
 
-> 延伸閱讀：[[教學] 一次搞懂 clientHeight/clientWidth/offSetHeight/offsetWidth/scrollHeight/scrollWidth/scrollTop/scrollLeft 的區別](/element-size-scrolling)
+> 延伸閱讀：[什麼是 clientHeight, clientWidth, offSetHeight, offsetWidth, scrollHeight, scrollWidth, scrollTop, scrollLeft](/element-size-scrolling)
 
-## 用 window.pageXOffset 和 window.pageYOffset 算出絕對位置
+## 如何用 window.pageXOffset 和 window.pageYOffset 算出絕對位置
 
 很多時候我們需要的是「絕對位置」，也就是元素相對於「文件左上角」的座標，可惜的是瀏覽器並沒有提供一個原生的值可以讓我們使用。
 
@@ -66,10 +64,10 @@ const y = window.pageYOffset + rect.top;
 
 想知道更多 `pageXOffset`/`pageYOffset` 的細節，可以看這篇：
 
-> 延伸閱讀：[[教學] 一次搞懂 clientHeight/clientWidth/offSetHeight/offsetWidth/scrollHeight/scrollWidth/scrollTop/scrollLeft 的區別](/element-size-scrolling)
+> 延伸閱讀：[什麼是 clientHeight, clientWidth, offSetHeight, offsetWidth, scrollHeight, scrollWidth, scrollTop, scrollLeft](/element-size-scrolling)
 
-## Reference
-* [Element.getBoundingClientRect() - MDN
-](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+## 參考資料
+
+* [Element.getBoundingClientRect() - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
 * [Determining the dimensions of elements - MDN](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 * [Coordinates - javascript.info](https://javascript.info/coordinates)

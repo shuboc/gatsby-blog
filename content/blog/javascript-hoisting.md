@@ -359,8 +359,7 @@ for (let i = 0; i < 3; ++i) {
 }
 ```
 
-> 關於更多 IIFE 的應用，可以參考我的另一篇文章：[[教學] JavaScript Closure (閉包)、函式與語彙環境
-](/javascript-closure/#%E5%88%A9%E7%94%A8-iife-immediately-invoked-function-expression-%E7%94%A2%E7%94%9F%E7%8D%A8%E7%AB%8B%E7%9A%84%E7%92%B0%E5%A2%83)
+> 關於更多 IIFE 的應用，可以參考我的另一篇文章：[[教學] JavaScript Closure (閉包)、函式與語彙環境](/javascript-closure#%E5%88%A9%E7%94%A8-iife-immediately-invoked-function-expression-%E7%94%A2%E7%94%9F%E7%8D%A8%E7%AB%8B%E7%9A%84%E7%92%B0%E5%A2%83)
 
 ## 總結
 
