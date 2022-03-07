@@ -1,14 +1,17 @@
 ---
-title: "最高學以致用法：讓學習發揮最大成果的輸出大全 讀書心得"
+title: "最高學以致用法：讓學習發揮最大成果的輸出大全 - 讀書心得"
 tags: [book]
 date: "2022-02-28"
+description: "《最高學以致用法》這本書的核心宗旨就是透過「輸出」來讓學習的效果最大化，使人生產生正向的改變。書中整理了80個和「輸出」有關的實用小建議，每一則大概三分鐘以內就可以看完，很適合通勤的零碎時間閱讀。"
 ---
 
-不知道大家有沒有這種經驗：明明看了很多書，可是過了一陣子想跟別人推薦這本書的時候，卻發現自己講不出這些書的重點。雖然我們以為自己讀了很多書、得到很多知識，但是其實吸收的效果很差。
+不知道大家有沒有這種經驗：明明看了很多書，可是過了一陣子想跟別人推薦這本書的時候，卻發現自己講不出這些書的重點。雖然我們以為自己讀了很多書、得到很多知識，但是其實吸收的效果很差。原因是我們只做到了「輸入」，忽略了對學習最重要的關鍵：「輸出」。
 
 偶然間接觸到這本[《最高學以致用法：讓學習發揮最大成果的輸出大全》](https://www.books.com.tw/exep/assp.php/shubo/products/0010852800?utm_source=shubo&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202203)，讓我明白了有方法可以改善這種問題。
 
-這本書的核心宗旨是**透過「輸出」來讓學習的效果最大化，使人生產生正向的改變。** 書中整理了80個和「輸出」有關的實用小建議。每一則大概三分鐘以內就可以看完，很適合通勤的零碎時間閱讀。
+[《最高學以致用法：讓學習發揮最大成果的輸出大全》](https://www.books.com.tw/exep/assp.php/shubo/products/0010852800?utm_source=shubo&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202203)  這本書的核心宗旨就是**透過「輸出」來讓學習的效果最大化，使人生產生正向的改變。** 書中整理了80個和「輸出」有關的實用小建議，每一則大概三分鐘以內就可以看完，很適合通勤的零碎時間閱讀。
+
+[![最高學以致用法：讓學習發揮最大成果的輸出大全](./cover.jpeg)](https://www.books.com.tw/exep/assp.php/shubo/products/0010852800?utm_source=shubo&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202203)
 
 接下來我整理一些自己覺得實用的部分：
 
@@ -134,5 +137,7 @@ date: "2022-02-28"
 因此之後我會增加自己輸出的頻率，以後讀書的時候會一邊手寫筆記以增進學習效果，另外也會把我的各種學習心得放上這個部落格。有機會的話會在公司裡面分享一些技術的主題或是開讀書會。
 
 最後我認同作者說的：輸出也是一種溝通能力，沒辦法好好輸出的話，別人就沒有辦法理解你的魅力和實力。大家也可以透過學習本書的80個小技巧，提升你輸出的能力，讓你的魅力和實力被大家看見，獲得適當的評價，擁有好的人際關係，讓人生變得更好。
+
+[![最高學以致用法：讓學習發揮最大成果的輸出大全](./cover.jpeg)](https://www.books.com.tw/exep/assp.php/shubo/products/0010852800?utm_source=shubo&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202203)
 
 [《最高學以致用法：讓學習發揮最大成果的輸出大全》](https://www.books.com.tw/exep/assp.php/shubo/products/0010852800?utm_source=shubo&utm_medium=ap-books&utm_content=recommend&utm_campaign=ap-202203)
