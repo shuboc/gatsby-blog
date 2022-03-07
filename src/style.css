@@ -238,6 +238,11 @@ a:focus {
   text-decoration: none;
 }
 
+video {
+  max-width: 100%;
+  margin-bottom: var(--spacing-6);
+}
+
 /* Custom classes */
 
 .global-wrapper {
