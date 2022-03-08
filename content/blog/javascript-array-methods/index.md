@@ -1,12 +1,12 @@
 ---
-title: "JavaScript 開發者都該會的 7 個好用陣列方法"
+title: "JavaScript 陣列方法: map, forEach, filter, find, every, some, reduce"
 tags: ["javascript"]
 image: ./cover.png
 last_modified_at: 2020/10/15
 date: "2020-08-23"
 ---
 
-本篇文章要教你 7 個好用的 JavaScript 的陣列方法：map(), forEach(), filter(), find(), every(), some() 以及 reduce()。這些陣列方法容易使用，能夠幫助你提升程式碼的可維護性並減少潛在的bug，身為 JavaScript 的開發者的你一定要會！
+JavaScript 有7個陣列方法：map(), forEach(), filter(), find(), every(), some() 以及 reduce()。這些陣列方法運用了所謂的「宣告式編程」，將程式的重點放在「做什麼」而非「如何做」，能夠幫助你提升程式碼的可維護性並減少潛在的bug。
 
 ## 目錄
 
