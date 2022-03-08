@@ -1,7 +1,7 @@
 ---
-title: "JavaScript 陣列方法: map, forEach, filter, find, every, some, reduce"
+title: "JavaScript array 方法: map, forEach, filter, find, every, some, reduce"
 tags: ["javascript"]
-image: ./cover.png
+image: ./cover.jpg
 last_modified_at: 2020/10/15
 date: "2020-08-23"
 ---
