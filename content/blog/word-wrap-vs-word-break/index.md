@@ -4,7 +4,7 @@ tags: ["css"]
 date: "2022-03-08"
 ---
 
-在使用者可以留言的網站中，經常會出現長連結或者是太長的英文字使得文字超出頁面範圍，讓網站跑版。這時候我們可以用 CSS 做到強制文字換行的效果，可以使用的屬性有 word-break, word-wrap, overflow-wrap 等，他們的用法是什麼，又有什麼不一樣呢？
+在使用者可以留言的網站中，經常會出現長連結或者是太長的英文字使得文字超出頁面範圍，讓網站跑版。這時候我們可以用 CSS 做到強制文字換行的效果，可以使用的屬性有 `word-break`, `word-wrap`, `overflow-wrap` 等，他們的用法是什麼，又有什麼不一樣呢？
 
 ## 目錄
 
@@ -51,22 +51,22 @@ word-break: keep-all;
 
 ## overflow-wrap
 
-`overflow-wrap` 屬性的作用是告訴瀏覽器，如果斷行後的結果還是會溢出容器元素，該如何處理。
+`overflow-wrap` 屬性的作用是告訴瀏覽器，如果詞斷行後的結果還是會溢出容器元素，該如何處理。
 
 * `normal`：預設值，如果文字太長，可能會溢出容器元素。
 * `break-word`：如果文字太長，沒辦法裝進容器元素裡，允許文字在任意位置斷行。
 
-使用方法如下：
+範例如下：
+
+```css
+word-wrap: normal;
+```
+
+![word-wrap: normal](./word-wrap-normal.png)
 
 ```css
 word-wrap: break-word;
 ```
-
-使用前：
-
-![word-wrap: normal](./word-wrap-normal.png)
-
-使用後：
 
 ![word-wrap: break-word](./word-wrap-break-word.png)
 
@@ -76,9 +76,7 @@ word-wrap: break-word;
 
 ## 結論
 
-一般來說 CJK 的內容不太需要特別處理斷行的問題，另外使用 `word-break: break-all` 也容易讓過多的英文單詞斷在中間，造成閱讀不適。
-
-因此大部分的情況 `overflow-wrap: break-all` 應該就很夠用了。
+一般來說 CJK 的內容不太需要特別處理斷行的問題，另外使用 `word-break: break-all` 也容易讓過多的英文單詞斷在中間，造成閱讀不適。因此大部分的情況 `overflow-wrap: break-all` 應該就很夠用了。
 
 ## 參考資料
 
