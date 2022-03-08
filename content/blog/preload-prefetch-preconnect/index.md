@@ -57,9 +57,11 @@ date: "2019-04-06"
 
 `preload` 取得的資源，和一般的 HTTP request 使用相同的快取。所以資源如果可以快取的話會放在 HTTP cache 和 memory cache，不能快取的話，會在memory cache。
 
-下面介紹一些使用情境，讓我們一起看下去！
+下面介紹一些 `preload` 的應用：
 
-### Use Case 1: Critical Path (關鍵路徑) CSS and JavaScript
+## Preload 的應用
+
+### Critical Path (關鍵路徑) CSS and JavaScript
 
 我們知道，在 HTML 中引用 JS/CSS 檔案會阻擋 (block) [關鍵轉譯路徑 (critical rendering path)](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)。
 
@@ -76,7 +78,7 @@ date: "2019-04-06"
 
 如果是重要的資源，那 `preload` 可能是比較好的優化方式。相較之下，同樣是可以非同步下載資源，`async` script 會 block `onload` event。
 
-### Use Case 2: Font 字體
+### Font 字體
 
 ```html
 <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2" href="myfont.woff2">
@@ -89,11 +91,10 @@ date: "2019-04-06"
 參考資料：
 
 * [Preload](https://w3c.github.io/preload/#early-fetch-of-critical-resources)
-* [The crossorigin attribute: Requesting CORS access to content
-](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
+* [The crossorigin attribute: Requesting CORS access to content](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
 * [Preload, Prefetch And Priorities in Chrome](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
 
-### Use Case 3: Decouple Load from Execution
+### 解耦 JS 載入與執行 (Decouple JS Load from Execution)
 
 用 JavaScript 動態觸發 `preload`，預先下載好，等到需要時才執行：([Source](http://yoavweiss.github.io/link_htmlspecial_16/#59))
 
@@ -112,7 +113,7 @@ function runScript(src) {
 }
 ```
 
-### Use Case 4: Asnyc Loading of CSS
+### 非同步載入 CSS
 
 `preload` 可以用來非同步載入CSS：([Source](http://yoavweiss.github.io/link_htmlspecial_16/#61))
 
@@ -121,7 +122,7 @@ function runScript(src) {
       onload="this.rel='stylesheet'">
 ```
 
-### Use Case 5: Responsive Loading
+### 響應式載入 (Responsive Loading)
 
 `preload` 也可以搭配 media query 一起使用：([Source](http://yoavweiss.github.io/link_htmlspecial_16/#63))
 
@@ -130,7 +131,7 @@ function runScript(src) {
       media="(max-width: 600px)">
 ```
 
-### Use Case 6: Preload Header
+### Preload Header
 
 我們也可以用 server response header 來觸發瀏覽器的 `preload`。
 
@@ -163,7 +164,7 @@ function runScript(src) {
 
 用時間軸表示如下：
 
-![建立連線](https://www.igvita.com/posts/15/xsocket-setup.png.pagespeed.ic.DV8rwlxj05.webp)
+![建立連線](./preconnect-potential-saving.webp)
 
 (Source: [Eliminating Roundtrips with Preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/))
 
@@ -181,7 +182,9 @@ function runScript(src) {
 
 這個網站引用了 Google Fonts 的 CSS 檔，而 CSS 檔又引用到另外兩個字形檔。上半部/下半部分別未使用/用了 `preconnect`。
 
-![preconnect 使用前與使用後](https://www.igvita.com/posts/15/xfont-preconnect.png.pagespeed.ic.ALPEs7sMxi.webp)
+![preconnect 使用前與使用後](./preconnect-before-after.webp)
+
+(Source: [Eliminating Roundtrips with Preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/))
 
 首先，圖上半部是單純直接下載 CSS 的結果。依時間先後順序，瀏覽器做了以下的事情：
 
@@ -197,6 +200,8 @@ function runScript(src) {
 3. 下載字體 (over HTTP/2 multiplexing)
 
 可以很明顯看到，因為利用 `preconnect` 提早建立好與 `fonts.gstatic.com` 之間的連線，省去了一次完整的 (DNS Lookup + TCP Handshake + SSL Negotiation) ，共三個 RTT 的時間。
+
+## `preconnect` 應用
 
 ### `preconnect` via `Link` HTTP Header / JavaScript
 
@@ -215,15 +220,13 @@ function preconnectTo(url) {
 }
 ```
 
-下面簡單介紹一些使用情境：
-
-### Use Case 1: CDN
+### CDN
 
 如果你有很多資源要從某個CDN去拿，你可以提示 `preconnect` CDN的域名。
 
 特別是你不太能預先知道有哪些資源要下載的情況，只需要給定域名這點滿方便的。
 
-### Use Case 2: Streaming
+### Streaming
 
 如果頁面上有個串流媒體，但你沒有要馬上播放，又希望按下播放的時候可以越快開始越好，那麼可以考慮先用 `preconnect` 建立連線，節省一段連線時間。
 
@@ -237,7 +240,7 @@ function preconnectTo(url) {
 
 資源將會等頁面完全下載完以後，以 Lowest 優先度下載。
 
-### Use Case: 分頁的下一頁
+### 應用情境：分頁的下一頁
 
 如果你確定使用者有很高的機率會點下一頁的話。
 
@@ -246,6 +249,7 @@ function preconnectTo(url) {
 * `preload` 告訴瀏覽器：「這份資源對目前的頁面是必要的，請用最快的速度下載此資源。」
 * `preconnect` 告訴瀏覽器：「這個網頁將會在不久的將來下載某個 domain 的資源，請先幫我建立好連線。」
 * `prefetch` 告訴瀏覽器：「這資源我等等會用到，有空的話幫我先下載」。
+* `dns-prefetch` 告訴瀏覽器：「先幫我做 DNS Lookup，等等可能會用到」。
 
 ## Reference
 
