@@ -1,7 +1,7 @@
 ---
 title: "JavaScript 開發者都該會的 7 個好用陣列方法"
 tags: ["javascript"]
-image: /images/javascript-array-methods.png
+image: ./cover.png
 last_modified_at: 2020/10/15
 date: "2020-08-23"
 ---
