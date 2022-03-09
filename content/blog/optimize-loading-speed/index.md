@@ -1,5 +1,4 @@
 ---
-title: "前端工程師都該懂的6個網頁載入加速技巧 (加速 30% 真實案例分享)"
 title: "網頁載入效能優化 (Web Performance Optimization) (加速 30% 真實案例分享)"
 tags: ["javascript", "webpack", "performance"]
 last_modified_at: 2020/10/15
