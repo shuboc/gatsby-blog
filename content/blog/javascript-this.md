@@ -1,7 +1,8 @@
 ---
 title: "JavaScript this 是什麼？"
 tags: ["javascript"]
-last_modified_at: 2020/10/15
+redirect_from:
+  - /what-is-this/
 date: "2020-07-10"
 ---
 
@@ -112,7 +113,7 @@ user.speak(); // (2) Hello world! My name is Shubo
 
 因為「呼叫 `speak()` 方法的物件」是 `user` 物件，所以 `speak()` 方法中的 `this` 就等於 `user` 物件。
 
-## This 的值是動態決定的
+## this 的值是動態決定的
 
 這裡有個重要的觀念：函式中的 `this` 並不是一個固定不變的值。
 
@@ -253,7 +254,7 @@ user.speak(); // (3)
 
 原因是 arrow 被宣告的當下，他的環境是 global context。也就是說 `this` 等於 `window`，或是 strict mode 底下的 `undefined`。
 
-## 所以，我該如何判斷 this 的值？
+## 結論：該如何判斷 this 的值？
 
 我們可以簡單歸納出決定 `this` 的規則：
 
