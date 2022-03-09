@@ -1,7 +1,6 @@
 ---
 title: "Caterpillar Method"
 tags: [algorithm]
-redirect_from: /2017/04/03/caterpillar-method
 last_modified_at: 2020/10/15
 date: "2017-04-03"
 ---

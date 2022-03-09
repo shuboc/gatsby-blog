@@ -1,7 +1,8 @@
 ---
 title: "什麼是 JavaScript？ JavaScript 是幹嘛用的？ - JavaScript 程式教學 / JS Tutorial"
 tags: ["javascript"]
-permalink: /javascript/intro
+redirect_from:
+  - /javascript/intro/
 date: "2020-11-27"
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "0 mod n Sum Subset Problem"
 tags: [algorithm]
-redirect_from: /2017/04/01/maximum-slice-problem
 last_modified_at: 2020/10/15
 date: "2017-03-27"
 ---

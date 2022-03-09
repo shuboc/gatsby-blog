@@ -1,7 +1,8 @@
 ---
 title: "JavaScript 變數 - JavaScript 程式教學 / JS Tutorial"
 tags: ["javascript"]
-permalink: /javascript/variable
+redirect_from:
+  - /javascript/variable/
 date: "2020-12-09"
 ---
 

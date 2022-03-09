@@ -2,7 +2,6 @@
 layout: post
 title: "[教學] 純CSS氣泡提示框"
 tags: [css]
-redirect_from: /2016/05/08/css-balloon
 last_modified_at: 2020/10/15
 date: "2016-05-08"
 ---

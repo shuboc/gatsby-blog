@@ -1,7 +1,6 @@
 ---
 title: "[教學] 3個JavaScript的call()和apply()的應用範例"
 tags: ["javascript"]
-redirect_from: /2018/08/11/javascript-apply-call-call-forwarding
 last_modified_at: 2020/10/15
 date: "2018-08-11"
 ---

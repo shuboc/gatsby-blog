@@ -1,7 +1,8 @@
 ---
-title: "如何開始寫 JavaScript - JavaScript 程式教學 / JS Tutorial"
+title: "如何挑選 JavaScript 編輯器 - JavaScript 程式教學 / JS Tutorial"
 tags: ["javascript"]
-permalink: /javascript/howto
+redirect_from:
+  - /javascript/howto/
 date: "2020-11-28"
 ---
 

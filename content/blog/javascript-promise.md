@@ -1,7 +1,6 @@
 ---
 title: "[教學] 如何使用 JavaScript Promise 簡化非同步流程"
 tags: [javascript]
-redirect_from: /2017/05/20/javascript-promise
 last_modified_at: 2020/10/15
 date: "2017-05-20"
 ---

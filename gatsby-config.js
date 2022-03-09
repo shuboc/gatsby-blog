@@ -149,6 +149,8 @@ module.exports = {
           "UA-67843032-2", // Google Analytics / GA
         ],
       }
-    }
+    },
+    'gatsby-redirect-from',
+    'gatsby-plugin-meta-redirect',
   ],
 }

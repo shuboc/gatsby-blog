@@ -2,7 +2,6 @@
 layout: post
 title: "[教學] JavaScript new、Function Constructor (建構函式) 及 Object.create()"
 tags: [javascript]
-redirect_from: /javascript-create-object
 last_modified_at: 2020/10/15
 date: "2016-04-23"
 ---

@@ -2,7 +2,6 @@
 layout: post
 title: "[教學] Redux如何和React Router搭配使用"
 tags: [react]
-redirect_from: /2016/10/16/filtering-redux-state-with-react-router-params
 last_modified_at: 2018/12/29
 date: "2016-10-16"
 ---

@@ -1,11 +1,12 @@
 ---
 title: "JavaScript 程式結構 - JavaScript 程式教學 / JS Tutorial"
 tags: ["javascript"]
-permalink: /javascript/structure
+redirect_from:
+  - /javascript/structure/
 date: "2020-12-02"
 ---
 
-這篇文章將會教你 JavaScript 最基礎的程式結構，包含組成程式碼的最小元素：語句、標示語句結束的分號、單行及多行註解。
+這篇文章將會教你 JavaScript 最基礎的程式結構，包含組成程式碼的最小元素：語句、標示語句結束的分號、單行及多行註解。
 
 ## 目錄
 

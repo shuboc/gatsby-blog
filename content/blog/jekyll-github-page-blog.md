@@ -2,7 +2,6 @@
 layout: post
 title: "如何用 Github Pages 和 Jekyll 快速建立免費部落格"
 tags: [jekyll]
-redirect_from: /2016/03/05/build-your-own-blog-using-jekyll-and-github-pages
 last_modified_at: 2020/10/15
 date: "2016-03-05"
 ---

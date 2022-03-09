@@ -2,7 +2,6 @@
 layout: post
 title: "[教學] Redux Selector"
 tags: [react]
-redirect_from: /2016/11/12/redux-selector
 last_modified_at: 2018/12/29
 date: "2016-11-12"
 ---

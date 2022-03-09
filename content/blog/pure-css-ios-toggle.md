@@ -2,7 +2,6 @@
 layout: post
 title: "[教學] 純CSS iOS開關"
 tags: [css]
-redirect_from: /2016/05/23/customized-checkboxes
 last_modified_at: 2020/10/15
 date: "2016-05-23"
 ---
