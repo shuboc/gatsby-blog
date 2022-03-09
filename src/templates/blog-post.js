@@ -37,7 +37,6 @@ const BlogPostTemplate = ({ data, location }) => {
         <hr />
         <footer>
           <Bio />
-          <div className="fb-page" data-href="https://www.facebook.com/shubo.code/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/shubo.code/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/shubo.code/">Shubo 的程式開發筆記</a></blockquote></div>
         </footer>
       </article>
       <nav className="blog-post-nav">
@@ -67,6 +66,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </ul>
       </nav>
       <div className="fb-comments" data-width="" data-numposts="5"></div>
+      <div className="fb-page" data-href="https://www.facebook.com/shubo.code/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/shubo.code/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/shubo.code/">Shubo 的程式開發筆記</a></blockquote></div>
     </Layout>
   )
 }
