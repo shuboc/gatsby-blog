@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[教學] 在React元件中使用d3圖表"
+title: "在React元件中使用d3圖表"
 tags: [react, d3]
 last_modified_at: 2020/10/15
 date: "2016-07-18"

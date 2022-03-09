@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[教學] JavaScript new、Function Constructor (建構函式) 及 Object.create()"
+title: "JavaScript new、Function Constructor (建構函式) 及 Object.create()"
 tags: [javascript]
 last_modified_at: 2020/10/15
 date: "2016-04-23"

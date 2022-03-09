@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[教學] 純CSS iOS開關"
+title: "純CSS iOS開關"
 tags: [css]
 last_modified_at: 2020/10/15
 date: "2016-05-23"

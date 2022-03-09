@@ -1,5 +1,5 @@
 ---
-title: "[教學] 三種 Interative Binary Tree Traversal 的方法 (In-Order, Pre-Order and Post-Order)"
+title: "三種 Interative Binary Tree Traversal 的方法 (In-Order, Pre-Order and Post-Order)"
 tags: [algorithm, data structure]
 last_modified_at: 2020/10/15
 date: "2017-04-17"

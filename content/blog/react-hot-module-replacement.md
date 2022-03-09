@@ -1,5 +1,5 @@
 ---
-title: "[教學] 如何設定 Webpack HMR + React Hot Loader (2020更新)"
+title: "如何設定 Webpack HMR + React Hot Loader (2020更新)"
 tags: ["react", "webpack"]
 last_modified_at: 2020/10/15
 date: "2019-12-28"

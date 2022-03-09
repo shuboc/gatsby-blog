@@ -1,5 +1,5 @@
 ---
-title: "[教學] @babel/preset-env 設定"
+title: "@babel/preset-env 設定"
 tags: ["webpack", "javascript"]
 last_modified_at: 2020/10/15
 date: "2020-06-07"

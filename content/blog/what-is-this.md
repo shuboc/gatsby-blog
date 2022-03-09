@@ -1,5 +1,5 @@
 ---
-title: "[教學] JavaScript 中的 this 是什麼？"
+title: "JavaScript 中的 this 是什麼？"
 tags: ["javascript"]
 last_modified_at: 2020/10/15
 date: "2020-07-10"

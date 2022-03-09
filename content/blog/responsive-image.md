@@ -1,5 +1,5 @@
 ---
-title: "[教學] 用 img srcset 與 HTML5 picture，讓圖片也能RWD"
+title: "用 img srcset 與 HTML5 picture，讓圖片也能RWD"
 tags: [rwd, web browser]
 last_modified_at: 2020/10/21
 date: "2017-04-27"

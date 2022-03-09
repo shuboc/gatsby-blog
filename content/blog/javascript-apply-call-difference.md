@@ -1,5 +1,5 @@
 ---
-title: "[教學] 3個JavaScript的call()和apply()的應用範例"
+title: "3個JavaScript的call()和apply()的應用範例"
 tags: ["javascript"]
 last_modified_at: 2020/10/15
 date: "2018-08-11"
