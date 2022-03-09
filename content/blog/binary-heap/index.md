@@ -42,7 +42,7 @@ Binary Heap 有兩個主要的操作： `insert()` 和 `extract_max()`。
 
 下列影片示範插入一個數字到 max heap 的過程：
 
-<video controls>
+<video autoplay controls playsinline loop>
   <source src="./insert.mp4" type="video/mp4">
 </video>
 
@@ -62,7 +62,7 @@ Binary Heap 有兩個主要的操作： `insert()` 和 `extract_max()`。
 
 下列影片示範將最大值從 max heap 取出的過程：
 
-<video controls>
+<video autoplay controls playsinline loop>
   <source src="./extract-max.mp4" type="video/mp4">
 </video>
 
