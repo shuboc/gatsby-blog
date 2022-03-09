@@ -1,5 +1,5 @@
 ---
-title: "最大子數列問題 (Maximum Subarray Problem) 及Kadane's Algorithm"
+title: "最大子數列問題 (Maximum Subarray Problem) 及 Kadane's Algorithm"
 tags: [algorithm, dynamic programming]
 last_modified_at: 2020/10/15
 date: "2017-04-01"

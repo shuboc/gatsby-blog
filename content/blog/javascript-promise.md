@@ -1,5 +1,5 @@
 ---
-title: "如何使用 JavaScript Promise 簡化非同步流程"
+title: "JavaScript Promise 的用法"
 tags: [javascript]
 last_modified_at: 2020/10/15
 date: "2017-05-20"

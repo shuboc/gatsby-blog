@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Closure (閉包)、函式與語彙環境"
+title: "JavaScript Closure (閉包)"
 tags: ["javascript"]
 last_modified_at: 2020/10/15
 date: "2018-03-04"

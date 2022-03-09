@@ -1,5 +1,5 @@
 ---
-title: "JavaScript 中的 Hoisting 是什麼意思？let const var 的差異居然是這個？"
+title: "JavaScript 中的 Hoisting 是什麼意思？let const var 的差異是什麼？"
 tags: ["javascript"]
 last_modified_at: 2020/10/15
 date: "2020-07-13"

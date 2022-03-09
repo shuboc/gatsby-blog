@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JavaScript new、Function Constructor (建構函式) 及 Object.create()"
+title: "JavaScript new 關鍵字的用法"
 tags: [javascript]
 last_modified_at: 2020/10/15
 date: "2016-04-23"

@@ -1,5 +1,5 @@
 ---
-title: "CORS 是什麼? 如何設定 CORS?"
+title: "跨來源資源共用 (CORS) 是什麼? 如何設定 CORS?"
 tags: ["javascript", "web browser"]
 last_modified_at: 2020/10/15
 date: "2020-07-03"
@@ -11,10 +11,6 @@ date: "2020-07-03"
 
 ```toc
 ```
-
-## TL;DR
-
-只想知道有哪些東西要設定的話，可以直接跳到[總結](./#總結)的部分唷！
 
 ## 同源政策 (Same-Origin Policy)
 
@@ -137,12 +133,12 @@ Access-Control-Allow-Origin: *
 
 JavaScript 預設可以存取的「簡單」response header 有以下這些：
 
-* Cache-Control
-* Content-Language
-* Content-Type
-* Expires
-* Last-Modified
-* Pragma
+* `Cache-Control`
+* `Content-Language`
+* `Content-Type`
+* `Expires`
+* `Last-Modified`
+* `Pragma`
 
 如果要讓 JavaScript 存取其他 header，server 端可以用 `Access-Control-Expose-Headers` header 設定。
 
@@ -167,7 +163,7 @@ Preflight request 是一個 http OPTIONS 方法，會帶有兩個 request header
 
 比方說我發送的非「簡單」跨來源請求是這樣：
 
-```JavaScript`
+```JavaScript
 fetch('https://othersite.com/data/', {
   method: 'POST',
   headers: {
@@ -251,7 +247,7 @@ fetch('https://othersite.com/data/', {
 
 ## 跨來源請求的 Cookie
 
-一般的 http request 會帶有該網域底下的 cookie；然而，**跨來源請求預設是不能帶 cookie 的。**
+一般的 http request 會帶有該網域底下的 cookie；然而，**跨來源請求預設是不能帶 cookie 的。**
 
 為什麼呢？因為帶有 cookie 的請求非常強大，如果請求攜帶的 cookie 是 session token，那這個請求可以以你的身份做很多機敏的事情，像是存取你的隱私資料、從你的銀行帳戶轉帳等。
 
