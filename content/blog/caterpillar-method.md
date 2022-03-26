@@ -5,7 +5,7 @@ last_modified_at: 2020/10/15
 date: "2017-04-03"
 ---
 
-令 `A = [a0, a1, ..., an-1], ai > 0`，要如何判斷是否存在一組`(p, q), p <= q `使得 `sum(ap, ap+1, ... aq) = s`？我們可以用下面介紹的**Caterpillar Method**。
+令 A = [a0, a1, ..., an-1], ai > 0，要如何判斷是否存在一組 (p, q)，其中 p <= q，使得 sum(ap, ap+1, ... aq) = s？我們可以用下面介紹的**Caterpillar Method**。
 
 ## 目錄
 

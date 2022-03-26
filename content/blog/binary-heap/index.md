@@ -4,7 +4,7 @@ tags: ["data structure", "algorithm"]
 date: "2022-03-07"
 ---
 
-Binary Heap (二元堆積) 是一種常見的資料結構，可以用來儲存一組數值的資料，可以分成 min heap (最小堆積) 和 max heap (最大堆積)，min heap 取出最小值的時間複雜度為 `O(logN)` ，而 max heap 取出最小值的時間複雜度為 `O(logN)`。插入元素需要 `O(logN)` 的時間複雜度。Binary Heap 適合需要取最大最小值的場合，也適合用來解決 top-k 問題，同時也常被用來實作 priortity queue (優先權佇列)。在 Dijkstra 演算法中，堆積也扮演了重要的角色。
+Binary Heap (二元堆積) 是一種常見的資料結構，適合需要取最大最小值的場合，也適合用來解決 top-k 問題，同時也常被用來實作 priortity queue (優先權佇列)。在 Dijkstra 演算法中，堆積也扮演了重要的角色。Binary Heap 取出最大/最小值的時間複雜度為 O(logN)，而插入元素需要 O(logN) 的時間複雜度。
 
 ## 目錄
 

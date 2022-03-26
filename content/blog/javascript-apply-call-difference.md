@@ -5,14 +5,14 @@ last_modified_at: 2020/10/15
 date: "2018-08-11"
 ---
 
-這篇教學會用 3個 JavaScript 中運用到 `apply()` 和 `call()` 的例子，讓你快速了解 `apply()` 和 `call()` 的使用方法。
+這篇教學會介紹 JavaScript 中運用到 apply() 和 call() 的應用，包含了 Call Forwarding、Cache 和 Method Borrowing，讓你快速了解 apply() 和 call() 的使用方法。
 
 ## 目錄
 
 ```toc
 ```
 
-## 範例應用1: Call Forwarding
+## Call Forwarding
 
 有時候，我們想要在一個函式原本的功能之上附加額外的功能，這個時候可以使用**Call Forwarding**的技巧。
 
@@ -90,7 +90,7 @@ worker.slow()
 
 如此一來`wrappedFunction`呼叫起來跟原本的函式幾乎一模一樣，但是又加上了自己想要的邏輯。
 
-## 範例應用2: Cache
+## Cache
 
 假設有個計算量非常費時的函式：
 
@@ -126,7 +126,7 @@ slow(1) // Cached!
 slow(1) // Cached!
 ```
 
-## 範例應用3: Method Borrowing
+## Method Borrowing
 
 上例中的`hash()`的實作需要注意。
 

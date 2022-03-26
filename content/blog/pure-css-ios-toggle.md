@@ -6,10 +6,10 @@ last_modified_at: 2020/10/15
 date: "2016-05-23"
 ---
 
+這篇教學要介紹如何用純CSS把checkbox做成iOS風格的開關(toggle)。最近在[CSS Secrets](http://www.tenlong.com.tw/items/9863478741?item_id=1010373)裡面看到這樣的技巧，覺得還滿酷的！決定分享給大家。
+
 <p data-height="224" data-theme-id="0" data-slug-hash="GZVKgN" data-default-tab="result" data-user="shubochao" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/shubochao/pen/GZVKgN/">iOS toggle button</a> by Shubo Chao (<a href="http://codepen.io/shubochao">@shubochao</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-這篇教學要介紹如何用純CSS把checkbox做成iOS風格的開關(toggle)。最近在[CSS Secrets](http://www.tenlong.com.tw/items/9863478741?item_id=1010373)裡面看到這樣的技巧，覺得還滿酷的！決定分享給大家。
 
 ## 目錄
 
