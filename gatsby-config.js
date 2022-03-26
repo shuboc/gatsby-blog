@@ -177,7 +177,6 @@ module.exports = {
           })
         },
         serialize: ({ path, gitAuthorTime }) => {
-          console.log(gitAuthorTime)
           return {
             url: path,
             lastmod: gitAuthorTime,
@@ -196,5 +195,6 @@ module.exports = {
     },
     'gatsby-redirect-from',
     'gatsby-plugin-meta-redirect',
+    'gatsby-plugin-gatsby-cloud',
   ],
 }

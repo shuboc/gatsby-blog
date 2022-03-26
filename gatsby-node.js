@@ -4,7 +4,7 @@ const _ = require("lodash")
 const { execSync } = require("child_process")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
@@ -63,6 +63,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         },
       })
     })
+
+    createRedirect({ fromPath: '/what-is-this', toPath: '/javascript-this', isPermanent: true })
+    createRedirect({ fromPath: '/javascript/*', toPath: '/javascript-tutorial', isPermanent: true })
   }
 
   // Extract tag data from query
