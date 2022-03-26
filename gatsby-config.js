@@ -140,7 +140,51 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allMarkdownRemark {
+              nodes {
+                fields {
+                  slug
+                  gitAuthorTime
+                }
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: () => `https://shubo.io/`,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allMarkdownRemark: { nodes: allMarkdownRemarkNodes },
+        }) => {
+          const nodeMap = allMarkdownRemarkNodes.reduce((acc, node) => {
+            const { fields } = node
+            const { slug } = fields
+            acc[slug] = fields
+            return acc
+          }, {})
+
+          return allPages.map(page => {
+            return { ...page, ...nodeMap[page.path] }
+          })
+        },
+        serialize: ({ path, gitAuthorTime }) => {
+          console.log(gitAuthorTime)
+          return {
+            url: path,
+            lastmod: gitAuthorTime,
+          }
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
