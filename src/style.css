@@ -335,6 +335,10 @@ img {
   margin-bottom: var(--spacing-8);
 }
 
+.token.operator {
+  background: none !important;
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {
