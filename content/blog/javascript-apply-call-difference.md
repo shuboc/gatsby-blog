@@ -150,6 +150,5 @@ function hash() {
 
 * [Decorators and forwarding, call/apply - JavaScript Info](http://javascript.info/call-apply-decorators)
 * [Arguments object - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
-* [Function.prototype.apply - MDN
-](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+* [Function.prototype.apply - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 
