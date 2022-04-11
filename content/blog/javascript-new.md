@@ -1,25 +1,35 @@
 ---
 layout: post
-title: "JavaScript new 關鍵字的用法"
+title: "JavaScript new 運算子及建構函式的用法"
 tags: [javascript]
 last_modified_at: 2020/10/15
 date: "2016-04-23"
 ---
 
-這篇教學將介紹 JavaScript 中兩種建立物件的方法：使用 JavaScript new 及 Function Constructor (建構函式) 以及 ES5 `Object.create()`。
+JavaScript 中可以使用 JavaScript new 運算子及建構函式建立物件。定義建構函式的必要步驟：1. 宣告建構函式 2. 在建構函式中，將物件屬性定義在 this 上 3. 將物件方法定義在建構式的 prototype 屬性裡 4. 用 new 運算子呼叫建構函式。JavaScript 中也可以使用 Object.create() 方法建立物件。
 
 ## 目錄
 
 ```toc
 ```
 
-## JavaScript new 和 Function Constructor (建構函式)
+## JavaScript new 運算子和建構函式 (Function Constructor)
 
-在 JavaScript 中，使用 `new` 是最常見的建立新物件的方法之一。那麼要如何使用 `new` 呢？
+在 JavaScript 中可以使用 `new` 運算子搭配建構函式 (function constructor) 建立新物件。
 
-首先我們需要定義一個 function constructor (建構函式)。簡單來說，function constructor 是一個用來創造新物件的函式，通常會和 `new` 一起搭配使用。
+建構函式 (function constructor) 是一個用來創造新物件的函式，需要和 `new` 運算子一起搭配使用。
 
-要如何定義建構式呢？舉個例子，如果要建構`Cat`物件，並且每個物件都有各自的`name`特性(property)，那我們可以定義`Cat`建構式如下：
+舉例來說，假設現在要用 `Cat()` 建構函式創造新物件，我們需要搭配 `new` 運算子一起呼叫建構函式 `Cat()`，呼叫 `Cat()` 時可以傳入參數：
+
+~~~jsx
+var kitty = new Cat("Kitty");
+~~~
+
+## 在 this 上定義物件屬性
+
+如果要定義物件的屬性，需要在建構函式中修改 `this` 的屬性 (property)。在建構函式中，`this` 代表我們要創造的新物件。
+
+舉例來說，假設物件需要有 `name` 屬性，我們需要將建構函式的 `name` 參數指定給 `this.name`。我們可以定義 `Cat` 建構式如下：
 
 ~~~jsx
 // Constructor
@@ -28,7 +38,18 @@ function Cat(name) {
 }
 ~~~
 
-那我們要如何定義物件的方法呢？答案是將方法定義在`prototype`屬性裡。例如：
+搭配 new 運算子呼叫建構函式時，將 `"Kitty"` 當作建構函式的參數傳入，則新物件的 `name` 屬性即為 `"Kitty"`。我們可以呼叫 `kitty.name` 來驗證：
+
+~~~jsx
+var kitty = new Cat("Kitty");
+console.log(kitty.name) // Kitty
+~~~
+
+## 在 prototype 上定義物件方法
+
+要定義物件方法，需要將物件方法宣告在建構函式的 `prototype` 屬性裡。建構函式的 `prototype` 屬性，就是新物件的 prototype。
+
+舉例來說，如果 `Cat` 建構函式產生的物件都要有 `speak()` 方法，我們可以定義 `Cat.prototype.speak()`：
 
 ~~~jsx
 // Define 'speak' method for Cat objects
@@ -37,65 +58,47 @@ Cat.prototype.speak = function() {
 };
 ~~~
 
-定義完建構式和方法後，我們用`new`運算子呼叫建構式：
+接著用 `new` 運算子呼叫建構函式創造新物件，就可以在新物件上呼叫 `speak()` 方法：
 
 ~~~jsx
 var kitty = new Cat("Kitty");
 kitty.speak(); // Kitty: meow!
 ~~~
 
-這樣就創造出了一個`kitty`物件，可以呼叫我們定義的`speak`方法！
+## 原型繼承 (Prototypal Inheritance)
 
-簡單總結一下，建構式有幾個必要的步驟：
+要了解 new 和建構函式的運作原理，首先我們要了解何謂原型繼承 (prototypal inheritance)。
 
-1. 定義建構式
-2. 將方法定義在建構式的`prototype`特性裡
-3. 用`new`運算子呼叫建構式
+原型繼承的意思是，JavaScript 中每個物件都有個 prototype 屬性，物件能夠繼承 prototype 上的屬性或方法。這個機制可以讓我們產生繼承自同一個 prototype 的多個物件，達到代碼復用的效果。
 
-### new 運算子和 Function Constructor (建構函式) 的運作原理
+想知道 prototype 更詳細的原理可以看這篇[JavaScript Prototype (原型) 是什麼？](/javascript-prototype)
 
-要了解其運作原理，首先我們要了解何謂 prototypal inheritance (原型繼承)。
+## 用 new 運算子呼叫建構函式時，背後發生了什麼事？
 
-所謂的 prototypal inheritance 用一句話形容就是：JavaScript 每個物件都有個 prototype，物件能夠繼承 prototype 上的屬性或方法；如果物件上找不到某個屬性或方法時，就會去查詢它的 prototype 是否存在這個屬性或方法。
+當我們用 new 運算子呼叫建構函式 `new Cat("Kitty")` 的時候，JavaScript 引擎在背後做了幾件事:
 
-這個機制使我們可以在prototype物件上定義特性或方法，所有繼承同一個prototype的物件都可以透過原型委託使用這些特性或方法。
+1. 建立新物件。
+2. 將新物件的 prototype 指定為建構函式的 `prototype` 屬性。以上面的例子來說就是 `Cat.prototype`。
+3. 將新物件綁定到 `this` 物件，並呼叫建構函式。
+4. 在不特別指定 `return` 值的情況下，回傳剛創造的新物件。
 
-想知道 prototype 更詳細的原理可以看這篇喔。
+因為新物件的原型是 `Cat.prototype`，所以新物件可以呼叫定義在 `Cat.prototype` 上的 `speak()` 方法。
 
-> 延伸閱讀：[JavaScript Prototype](/javascript-prototype)
+## 使用 new 運算子與建構函式容易犯的錯誤
 
-接著我們來瞭解`new`運算子的機制。
-
-當我們呼叫`new Cat("Kitty")`的時候，JS在背後做了幾件事:
-
-1. 建立新物件，
-2. 新物件的繼承自建構式的`prototype`特性，也就是`Cat.prototype`。
-3. 將新物件綁定到建構式的`this`物件，並呼叫建構式。
-4. (在不特別寫明`return`值的情況下) 回傳剛創造的新物件。
-
-第2步將新物件的原型設為 `Cat.prototype`。所以對新物件呼叫`speak()`方法時，會先在物件本身尋找此方法。然後會發現自己身上找不到此方法，於是再到自己的prototype，也就是 `Cat.prototype` 上尋找。因為我們定義了 `Cat.prototype.speak`，所以可以順利找到此方法。
-
-簡單地說，當你使用建構式來創造新物件，新物件的原型就是建構式上的`prototype`特性。而在原型上定義方法，就等於所有物件都可以透過原型委託的方式使用原型上的方法。
-
-### 使用 new 與 Contructor Function 容易犯的錯誤
-
-建構式必須和`new`運算子搭配使用，但萬一我們忘了，直接呼叫建構式：
+建構式必須和 `new` 運算子搭配使用，但萬一我們忘了 `new`，直接呼叫建構函式：
 
 ~~~jsx
 var kitty = Cat("kitty");
 ~~~
 
-此時並不會有任何錯誤或警告，`this`會直接bind到全域變數，有可能會導致很難察覺的bug!
+此時並不會有任何錯誤或警告，`this` 會直接綁定全域變數，有可能會導致很難察覺的 bug!
 
-## 用`Object.create()`創造新物件
+## 用 Object.create() 創造新物件
 
-ES5中提供了`Object.create()`的方法，用來創造新物件。使用方法：
+ES5 中提供了 `Object.create()` 的方法，用途是創造新物件，並令其 prototype 等於第一個被傳入的參數。
 
-> Object.create(proto[, propertiesObject])
-
-這個 function 會回傳一個新物件，其 prototype 等於第一個被傳入的參數。
-
-例如，我們想要創造很多貓物件，所以我們先創造一個物件 `cat` 來當作 prototype，裡面定義了`speak()`方法：
+例如，我們想要創造很多貓物件，所以我們先創造一個物件 `cat` 來當作 prototype，裡面定義了 `speak()` 方法：
 
 ~~~jsx
 var cat = {
@@ -105,7 +108,7 @@ var cat = {
 };
 ~~~
 
-當我們呼叫`Object.create(cat)`時，回傳的新物件的 prototype 就是 `cat`。
+當我們呼叫 `Object.create(cat)` 時，回傳的新物件的 prototype 就是 `cat`。
 
 ~~~jsx
 // Create a new cat
@@ -114,11 +117,13 @@ kitty.name = "Kitty";
 kitty.speak(); // Kitty: meow!
 ~~~
 
-`kitty`物件裡找不到`speak()`方法，於是接下來到他的原型物件(也就是`cat`物件)上面尋找。`cat`物件裡定義了`speak()`方法，於是呼叫成功。
+雖然 `kitty` 本身沒有定義 `speak()` 方法，但它的 prototype (也就是 `cat` 物件) 定義了 `speak()` 方法，於是可以成功呼叫。
 
-#### Object.create() 的原理
+使用 `Object.create()` 的好處是，省去了可能會忘記用 `new` 呼叫建構式的風險。
 
-被傳進作為參數的物件，將會被當成新物件的原型物件。所以`Object.create()`的內部可能會長得像這樣（示意）：
+## Object.create() 的 polyfill
+
+被傳進作為參數的物件，將會被當成新物件的原型物件。所以 `Object.create()` 的 polyfill 可以這樣寫：
 
 ~~~jsx
 if (!Object.create) {
@@ -130,20 +135,26 @@ if (!Object.create) {
 }
 ~~~
 
-其中`F()`是建構式，建構式上的`prototype`特性設為`o`，並且由`new`運算子呼叫建構式。所以新物件的特性查找將會委託給`o`。
+其中 `F()` 是建構函式，將建構函式的 `prototype` 設為傳入的物件 `o`，並且由 `new` 運算子呼叫建構函式，產生新物件。
 
-使用`Object.create()`的好處是，省去了可能會忘記用 `new` 呼叫建構式的風險。
+參考：[Object.create() polyfill - MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/create#polyfill)
 
 ## 結論
 
-JS中可以用建構式，或者是ES5的 `Object.create()` 來創造新物件。
+JavaScript 中可以用建構函式搭配 new 運算子，或是 ES5 的 `Object.create()` 來創造新物件。
 
-使用建構式創造的新物件，將繼承自建構式上的 `prototype` 屬性。
+定義建構函式的必要步驟：
 
-使用`Object.create(obj)`創造的新物件，將繼承自`obj`。
+1. 宣告建構函式。
+2. 在建構函式中，將物件屬性定義在 `this` 上。
+3. 將物件方法定義在建構式的 `prototype` 屬性裡。
+4. 用 `new` 運算子呼叫建構函式。
+
+使用 `Object.create(obj)` 方法創造的新物件，將繼承自 `obj`。
 
 ## 參考資料
 
 * [new operator - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)
 * [Object.create() - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
 * [Object Creation - Programming JavaScript Application](http://chimera.labs.oreilly.com/books/1234000000262/ch03.html#object_creation)
+* [Constructor, operator "new" - javascript.info](https://javascript.info/constructor-new)
