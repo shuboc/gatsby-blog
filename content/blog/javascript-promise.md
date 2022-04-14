@@ -12,7 +12,7 @@ JavaScript 中的 Promise 是專門用來執行非同步操作的資料結構，
 ```toc
 ```
 
-## Why Promise?
+## 為何要使用 Promise?
 
 JavaScript在執行非同步（例如API request，等待使用者點擊）的流程時，因為不知道什麼時候會完成，通常會接受一個callback function作為參數，完成會呼叫此callback function以執行下一步。
 
@@ -37,11 +37,13 @@ asyncA()
   .catch() // Error Handling
 ```
 
-## Create Promise
+## 建立 Promise
 
-Promise的constructor接受一個執行函式(executor)，用來定義非同步行為。執行函式會被馬上呼叫並傳入兩個參數：`(resolve, reject)`。
+Promise 是一種物件，它的建構函式接受一個執行函式 (executor)，用來定義非同步行為。執行函式會被馬上呼叫並傳入兩個參數：`(resolve, reject)`。
 
-Promise物件的初始狀態為*pending*，在執行函式中呼叫`resolve()`，會將Promise的狀態轉變成*resolved*，而呼叫`reject()`會將狀態轉為*rejected*。
+Promise 物件的初始狀態為 *pending*，當我們完成了非同步流程，在執行函式中呼叫 `resolve()`，會將 Promise 的狀態轉變成 *resolved*。當錯誤發生時，我們呼叫 `reject()` 會將 Promise 的狀態轉變為 *rejected*。
+
+下面是一個建立 promise 的範例：
 
 ```Javascript
 const p = new Promise(function(resolve, reject) {
@@ -55,7 +57,7 @@ const p = new Promise(function(resolve, reject) {
 })
 ```
 
-### Example: Check `document.readyState`
+範例：檢查 document.readyState
 
 ```Javascript
 function ready() {
@@ -72,23 +74,11 @@ function ready() {
 }
 ```
 
-## `.then()`
+## 用 .then() 串接非同步流程
 
-Promise具有`.then()`方法，用來定義非同步行為完成後的動作。`.then()`方法接受一個callback function作為參數，當promise轉變成*resolved*狀態時，這個callback function會被執行。
+Promise具有 `.then()` 方法，用來定義非同步行為完成後的動作。`.then()` 方法接受一個 callback function 作為參數，當 promise 轉變成 *resolved* 狀態時，這個 callback function 會被執行。
 
-在Promise的執行函式中，傳入`resolve()`的參數，會在`.then()`的callback function中作為參數傳入：
-
-```Javascript
-const p = new Promise(resolve => {
-  resolve(42)
-})
-
-p.then(function(value) {
-  console.log(value) // 42
-})
-```
-
-### Example: `setTimeout`
+範例：`setTimeout`
 
 ```Javascript
 function delay(ms) {
@@ -102,9 +92,21 @@ delay(3000).then(function() {
 })
 ```
 
-## `.catch()`
+Promise 中 `resolve()` 的值，可以在 `.then()` 方法的 callback function 中使用：
 
-在執行函數中呼叫reject，或非同步的過程中有exception被拋出（`throw new Error(...)`）時，可以用`.catch()`方法來處理錯誤：
+```Javascript
+const p = new Promise(resolve => {
+  resolve(42)
+})
+
+p.then(function(value) {
+  console.log(value) // 42
+})
+```
+
+## 用 .catch() 錯誤處理
+
+在執行函數中呼叫 reject，或非同步的過程中有 exception 被拋出（`throw new Error(...)`）時，可以用 `.catch()` 方法來處理錯誤：
 
 ```Javascript
 new Promise(function(resolve, reject) {
@@ -120,59 +122,68 @@ new Promise(function(resolve, reject) {
 })
 ```
 
-### Why `.catch()`?
+### .catch() 如何簡化非同步流程的錯誤處理
 
 非同步的錯誤處理其實很麻煩！
 
-參考下面的例子，如果在callback function裡面`throw new Error`的話，無法被try/catch捕捉到，因為等到callback function被執行時，已經離開try/catch的範圍了：
+以下是一個常見的錯誤：如果在 `callback` 裡面 `throw err` 的話，無法被 try/catch 區塊捕捉到，因為等到 `callback` 被執行時，已經離開 try/catch 的範圍了：
 
 ```Javascript
-function callApi(callback) {
-  try {
-    doSomethingAsync(function(err) {
-      if (err) {
-        throw err // Throw error in a callback
-      }
-    })
-  } catch(err) {
-    callback(err) // Can not catch error properly!
-  }
+try {
+  doSomethingAsync(function callback(err) {
+    if (err) {
+      throw err // Throw error in a callback
+    }
+  })
+} catch(err) {
+  console.error(err) // Can not catch error properly!
 }
 ```
 
-解法是callback function裡面也必須要有try/catch。這凸顯了一個難處：寫非同步程式的人必須仔細在各處捕捉錯誤，否則程式一不小心就crash了。
+解法是 callback function 裡面也必須要有 try/catch。這凸顯了一個難處：寫非同步程式的人必須仔細在各處捕捉錯誤，否則程式一不小心就 crash 了。
 
-有了`.catch()`之後，不管是`reject(new Error())`或是`throw new Error()`通通都可以在`.catch()`中統一處理，相當方便！
+有了 `.catch()` 之後，所有錯誤都可以在 `.catch()` 中統一處理，相當方便！
 
-[更多Node.js的error handling](https://www.joyent.com/node-js/production/design/errors)
+參考：[Error Handling in Node.js](https://www.joyent.com/node-js/production/design/errors)
 
-### `.then(onResolve, onReject)` / `.then(onResolve).catch(onReject)`的差異
+### 使用 .catch() 的一些小細節
 
-`.catch`有兩種寫法，其中第二種比較好：
+#### .then(onResolve, onReject) / .then(onResolve).catch(onReject) 的差異
+
+Promise 的錯誤處理有兩種寫法，其中第二種比較好：
 
 1. `then(onResolve, onReject)`：只會有其中一個被執行，如果執行`onResolve`錯誤無法被`onReject`處理。
-2. `.then(onResolve).catch(onReject)`：如果執行`onResolve`錯誤會被`onReject`處理。
+2. `.then(onResolve).catch(onReject)`：如果執行 `onResolve` 錯誤，會被 `onReject` 處理。
 
-### `resolve`也可能失敗
+#### resolve 也可能失敗
 
-在promise裡面呼叫`resolve(value)`，或是`.then(function() {return value})`都有可能發生錯誤，例如：
+在promise裡面呼叫 `resolve(value)`，或是 `.then(function() { return value })` 都有可能發生錯誤，例如：
 
 1. `value === undefined`
-2. `value`是一個*rejected*的promise
+2. `value` 是一個 *rejected* 的 Promise
 
-值得注意當`resolve(promise)`時，resolve的值＝`promise` resolve的結果。
+參考：[Promises: resolve is not the opposite of reject](https://jakearchibald.com/2014/resolve-not-opposite-of-reject/)
 
-詳見 [Promises: resolve is not the opposite of reject](https://jakearchibald.com/2014/resolve-not-opposite-of-reject/)
+#### 使用 reject 而不是 throw
 
-### 使用`reject`而不是`throw`
+可以區分是我們主動回傳錯誤，還是非預期的異常，debug 的時候可能會滿有用的。
 
-可以區分是我們主動回傳錯誤，還是非預期的異常，[debug的時候可能會滿有用的](http://liubin.org/promises-book/#not-throw-use-reject)。
+參考：[使用reject有什么优点](http://liubin.org/promises-book/#not-throw-use-reject)。
 
-`.then()`中需要reject的時候，可用`return Promise.reject(new Error())`)
+注意：`.then()` 中需要 `reject` 的時候，可用 `return Promise.reject(new Error())`)。
 
-## Chaining
+## Promise Chaining
 
-`.then()`方法是可以串接的，且callback function中的回傳值就會是下一個`.then()`的callback function的參數。
+前面有提到 Promise 的回傳值可以在 `.then()` 的 callback function 的參數中拿到：
+
+```Javascript
+doAsync()
+  .then(function(value) {
+    console.log(value) // 42
+  })
+```
+
+除此之外，**`.then()` 方法也會回傳一個新 Promise**，其 resolve 的值等於 `.then()` 的callback function 的回傳值。所以我們可以不斷地用 `.then()` 方法串接非同步流程：
 
 ```Javascript
 doAsync()
@@ -184,27 +195,26 @@ doAsync()
   })
 ```
 
-### 為何可以串接？
-
-**`.then()`方法會回傳一個新Promise**，其resolve的值等於`.then()`的callback function的回傳值。上面的程式碼等同於：
+上面的程式碼等同於：
 
 ```Javascript
-// .then()回傳一個promise
-const p1 = doAsync().then(function() {
-  return 42 // p1的resolve值為42
-})
+// .then() 回傳一個 promise
+const p1 = doAsync()
+  .then(function() {
+    return 42 // p1的resolve值為42
+  })
 
-// promise可以呼叫then方法
+// promise 可以呼叫 then 方法
 p1.then(function(value) {
   console.log(value) // 42
 })
 ```
 
-## Sequencing (串接)
+## Resolve a promise
 
-`resolve`或是`.then()`的callback function的回傳值可以是任何東西，包括promise。
+`resolve` 或是 `.then()` 的callback function的回傳值可以是任何東西，包括promise。
 
-resolve一個promise，會等promise完成之後才呼叫`.then()`，這個特性可以讓我們達成一件非同步工作完成後，再做另一件非同步工作的效果：
+resolve 一個 promise，會等這個 promise 完成之後才呼叫 `.then()`，這個特性可以讓我們達成一件非同步工作完成後，再做另一件非同步工作的效果：
 
 ```Javascript
 fetch(urls[0]).then(processData)
@@ -216,11 +226,12 @@ fetch(urls[0]).then(processData)
   })
 ```
 
-### 用`Array#forEach`串接
+## 用 forEach() 串接 promise
 
-上面的例子用`.forEach()`改寫。注意：`p.then()`會回傳一個新的promise，如果要達到串接的效果，每次都必須對新回傳的promise去呼叫`.then()`。
+假設我想要一件事做完，再接著做下一件事，可以用 `forEach()` 串接：
 
 ```Javascript
+const urls = [url1, url2, url3]
 let sequence = Promise.resolve()
 urls.forEach(function(url) {
   sequence = sequence.then(function() {
@@ -229,9 +240,12 @@ urls.forEach(function(url) {
 })
 ```
 
-以下是錯誤的寫法，所有的`.then()`都對同一個p呼叫，p一旦resolve，所有的`.then()`callback functions都會同時執行：
+每次呼叫 `sequence.then()` 會回傳一個新的 promise，我們把它存在 `sequence` 變數，下次再對這個新的 promise 去呼叫 `.then()`。
+
+以下寫法看起來很類似，但是效果完全不同：
 
 ```Javascript
+const urls = [url1, url2, url3]
 let sequence = Promise.resolve()
 urls.forEatch(function(url) {
   // Calling .then on the same promise
@@ -241,9 +255,14 @@ urls.forEatch(function(url) {
 })
 ```
 
-### 用`Array#reduce`串接
+因為所有的 `.then()` 都對同一個 Promise 呼叫，Promise 一旦 resolve，所有的 `.then()` callback functions 都會同時執行。
+
+## 用 .reduce() 串接 promise
+
+這個例子和上面做的事情一樣，只是改成用 `reduce()`：
 
 ```Javascript
+const urls = [url1, url2, url3]
 urls.reduce(function(sequence, url) {
   return sequence.then(function(url) {
     return fetch(url).then(processData)
@@ -251,15 +270,13 @@ urls.reduce(function(sequence, url) {
 }, Promise.resolve())
 ```
 
-參考 [专栏: 每次调用then都会返回一个新创建的promise对象](http://liubin.org/promises-book/#then-return-new-promise)
+參考:[专栏: 每次调用then都会返回一个新创建的promise对象](http://liubin.org/promises-book/#then-return-new-promise)
 
-## Parallelism (平行化)
+## 利用 Promise.all() 平行化執行非同步工作
 
-### `Promise.all()`
+如果我們需要平行執行非同步工作，可以利用 `Promise.all()`，它接受一個 promise 的陣列作為參數，並回傳一個 promise。
 
-如果我們需要平行執行非同步工作，可以利用`Promise.all()`，它接受一個array of promises作為參數，並回傳一個promise。
-
-當參數的promise全數resolve時，回傳的promise才會resolve，resolve的值是array of promises按照順序resolve的值：
+所有的 promise 會同時進行。當所有 promise 都 resolve 時，`Promise.all()` 回傳的 promise 才會 resolve，resolve 的值是所有 promise resolve 的值的陣列，並且會按照 promise 在陣列裡的順序：
 
 ```Javascript
 Promise.all(
@@ -269,28 +286,13 @@ Promise.all(
 ).then(function(arrayOfValue) {
   console.log(arrayOfValue) // [1, 2, 3]
 })
-
 ```
 
-### 利用`Promise.all()`平行化執行非同步工作
+注意 promise 完成的時間先後順序沒有一定，但是結果的順序一定會按照 promise 在陣列中的順序。
 
-當`Promise.all()`接受array of promises作為參數時，所有的非同步工作會同時進行。
+## 範例：平行化＋串接
 
-注意array of promises完成的順序通常不等於在array裡的順序，但是`.then()`的callback參數會按照array of promise的順序，結果的順序很重要的情況下非常有用！
-
-```Javascript
-Promise.all(
-  urls.map(function(url) {
-    return fetch(url)
-  })
-).then(function(arrayOfValue) {
-  arrayOfValue.forEach(processData)
-})
-```
-
-### 進階：平行化＋串接
-
-假設想要平行發送`urls`，但不等所有url都收到回應後才按照順序`processData`，想要個別url一完成就做`processData`，但必須等前面url的回應做完`processData`之後才能對後面url的回應做`processData`，該怎麼做呢？
+假設想要平行發送 `urls`，且必須等前面 url 的回應做完 `processData` 之後才能對後面 url 的回應做 `processData`，該怎麼做呢？
 
 ```Javascript
 const arrayOfFetchPromises = urls.map(function(url) {
@@ -305,19 +307,18 @@ arrayOfFetchPromises.forEach(function(fetchPromise) {
 })
 ```
 
-1. 分別對所有url創promise，開始平行送request。
-2. 不斷串接`fetchPromise.then(processData)`的非同步工作，這樣就可以保證`processData`是按照順序的。
+1. 分別對所有 url 創 promise，開始平行送 request。
+2. 不斷串接 `fetchPromise.then(processData)` 的非同步工作，這樣就可以保證 `processData`是按照順序的。
 
-## Misc
+## 延伸閱讀
 
 * Promise polyfill
 * [用Promise.race和setTimeout實現超時取消fetch操作](http://liubin.org/promises-book/#promise-and-method-chain)
 * [`Promise.then()`保證非同步呼叫](http://liubin.org/promises-book/#promise-is-always-async)
 * [方法鏈如何實作](http://liubin.org/promises-book/#promise-and-method-chain)
 
-## Reference
+## 參考資料
 
-* [JavaScript Promises - An Introduction](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
 * [JavaScript Promise迷你书（中文版）](http://liubin.org/promises-book/)
 * [JavaScript Promise - Udacity](https://classroom.udacity.com/courses/ud898)
-* [Promises: resolve is not the opposite of reject](https://jakearchibald.com/2014/resolve-not-opposite-of-reject/)
+* [JavaScript Promises: an introduction - web.dev](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
