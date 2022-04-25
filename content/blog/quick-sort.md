@@ -144,11 +144,11 @@ quickSort(arr, 0, arr.length - 1);
 
 [Quick Select](https://en.wikipedia.org/wiki/Quickselect) 演算法可以用來快速找出 array 裡面第 k 小的元素。為了方便說明，先假設 k 是 zero-based。
 
-對陣列做 partition，就可以得到分成兩半的陣列和 `pivotIndex`。結果有三種情況：
+對陣列做 partition，就可以得到分成兩半的陣列和 pivot index `p`。結果有三種情況：
 
-1. `pivotIndex == k`，因為 pivot 左邊所有元素都小於等於 pivot ，右邊元素都大於 pivot，所以 pivot 就是第 k 小的元素。
-2. `pivotIndex < k`，表示 pivot 的左半邊都比 pivot 小，我們只需要繼續對右半邊做 partition，直到 `pivotIndex` 等於 k。
-3. `pivotIndex > k`，表示 pivot 的右半邊都比 pivot 大，我們只需要繼續對左半邊做 partition，直到 `pivotIndex` 等於 k。
+1. `p == k`，因為 pivot 左邊所有元素都小於等於 pivot ，右邊元素都大於 pivot，所以 pivot 就是第 k 小的元素。
+2. `p < k`，表示 pivot 的左半邊都比 pivot 小，我們只需要繼續對右半邊做 partition，直到 `p` 等於 k。
+3. `p > k`，表示 pivot 的右半邊都比 pivot 大，我們只需要繼續對左半邊做 partition，直到 `p` 等於 k。
 
 Quick select 平均時間複雜度為 O(n)。
 
