@@ -30,7 +30,7 @@ Binary heap 有兩個特點：
 
 Binary Heap 有兩個主要的操作： `insert()` 和 `extract_max()`。
 
-## `insert()`
+## insert()
 
 當我們插入元素到 binary heap 時，有以下幾個步驟要執行：
 
@@ -48,7 +48,7 @@ Binary Heap 有兩個主要的操作： `insert()` 和 `extract_max()`。
 
 `insert()` 的時間複雜度是 `O(logN)`，因為需要跟分支上的元素作比較，分支的高度是 `O(logN)`。
 
-## `extract_max()`
+## extract_max()
 
 當我們要取出最大值時，只要把樹的根節點取出即可。問題是要如何更新整棵樹的結構，使得刪除完之後還是一棵 binary heap tree？
 
