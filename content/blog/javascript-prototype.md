@@ -1,6 +1,6 @@
 ---
 title: "JavaScript Prototype (原型) 是什麼？"
-tags: [javascript]
+tags: ["javascript", "frontend interview"]
 last_modified_at: 2021/12/31
 date: "2020-05-09"
 ---

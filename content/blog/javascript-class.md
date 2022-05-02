@@ -1,6 +1,6 @@
 ---
 title: "JavaScript Class (類別)"
-tags: ["javascript"]
+tags: ["javascript", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2019-03-05"
 ---

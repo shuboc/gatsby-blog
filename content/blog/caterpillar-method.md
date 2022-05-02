@@ -1,6 +1,6 @@
 ---
 title: "Caterpillar Method"
-tags: [algorithm]
+tags: ["algorithm", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2017-04-03"
 ---

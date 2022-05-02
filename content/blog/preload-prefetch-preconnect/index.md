@@ -1,6 +1,6 @@
 ---
 title: "深入淺出 Preload, Prefetch 和 Preconnect：三種加快網頁載入速度的 Resource Hint 技巧"
-tags: ["web browser"]
+tags: ["web browser", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2019-04-06"
 ---

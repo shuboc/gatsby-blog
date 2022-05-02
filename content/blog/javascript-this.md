@@ -1,6 +1,6 @@
 ---
 title: "JavaScript this 是什麼？"
-tags: ["javascript"]
+tags: ["javascript", "frontend interview"]
 redirect_from:
   - /what-is-this/
 date: "2020-07-10"

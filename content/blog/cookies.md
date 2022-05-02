@@ -1,6 +1,6 @@
 ---
 title: "什麼是 Cookie？如何用 JS 讀取/修改 document.cookie?"
-tags: ["javascript", "web browser"]
+tags: ["javascript", "web browser", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2020-06-19"
 ---
