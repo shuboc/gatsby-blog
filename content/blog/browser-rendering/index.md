@@ -1,6 +1,5 @@
 ---
-layout: post
-title: "瀏覽器轉譯/渲染(Browser Rendering)原理"
+title: "瀏覽器轉譯/渲染原理 (Browser Rendering)"
 tags: ["web browser", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2016-11-27"
@@ -8,21 +7,8 @@ date: "2016-11-27"
 
 這篇教學簡介瀏覽器轉譯/渲染(Browser Rendering)的原理，如何使用Chrome DevTool找到效能瓶頸，以及如何避開導致效能瓶頸的作法。
 
-主要內容擷取自 [轉譯效能 - Google Developers](https://developers.google.com/web/fundamentals/performance/rendering/) 這篇文章，以及線上課程 [Browser Rendering Optimization](https://classroom.udacity.com/courses/ud860)。課程使用Chrome DevTool，可以看到很多CSS和JS在無意間造成頁面render效能的瓶頸的例子，也呼應了課程不斷強調的最重要的一件事：**在最佳化之前先對網站作profile。**
-
-## 目錄
-
 ```toc
 ```
-
-## TL;DR
-
-1. 瀏覽器每個Frame固定執行的步驟：JS > Style > Layout > Paint > Composite
-2. RAIL: 使用者在各個使用情況下的反應時間不同，亦即Response(100s), Animation(16ms), Idle(50ms), Loading(1s)，超出限制將會感覺畫面頓頓的。
-3. 如果要用JS呈現動畫，請愛用`requestAnimationFrame`，並且將運算壓在3~4ms間；大量運算請愛用web worker。
-4. 小心*Forced Synchronous Layout*，亦即在JS中引發大量重複計算Layout
-5. CSS的selector matching，越簡單(層數越少)效能越好。
-6. CSS的屬性，依性質可能觸發Layout/Paint/Composite，觸發越少效能越好。可用CSS增加畫面的Layer，減少Layout或Paint的次數。
 
 ## Critical Rendering Path
 
@@ -31,13 +17,15 @@ date: "2016-11-27"
 每個frame瀏覽器會執行下面的動作：
 
 1. 建立 DOM & CSSOM to Render Tree (element + style) (**Recalculate Styles**)
-2. 算出元素實際的長寬和位置 (**Layout**)
-3. 實際在螢幕上畫出pixel，例如：raster(在螢幕上描點)，畫出長方形等動作 (**Paint**)
+2. 算出元素實際的長寬和位置 (**Layout**) (Reflow)
+3. 實際在螢幕上畫出pixel，例如：raster(在螢幕上描點)，畫出長方形等動作 (**Paint**) (Repaint)
 4. 把畫好的layer疊起來 (**Composite**)
 
-再加上可能會在frame的一開始用JS做style的修改，所以每個frame裡執行的動作依序為：
+![Rendering Pipeline](./rendering-pipeline.avif)
 
-**JS > Style > Layout > Paint > Composite**
+簡單來說，JS 和樣式的變化會導致 DOM tree 和 CSSOM tree 的變化，近一步導致 render tree 的變化，因而觸發 layout/reflow 或是 paint/repaint 的動作。
+
+因為每一步都會有時間上的開銷，因此想要維持頁面在 60fps 的順暢度，就必須盡量減少這些步驟的開銷。
 
 ### Layout and Paint
 
@@ -45,17 +33,15 @@ date: "2016-11-27"
 
 1. `margin-left` (會改變長寬的屬性，會觸發layout)
 
-  JS > Style > Layout > Paint > Composite
+![Rendering Pipeline](./rendering-pipeline.avif)
 
 2. `color` (只改變外觀不改變長寬的屬性，不觸發Layout，但會觸發Paint)
 
-  JS > Style > -- > Paint > Composite
+![Rendering Pipeline](./rendering-pipeline-no-layout.avif)
 
 3. `transform` (只是改變Layer和Layer之間的相對位置，不觸發layout和paint，只觸發composite)
 
-  JS > Style > -- > -- > Composite
-
-觸發越多動作，效能就越差，較容易造成畫面卡卡。
+![Rendering Pipeline](./rendering-pipeline-composite-only.avif)
 
 CSS屬性會觸發哪些動作，可參閱[csstriggers.com](https://csstriggers.com/)
 
@@ -166,6 +152,8 @@ for (var p = 0; p < paragraphs; ++p) {
 }
 ~~~
 
+關於讀取/修改哪些屬性會觸發 layout 的動作，可以參考 [What forces layout/reflow in JS](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)。
+
 ## Compositing and Painting
 
 ### Painting
@@ -192,3 +180,19 @@ will-change: transform; /* or any visual property */
 /* Other */
 transform: translateZ(0);
 ~~~
+
+## 結論
+
+0. 在最佳化之前先對網站作 profile。(可用 Chrome DevTool)
+1. 瀏覽器每個Frame固定執行的步驟：JS > Style > Layout > Paint > Composite。想要維持 60fps 就要減少這些動作的開銷。
+2. RAIL: 使用者在各個使用情況下的反應時間不同，亦即Response(100s), Animation(16ms), Idle(50ms), Loading(1s)，超出限制將會感覺畫面頓頓的。
+3. 如果要用JS呈現動畫，請愛用`requestAnimationFrame`，並且將運算壓在3~4ms間；大量運算請愛用web worker。
+4. 小心*Forced Synchronous Layout*，亦即在JS中引發大量重複計算Layout
+5. CSS的selector matching，越簡單(層數越少)效能越好。
+6. CSS的屬性，依性質可能觸發Layout/Paint/Composite，觸發越少效能越好。例如：改變元素的長寬會觸發 reflow/repaint，改變顏色不會觸發 reflow，但會觸發 repaint，改變 `transform` / `opacity` 既不會觸發 reflow 也不會觸發 repaint。可用CSS屬性事先增加畫面的層數，減少 reflow/repaint 的次數。
+
+## 參考資料
+
+[轉譯效能 - Google Developers](https://developers.google.com/web/fundamentals/performance/rendering/)
+
+[Browser Rendering Optimization - Udacity](https://classroom.udacity.com/courses/ud860) - 值得一上的好課，課程中可以看到很多CSS和JS在無意間造成頁面render效能的瓶頸的例子。
