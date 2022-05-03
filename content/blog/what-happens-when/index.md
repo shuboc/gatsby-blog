@@ -92,8 +92,12 @@ DOM tree 和 CSSOM tree 組合成 render tree (渲染樹)，render tree 只包�
 
 ## 參考資料
 
-[What happens when you type a URL into your browser?](https://aws.amazon.com/blogs/mobile/what-happens-when-you-type-a-url-into-your-browser/)
+[What happens when you type a URL into your browser? - AWS](https://aws.amazon.com/blogs/mobile/what-happens-when-you-type-a-url-into-your-browser/)
+
 [What happens when you type a URL in the browser and press enter?](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
-[What happens when...](https://github.com/alex/what-happens-when)
+
+[What happens when... - GitHub](https://github.com/alex/what-happens-when)：超詳細講解每一個步驟的細節
+
 [Render-tree Construction, Layout, and Paint](https://web.dev/critical-rendering-path-render-tree-construction/)
-[軟體工程師的修煉與成長 (10) — 四維的技術能力](https://vgod.medium.com/%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E4%BF%AE%E7%85%89%E8%88%87%E6%88%90%E9%95%B7-10-%E5%9B%9B%E7%B6%AD%E7%9A%84%E6%8A%80%E8%A1%93%E8%83%BD%E5%8A%9B-1602882aec33)
+
+[軟體工程師的修煉與成長 (10) — 四維的技術能力](https://vgod.medium.com/%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E4%BF%AE%E7%85%89%E8%88%87%E6%88%90%E9%95%B7-10-%E5%9B%9B%E7%B6%AD%E7%9A%84%E6%8A%80%E8%A1%93%E8%83%BD%E5%8A%9B-1602882aec33)：提到為什麼這個面試題目很重要，雖然我還沒什麼體會
