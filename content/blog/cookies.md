@@ -87,9 +87,9 @@ user=John; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT
 domain=example.com
 ```
 
-`domain` 用來指定哪些網域可以存取這個 cookie。
+`domain` 用來指定哪些網域可以存取這個 cookie。**預設值是當前網域，但是不包含其子網域。**
 
-**預設值是當前網域，但是不包含其子網域。**例如在 example.com 底下設置的 cookie 不指定 `domain` 的情況下，只有 example.com 可以存取此 cookie，但子網域如 subdomain.example.com 則無法存取此 cookie。
+例如在 example.com 底下設置的 cookie 不指定 `domain` 的情況下，只有 example.com 可以存取此 cookie，但子網域如 subdomain.example.com 則無法存取此 cookie。
 
 如果我們想要讓子網域存取 cookie，就必須明確地設定 `domain` 參數。例如：當一個 cookie 指定 `domain=example.com` 時，包含 example.com 以及他的子網域 subdomain.example.com 都能夠存取這個 cookie。
 
@@ -130,9 +130,9 @@ cookie=value; max-age=3600
 
 ### Secure
 
-`Secure` 參數的作用是讓 cookie 只能透過 https 傳遞。
+`Secure` 參數的作用是讓 cookie 只能透過 https 傳遞。**Cookie 預設是不區分 http 或是 https 的。**
 
-**Cookie 預設是不區分 http 或是 https 的。**換句話說，當我們設定 http://example.com 的 cookie 時，https://example.com 也能看得到同樣的 cookie。
+換句話說，當我們設定 http://example.com 的 cookie 時，https://example.com 也能看得到同樣的 cookie。
 
 如果 cookie 設了 `secure` 參數，只有透過 https 存取這個網站才能存取這個 cookie；透過 http 存取這個網站會看不到這個 cookie。
 
@@ -181,7 +181,7 @@ CSRF 攻擊是什麼呢？簡單地說，他會在受害者已登入的狀態下
 
 > 註：在 evil.com 內發送 bank.com 的請求的情境下，back.com 的 cookie 就是所謂的[第三方 cookie](./#third-party-cookie-第三方-cookie)。
 
-這裡的關鍵是：這個 POST 是一個**跨域請求**。什麼是跨域請求呢？**當一個請求的網域和網址列中的網域不同的時候，它就是一個跨域請求。**這裏我們可以看到，瀏覽器的網址列中的網域是 evil.com，但是我們送了一個往 bank.com 網域的 POST request，所以這是一個跨域請求。
+這裡的關鍵是：這個 POST 是一個**跨域請求**。什麼是跨域請求呢？**當一個請求的網域和網址列中的網域不同的時候，它就是一個跨域請求。** 這裏我們可以看到，瀏覽器的網址列中的網域是 evil.com，但是我們送了一個往 bank.com 網域的 POST request，所以這是一個跨域請求。
 
 **而跨域請求攜帶 cookie 就會有遭受 CSRF 攻擊的風險。**
 
@@ -215,11 +215,11 @@ CSRF 攻擊是什麼呢？簡單地說，他會在受害者已登入的狀態下
 
 舉個例子說明：假設我現在瀏覽 example.com，其中包含一張圖片 `<img src="https://example.com/image.png">`，此時攜帶的 cookie 就會是 example.com 底下的 cookie。因為這個請求的網域和網址列的網域同樣都是 example.com，所以這是一個相同網域的請求。此時 example.com 底下的 cookie 又稱作第一方 cookie (first-party cookie)。
 
-如果 example.com 包含另外一張圖片 `<img src="https://ad.com/image.png">`，他的網域是 ad.com，此時攜帶的 cookie 就會是 ad.com 底下的 cookie。因為 ad.com 不同於網址列的 example.com，所以這是一個跨域請求。此時 ad.com 底下的 cookie 又稱作第三方 cookie (third-party cookie)。
+如果 example.com 包含另外一張圖片 `<img src="https://ad.com/image.png">`，他的網域是 ad.com，此時攜帶的 cookie 就會是 ad.com 底下的 cookie。因為 ad.com 不同於網址列的 example.com，所以這是一個跨域請求。此時 ad.com 底下的 cookie 又稱作**第三方 cookie (third-party cookie)**。
 
 第三方 cookie 為什麼重要呢？因為他能夠跨網域的追蹤。舉例來說，example.com 發出 ad.com 的請求時，會攜帶 ad.com 的 cookie。如果同時有另一個網域 anothersite.com 也會請求 ad.com 的資源，也會攜帶同樣的 cookie。如果這個 cookie 是用來表示使用者 id，則對 ad.com 而言不管在哪個網域底下，他都知道兩個網站的造訪者都是你。這就是廣告追蹤的原理。
 
-這就是為什麼在隱私權意識抬頭的今天，大家對第三方 cookie 的限制越來越多：在寫這篇文的當下，在 Chrome 你必須要明確地標示 `SameSite=None; Secure`，否則預設情況下 `SameSite=Lax`，第三方 cookie 是不會被發送的。而 Safari 直接完全禁止第三方 cookie。
+這就是為什麼在隱私權意識抬頭的今天，大家對第三方 cookie 的限制越來越多：在寫這篇文的當下 (2020/6月)，在 Chrome 你必須要明確地標示 `SameSite=None; Secure`，否則預設情況下 `SameSite=Lax`，第三方 cookie 是不會被發送的。而 Safari 直接完全禁止第三方 cookie。
 
 ## Reference
 

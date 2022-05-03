@@ -268,3 +268,4 @@ user.speak(); // (3)
 
 * [this - MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/this)
 * [Object methods, "this" - javascript.info](https://javascript.info/object-methods)
+* [Arrow functions revisited](https://javascript.info/arrow-functions)

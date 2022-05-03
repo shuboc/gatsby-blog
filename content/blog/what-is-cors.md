@@ -288,7 +288,7 @@ Access-Control-Allow-Credentials: true
 
 如此一來，瀏覽器才會將 cookie 寫進該 domain。
 
-**注意：如果是允許使用 cookie 的情況，`Access-Control-Allow-Origin` 不能用 `*`，必須明確標示哪些來源允許存取。**理由也是基於安全性考量，因為可以用 cookie 的情況下，通常表示會存取一些比較個人化的資料，假設任何網站都能夠存取這樣的資料，顯然是有點危險的！所以不能設為 `*`!
+**注意：如果是允許使用 cookie 的情況，`Access-Control-Allow-Origin` 不能用 `*`，必須明確標示哪些來源允許存取。** 理由也是基於安全性考量，因為可以用 cookie 的情況下，通常表示會存取一些比較個人化的資料，假設任何網站都能夠存取這樣的資料，顯然是有點危險的！所以不能設為 `*`!
 
 如果你偷懶地用了 `Access-Control-Allow-Origin: *`，就會無情地收到來自瀏覽器的錯誤：
 
