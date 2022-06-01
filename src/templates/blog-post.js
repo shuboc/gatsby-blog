@@ -65,6 +65,8 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+      <div id="fb-root"></div>
+      <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v13.0&appId=1994883547264823&autoLogAppEvents=1" nonce="OhnhYoLm"></script>
       <div className="fb-comments" data-width="" data-numposts="5"></div>
       <div className="fb-page" data-href="https://www.facebook.com/shubo.code/" data-tabs="" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/shubo.code/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/shubo.code/">Shubo 的程式開發筆記</a></blockquote></div>
     </Layout>
