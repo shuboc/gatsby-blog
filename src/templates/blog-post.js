@@ -65,7 +65,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
-      <div className="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="" data-numposts="5"></div>
+      <div className="fb-comments" data-width="" data-numposts="5"></div>
       <div className="fb-page" data-href="https://www.facebook.com/shubo.code/" data-tabs="" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/shubo.code/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/shubo.code/">Shubo 的程式開發筆記</a></blockquote></div>
     </Layout>
   )
