@@ -201,5 +201,11 @@ module.exports = {
         mergeSecurityHeaders: false, // boolean to turn off the default security headers
       }
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+          shortname: `shuboc`
+      }
+    },
   ],
 }

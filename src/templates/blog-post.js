@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { kebabCase } from "lodash"
+import { Disqus } from 'gatsby-plugin-disqus';
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -65,8 +66,14 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
-      <div className="fb-comments" data-width="" data-numposts="5"></div>
       <div className="fb-page" data-href="https://www.facebook.com/shubo.code/" data-tabs="" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/shubo.code/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/shubo.code/">Shubo 的程式開發筆記</a></blockquote></div>
+      <Disqus
+        config={{
+          url: data.site.siteMetadata?.siteUrl + location.pathname,
+          identifier: post.id,
+          title: post.title,
+        }}
+      />
     </Layout>
   )
 }
@@ -82,6 +89,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {
