@@ -195,6 +195,11 @@ module.exports = {
     },
     'gatsby-redirect-from',
     'gatsby-plugin-meta-redirect',
-    'gatsby-plugin-gatsby-cloud',
+    {
+      resolve: `gatsby-plugin-gatsby-cloud`,
+      options: {
+        mergeSecurityHeaders: false, // boolean to turn off the default security headers
+      }
+    },
   ],
 }
