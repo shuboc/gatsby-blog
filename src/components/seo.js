@@ -63,6 +63,10 @@ const Seo = ({ description, lang, meta, title, image, url }) => {
           content: url,
         },
         {
+          property: 'fb:app_id',
+          content: 1994883547264823,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
