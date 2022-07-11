@@ -18,6 +18,7 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={data.site.siteMetadata?.siteUrl + post.frontmatter.image?.publicURL}
+        url={data.site.siteMetadata?.siteUrl + location.pathname}
       />
       <article
         className="blog-post"
