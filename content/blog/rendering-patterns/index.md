@@ -1,17 +1,21 @@
 ---
-title: "Server Side Rendering (SSR) 和 Client Side Rendering (CSR) 是什麼？"
-tags: ["web browser", "performance"]
-date: "2022-04-04"
-draft: true
+title: "SSR 和 CSR 的差別是什麼?"
+tags: ["web browser", "performance", "frontend interview"]
+date: "2022-07-12"
 ---
 
-## Client-Side Rendering (CSR)
+CSR (Client-Side Rendering，客戶端渲染) 表示所有的頁面渲染 (render) 都透過瀏覽器端的 JavaScript 來完成。SSR (Server-Side Rendering，伺服器端渲染) 表示伺服器收到使用者的請求之後，在伺服器端生成完整的 HTML，再回傳給使用者。
 
-Client-Side Rendering (CSR，客戶端渲染) 表示所有的 render 都透過瀏覽器端的 JavaScript 來完成。所有的邏輯、取資料、路由、template 都在客戶端處理。
+## 目錄
+
+```toc
+```
+
+## CSR (Client-Side Rendering)
+
+CSR (Client-Side Rendering，客戶端渲染) 表示所有的頁面渲染 (render) 都透過瀏覽器端的 JavaScript 來完成。所有的邏輯、取資料、路由、template 都在客戶端處理。
 
 CSR 可以用來建構時下流行的 SPA (Single Page Application，單頁式應用)。
-
-### CSR 的基本結構
 
 CSR 的 HTML 只需要一個簡單的根節點：
 
@@ -34,11 +38,9 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-### CSR 的 render 過程
-
 ![TTI of Client-Side Rendering](./client-rendering-tti.png)
 
-圖片來源：[Rendering on the Web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)
+圖片來源：[Rendering on the Web](https://web.dev/rendering-on-the-web/#client-side-rendering-(csr))
 
 上圖呈現了 CSR 的 render 時間軸。
 
@@ -46,15 +48,13 @@ setInterval(tick, 1000);
 
 接下來會開始下載一大包 JavaScript bundle，下載完之後要解析並執行 JavaScript，最後才能 render 畫面。在完成這些事情之後，才達到了 TTI (Time-to-Interactive，使用者首次可以跟頁面互動的時間點)。在 TTI 之前，使用者點畫面上任何東西都不會有反應。
 
-### CSR 的優點和缺點
+### CSR 的優缺點
 
-CSR 的優點：
+CSR 的優點是頁面的更新或是換頁都不需要刷新頁面，在使用體驗上相較於傳統的 SSR 應用會順暢許多。著名的例子像是 Facebook 的網頁版，大部分的使用者互動都不需要刷新頁面，非常順暢，使用起來就像是一個原生的 APP 一樣。
 
-* 頁面的更新或是換頁都不需要刷新頁面，在使用體驗上相較於傳統的 SSR 應用會順暢許多。著名的例子像是 Facebook 的網頁版，其中包含大量的可互動元素，所有的互動都不需要等待跳轉頁面，非常順暢。
+CSR 的缺點主要有以下兩點：
 
-CSR 的缺點：
-
-* 載入速度通常較慢，尤其是在低階的行動裝置上。如前所述，因為 CSR 要等待 JavaScript 的下載及執行 render ，所以 CSR 頁面載入的前幾秒，頁面上會沒有東西或是只有一些骨架。使用者必須要等待一段時間才能看到頁面的內容，相對來說會是較差的使用者體驗，尤其是在低階的行動裝置上，因為低階裝置的網路速度通常較慢，而且執行 JavaScript 會用到的 CPU 通常也較弱。
+* 載入速度通常較慢，尤其是在低階的行動裝置上。原因如前所述，因為 CSR 要等待 JavaScript 的下載及執行 render ，所以 CSR 頁面載入的前幾秒，頁面上會沒有東西或是只有一些骨架，使用者必須要等待一段時間才能看到頁面的內容，相對來說會是較差的使用者體驗。特別是在低階的行動裝置上，因為低階裝置的網路速度通常較慢，而且執行 JavaScript 會用到的 CPU 通常也較弱。
 * SEO 會較差，因為 CSR 的頁面對於爬蟲是比較不友善的。雖然爬蟲有辦法執行 JavaScript，但爬蟲也有一些 [JavaScript  render 頁面的限制](https://developers.google.com/search/docs/advanced/javascript/fix-search-javascript)。你可以用[行動裝置相容性測試](https://search.google.com/test/mobile-friendly)這個工具來測試一個 CSR 的頁面會如何被爬蟲 render 。
 
 ### 如何優化 CSR 的效能
@@ -70,17 +70,17 @@ CSR 透過適當的優化，可以達到可接受的效能，可使用的技巧�
 
 * 使用 code splitting 拆分 JavaScript bundle。
 
-保持 JavaScript bundle 在預算內是非常困難的事情，因為 JavaScript bundle 的大小，通常會隨著應用的開發越長越大。其中一個可行的做法是採用 code splitting 的方法，也就是只在真正需要某個 JavaScript 的時候才去下載拆分出來的片段。[Webpack 等打包工具支援 code splitting](https://webpack.js.org/guides/code-splitting/)。如果想看一些 code splitting 的真實案例，可以參考我寫的這篇[網頁載入效能優化 (Web Performance Optimization) (加速 30% 真實案例分享)](/optimize-loading-speed/)
+保持 JavaScript bundle 在預算內是非常困難的事情，因為 JavaScript bundle 的大小，通常會隨著應用的開發越長越大。其中一個可行的做法是採用 code splitting 的方法，也就是只在真正需要某個 JavaScript 的時候才去下載拆分出來的片段。[Webpack 等打包工具支援 code splitting](https://webpack.js.org/guides/code-splitting/)。
 
-## Server-Side Rendering (SSR)
+如果想看一些 code splitting 的真實案例，可以參考我寫的這篇[網頁載入效能優化 (Web Performance Optimization) (加速 30% 真實案例分享)](/optimize-loading-speed/)
 
-Server-Side Rendering (SSR，伺服器端渲染) 表示伺服器收到使用者的請求之後，在伺服器端生成完整的 HTML。因為生成 HTML 的時候會在伺服器端先取得內部或外部 API 資料，所以相較於 CSR 從瀏覽器端取資料的模式，SSR 可以省去多次的來回往返。
+## SSR (Server-Side Rendering)
 
-### SSR 的 render 過程
+SSR (Server-Side Rendering，伺服器端渲染) 表示伺服器收到使用者的請求之後，在伺服器端生成完整的 HTML。因為生成 HTML 的時候會在伺服器端先取得內部或外部 API 資料，所以相較於 CSR 從瀏覽器端取資料的模式，SSR 可以省去多次的來回往返。
 
 ![TTI of Server-Side Rendering](./server-rendering-tti.png)
 
-圖片來源：[Rendering on the Web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)
+圖片來源：[Rendering on the Web](https://web.dev/rendering-on-the-web/#server-rendering)
 
 上圖呈現了 SSR 的 render 時間軸。
 
@@ -88,36 +88,38 @@ Server-Side Rendering (SSR，伺服器端渲染) 表示伺服器收到使用者�
 
 接著要下載並且執行瀏覽器端互動所需要的 JavaScript，完成後就來到了 TTI (Time to Interactive，使用者首次可以跟頁面互動的時間點)。
 
-### SSR 的優點和缺點
+### SSR 的優缺點
 
-SSR 的優點：
+SSR 的優點主要有以下幾點：
 
-* 需要的 JavaScript 比較少，因此有較快的 TTI，可以較快開始互動。相較於 CSR 所有 render 的邏輯都包含在 JavaScript 中，因為 SSR 已經在伺服器端把 render 的工作做完了，SSR 方案中瀏覽器端需要的 JavaScript 理論上會比較少，所以會比較快達到 TTI。
+* 需要的 JavaScript 比較少，因此有較快的 TTI，可以較快開始互動，原因是相較於 CSR 所有 render 的邏輯都包含在 JavaScript 中，SSR 已經在伺服器端把 render 的工作做完了，SSR 方案中瀏覽器端需要的 JavaScript 理論上會比較少，所以會比較快達到 TTI。
 * 有更多的 JS 預算可以留給其他第三方 JS 使用。
 * SEO 較佳，因為 SSR 產生的完整 HTML 可以很容易的被爬蟲解讀，不需要想辦法執行 JavaScript。SEO 也是大部分的人會考慮 SSR 方案的最主要原因之一。
 
-SSR 的缺點：
+SSR 的缺點主要有以下幾點：
 
 * 較慢的 TTFB (Time to First Byte，從瀏覽頁面的動作開始到瀏覽器收到第一個 byte 所需要的時間)，因為在伺服器產生完整的 HTML 很花時間。如果同時有許多人造訪 server 造成負擔很重，或是有一些非常慢的 API，都有可能讓 server 的回應速度非常慢。
 * 互動性體驗差，因為 SSR 的頁面在每次互動之間都要重新讀取頁面，這在使用體驗上就不如 CSR 的頁面順暢，也是現代 web app 大多數會採用 CSR 方案的主要原因。
 
 <!-- TODO: ## Static Rendering -->
 
-## Universal Rendering: 透過 hydration 結合 CSR 與 SSR 的方案
+## SSR with Hydration
 
-Universal Rendering，也常被簡稱為 "SSR"，在伺服器端產生 HTML 並傳送給使用者，讓使用者可以較快看到網頁內容，接著在客戶端透過 hydration 的過程讓網頁具有互動性，再由客戶端的 JavaScript 接手後續的 render 工作。兼具了 SSR 的快速 FCP、SEO 友善，同時又有 CSR 的高互動性。
+SSR with Hydration，也被稱為 Universal Rendering，是一種透過 hydration 結合了 CSR 與 SSR 的方案，其 render 的流程是：
 
-### Hydration 的 render 過程
+1. 在伺服器端產生靜態 HTML 並傳送給使用者。
+2. 接著在客戶端透過 hydration 的過程讓網頁具有互動性。
+3. 由客戶端的 JavaScript 接手後續的 render 工作。
+
+SSR with Hydration 兼具了 SSR 的快速 FCP、SEO 友善，同時又有 CSR 的高互動性。
 
 ![TTI of Hydration](./hydration-tti.png)
 
 圖片來源：[Rendering on the Web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)
 
-首先使用者的請求會透過伺服器處理，產生完整的 HTML 以後，用來 render 的資料和 JavaScript 一起被嵌入 HTML，傳送給客戶端。因為已經有完整的 HTML，瀏覽器收到以後可以很快的畫出頁面，達到如同傳統 SSR 的快速 FCP，也就是使用者首次看到頁面上重要內容的時間。
-
-接著瀏覽器會下載 JavaScript bundle，下載完並解析 JavaScript 後，客戶端會執行 **hydration** 的步驟，完成後達到 TTI，也就是使用者開始可以跟頁面互動。
-
-之後的 render 工作則會由客戶端的 JavaScript 接手，達到 CSR 的高互動性。
+1. 首先使用者的請求會透過伺服器處理，產生完整的 HTML 以後，用來 render 的資料和 JavaScript 一起被嵌入 HTML，傳送給客戶端。因為已經有完整的 HTML，瀏覽器收到以後可以很快的畫出頁面，達到如同傳統 SSR 的快速 FCP，也就是使用者首次看到頁面上重要內容的時間。
+2. 接著瀏覽器會下載 JavaScript bundle，下載完並解析 JavaScript 後，客戶端會執行 hydration 的步驟，完成後達到 TTI，也就是使用者開始可以跟頁面互動。
+3. 之後的 render 工作則會由客戶端的 JavaScript 接手，達到 CSR 的高互動性。
 
 ### Hydration 是什麼？
 
@@ -127,11 +129,11 @@ Hydration 指的是在客戶端透過 JavaScript 讓伺服器端產生的 HTML �
 
 ### Hydration 實作
 
-React 可以實作 universal rendering。在 SSR 的部分，React 提供了 `renderToString()` API，於是我們可以用 Node.js 在伺服器端組合出完整的 HTML，並回應使用者：
+React 可以實作 SSR with Hydration。在 SSR 的部分，React 提供了 `renderToString()` API，於是我們可以用 Node.js 在伺服器端組合出完整的 HTML，並回應使用者：
 
 ```jsx
 app.get('/', (req, res) => {
-  const app = ReactDOMServer.renderToString(<App />);
+  const html = ReactDOMServer.renderToString(<App />);
 })
 ```
 
@@ -141,7 +143,7 @@ app.get('/', (req, res) => {
 ReactDOM.hydrate(<App />, document.getElementById('root'));
 ```
 
-### Hydration 優點和缺點
+### Hydration 的優缺點
 
 Hydration 的優點：
 
@@ -152,17 +154,21 @@ Hydration 的缺點：
 
 * 較差的 TTI。
 
-此方案雖然可以較早看到內容呈現在網頁上(較快的 FCP)，但是需要完成 hydration 之後才能互動。Hydration 包含了下載解析執行 JavaScript 並且為頁面元素加上 event handler，再完成這些動作之前，頁面是沒辦法互動的。
+此方案雖然可以較早看到內容呈現在網頁上(較快的 FCP)，但是需要完成 hydration 之後才能互動。
 
-因為 Hydration 通常會耗費很多時間，所以使用者可能會有長達數秒處於對頁面操作但是沒有任何反應的狀態。
+Hydration 包含了下載解析 JavaScript，並且為頁面元素加上 event handler，在完成這些動作之前，頁面是沒辦法互動的。
+
+因為 hydration 通常會耗費很多時間，所以使用者可能會有長達數秒處於對頁面操作但是沒有任何反應的狀態。
 
 * HTML 重複的部分多
 
-為了要讓 SSR 產生的頁面能夠在客戶端順利完成 hydration 的過程，伺服器端會把產生出 UI 的應用狀態 serialize 成一個 JavaScript 物件，放在 script tag 中，並附在回應的 HTML 裡。例如下圖是一個可以被用來 hydrate 的頁面：
+為了要讓 SSR 產生的頁面能夠在客戶端順利完成 hydration 的過程，伺服器端會把產生出 UI 的應用狀態 serialize 成一個 JavaScript 物件，放在 script tag 中，並附在回應的 HTML 裡。例如下圖是一個用於 SSR with Hydration 的頁面：
 
 ![Hydration HTML](./hydration-html.png)
 
-如上圖所示，產生出來的 HTML 和 JavaScript 的物件狀態有諸多重複之處，也因此會拖慢效能。
+圖片來源：[Rendering On the Web](https://web.dev/rendering-on-the-web/#a-rehydration-problem:-one-app-for-the-price-of-two)
+
+如上圖所示，黃色部份產生出來的 HTML 和 JavaScript 的物件狀態有諸多重複之處，會拖慢效能。
 
 ## Streaming SSR
 
@@ -172,7 +178,7 @@ Hydration 的缺點：
 
 ![Streaming SSR](./streaming-ssr.png)
 
-Image Source: https://mxstbr.com/thoughts/streaming-ssr/
+圖片來源: [Streaming Server-Side Rendering and Caching at Spectrum](https://mxstbr.com/thoughts/streaming-ssr/)
 
 React 在伺服器端有提供 `renderToNodeStream()` API 可供使用：
 
@@ -195,8 +201,6 @@ app.use('*', (request, response) => {
   });
 });
 ```
-
-### Streaming SSR 的優點和缺點
 
 Streaming SSR 的優點：
 
@@ -221,7 +225,7 @@ Progressive hydration 的做法是我們對頁面上的每個元件分別去做 
 
 ![Progressive Hydration](./progressive-hydration.svg)
 
-圖片來源：https://www.patterns.dev/posts/progressive-hydration/
+圖片來源：[Progressive Hydration](https://www.patterns.dev/posts/progressive-hydration/)
 
 理想的 Progressive Hydration 需要滿足這些條件：
 
@@ -235,7 +239,7 @@ Progressive hydration 的做法是我們對頁面上的每個元件分別去做 
 
 <!-- TODO: ## React Server Component -->
 
-## Selective Hydration + Streaming HTML
+## Selective Hydration + Streaming HTML (React 18)
 
 React 18 新的架構改動增進了 SSR 的效能，我們能夠透過使用新的 Server API `renderToPipeableStream()` 和已存在的 `<Suspense>` API 提升效能。
 
@@ -248,20 +252,28 @@ React 18 新的架構改動增進了 SSR 的效能，我們能夠透過使用新
 3. 在客戶端下載 app 的所有 JavaScript
 4. 在客戶端完成 app 的所有 hydration
 
-問題是以上的每一步沒有完成以前，是沒辦法開始下一步的。如果我們的 app 裡面有某些組件的某些步驟特別慢，就會拖慢那個步驟以及之後的所有步驟。這對效能來說並不理想。
+React 18 以前的問題是：以上的每一步沒有完成以前，是沒辦法開始下一步的。如果我們的 app 裡面有某些組件的某些步驟特別慢，就會拖慢那個步驟以及之後的所有步驟。這對效能來說並不理想。
+
+具體來說，SSR 有三大問題：
+
+* 你需要等所有的資料都下載完才能發送 HTML
+* 你需要等所有 JavaScript 下載完才能做 hydration
+* 你需要等所有 hydration 都完成才能開始互動
 
 React 18 提出的解法是透過 `<Suspense>` 從 app 拆分出獨立的組件，能夠獨立執行以上四個步驟而不影響 app 的其他部分。
 
-### Streaming HTML and Selective Hydration
+下面來看一下 React 18 如何解決上述四個問題：
+
+<!-- ### Streaming HTML and Selective Hydration
 
 1. Streaming HTML: React 18 `renderToPipeableStream()` API
 2. Selective Hydration: use `createRoot()`，並將特定部分的 app 用 `<Suspense>` 包起來
 
-詳細的 migration 步驟可看[How to Upgrade to the React 18 Release Candidate](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html)。
+詳細的 migration 步驟可看[How to Upgrade to the React 18 Release Candidate](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html)。 -->
 
-### 問題1: Streaming HTML before all data is fetched
+### 在資料完整下載前 Stream HTML
 
-通常我們會在伺服器端產生 HTML:
+在 React 18 以前，通常我們會在伺服器端產生 HTML:
 
 ```html
 <main>
@@ -291,7 +303,7 @@ React 18 提出的解法是透過 `<Suspense>` 從 app 拆分出獨立的組件�
 
 客戶端下載 JavaScript 並 hydrate：
 
-![](./ssr-hydration.png)
+![SSR Hydration](./ssr-hydration.png)
 
 但是在 React 18 我們可以用 `<Suspense>` 包裝需要獨立載入的組件。舉例來說，我們將 `<Comments />` 用 `<Suspense>` 包起來並且告訴 React 在載入時顯示 `<Spinner />`:
 
@@ -310,7 +322,7 @@ React 18 提出的解法是透過 `<Suspense>` 從 app 拆分出獨立的組件�
 
 因為將 `<Comments />` 用 `<Suspense>` 包起來，我們告訴 React 不需要等待 `<Comments />` 準備好就可以直接開始以串流的方式傳送 HTML 給客戶端。作為替代，伺服器會輸出 `<Spinner />`：
 
-![](./ssr-loading.png)
+![SSR Loading](./ssr-loading.png)
 
 以下是客戶端收到的 HTML，可以注意到 comments 的部分只有一個載入中的圖片。
 
@@ -335,7 +347,7 @@ React 18 提出的解法是透過 `<Suspense>` 從 app 拆分出獨立的組件�
 </main>
 ```
 
-當 comments 在伺服器端準備好時，伺服器端會將他的 HTML 透過串流的方式傳給客戶端，其中包含一段 script tag，用途是將 comments 的 HTML 插入到對的位置：
+當 comments 的資料在伺服器端準備好時，伺服器端會將他的 HTML 透過串流的方式傳給客戶端。具體來說，他會插入一個 script tag，用途是將 comments 的 HTML 插入到對的位置：
 
 ```html
 <div hidden id="comments">
@@ -345,7 +357,7 @@ React 18 提出的解法是透過 `<Suspense>` 從 app 拆分出獨立的組件�
 </div>
 <script>
   // This implementation is slightly simplified
-  document.getElementById('sections-spinner').replaceChildren(
+  document.getElementById('comments-spinner').replaceChildren(
     document.getElementById('comments')
   );
 </script>
@@ -353,15 +365,13 @@ React 18 提出的解法是透過 `<Suspense>` 從 app 拆分出獨立的組件�
 
 最終客戶端會收到包含 comments 的完整的 HTML：
 
-![](./ssr-html.png)
+![SSR HTML](./ssr-html.png)
 
-如此一來我們就加快了 HTML 送到客戶端的速度。
+如此一來我們解決了 SSR 的第一個問題：我們必須要在伺服器端取得所有資料才能往下進行。
 
-## Hydrating the page before all the code has loaded
+### 在 JavaScript 完整下載完之前做 hydration
 
-在整個 app 的 JavaScript bundle 下載完成之前，我們沒辦法 hydrate 整個 app。如果 bundle 很大，會花很多時間。
-
-我們可以用 code splitting 的技巧來減少需要下載的 bundle 大小。React 提供了 `React.lazy()` API 來做 code splitting:
+在整個 app 的 JavaScript bundle 下載完成之前，我們沒辦法 hydrate 整個 app。如果 bundle 很大，會花很多時間。我們可以用 code splitting 的技巧來減少需要下載的 bundle 大小。React 提供了 `React.lazy()` API 來做 code splitting:
 
 ```jsx
 import { lazy } from 'react';
@@ -377,80 +387,85 @@ const Comments = lazy(() => import('./Comments.js'));
 
 在過去，上面這段 code 沒辦法在 SSR 的情境下運作。如果在客戶端對某個組件 code splitting，在伺服器端就沒辦法渲染這個組件；不然就是要在伺服器端渲染並 hydrate 整個 app，通常只能二選一。
 
-然而，React 18 讓你可以在 `<Comments />` 下載完成之前，就對整個 app 的其他部分 hydrate。
+然而，**React 18 讓你可以在 `<Comments />` 下載完成之前，對整個 app 的其他部分 hydrate。**
 
-![](./ssr-html.png)
+首先用戶會看到無法互動的內容：
 
-未完待續...
+![SSR HTML](./ssr-html.png)
 
-<!-- ###
+接著 React 開始 hydrate。Comments 的 JS code 還沒準備好，不過沒關係，頁面其他部分的 hydration 還是可以照樣進行，這就是所謂的 **Selective Hydration**：
 
-`React.lazy()`
+![SSR Selective Hydration](./ssr-selective-hydration.png)
 
-SSR => render fallback component `<Loader />`
+直到 comments 的 code 下載完後，`Comments` 的部分就可以互動了。
 
-優點：
+![SSR Hydrated](./ssr-hydrated.png)
 
-* 較快的 FCP 和 TTI
-* 不用等待較慢的 component 的 data fetching，較快產生 HTML
-* 畫面上其他元素可早點完成 hydration，不用等待速度慢的元件 -->
+把 `Comments` 包在 `<Suspense>` 中，就等於告訴 React 不要 block 頁面其他部分。
 
-<!-- ## Next.js
+### 在頁面完整下載完之前做 hydration
 
-Next.js 可用來實作以下Pattern:
+假設 HTML 還沒完整下載完：
 
-SSR
+![SSR Loading](./ssr-loading.png)
 
-Static SSR (static site generators e.g., jekyll)
+頁面的其他部分可以開始 hydrate，不用等到頁面完整下載完才能開始：
 
-SSR with Rehydration (Next.js)
+![SSR hydration while loading](./ssr-hydration-while-loading.png)
 
-CSR with Prerendering (Gatsby.js)
+Comments 的 HTML 過一陣子才載入：
 
-Full CSR
+![SSR Selective Hydration](./ssr-selective-hydration.png)
 
-## 網頁 Rendering 的歷史
+最後 comments 的部分可以獨立做 hydration：
 
-## 網頁 Rendering 的關鍵效能指標
+![SSR Hydrated](./ssr-hydrated.png)
 
-TTFB
+不需要等全部的 HTML 下載完就可以開始做 hydration。
 
-FP
+### 在頁面完整 hydration 完之前互動
 
-FCP
+React 18 還有一個改進，就是 hydration 不會再 block 住使用者的互動。
 
-LCP
+舉例來說，當 comments 區塊在進行 hydration 的時候，如果我點擊頁面的其他部分，點擊事件處理是不會被 block 住的：
 
-TTI
+![SSR Click while Hydrating](./ssr-click-while-hydrating.png)
 
-Preload/Prefetch
+這是因為在 React 18 中，用 Suspense 包起來的部分的 hydration 會有一些小空隙讓瀏覽器事件可以執行，所以 onClick 事件在 hydration 的時候可以順利執行。
 
-priority
+再看一個例子，當頁面上其他地方在做 hydration 的時候，我點擊尚未 hydration 的部分：
+
+![SSR Click while Hydrating](./ssr-click-while-hydrating-2.png)
+
+這時候原本的 hydration 會暫停，優先 hydrate 被點擊的區域：
+
+![SSR Prioritized Hydration](./ssr-prioritized-hydration.png)
+
+### 總結：React 18 的改動
+
+React 18 對 SSR 的主要 feature:
+
+* Streaming HTML 讓你能夠儘早輸出 HTML，即使在資料還沒準備好的狀態也適用。
+* Selective Hydration 讓你能夠儘早開始 hydration，即使在 HTML 和 JavaScript 沒有下載完的狀態也適用。
+
+React 18 解決了三大問題：
+
+* 你不需要等所有的資料都下載完才能發送 HTML
+* 你不需要等所有 JavaScript 下載完才能做 hydration
+* 你不需要等所有 hydration 都完成才能開始互動
 
 ## 結論
 
-不同的方法可以優化不同的指標
-
-TTFB (Static Generation/Incremental Static Generation)
-
-TTI (Progressive Hydration)
-
-FCP/FP (Streaming)
-
-用 React.js/Next.js 實作
-
-# Summary
-
-一共有7種不同的pattern可供使用 -->
+本篇文章介紹了 CSR 和 SSR 的差別，以及介紹結合兩者的方案 SSR with Hydration，並提出一些做法能夠優化其效能，最後介紹了 React 18 對於 SSR 的支援。
 
 ## 參考資料
 
-https://github.com/reactwg/react-18/discussions/37
+[Rendering Patterns](https://www.patterns.dev/posts/rendering-patterns/)
 
-https://developers.google.com/web/updates/2019/02/rendering-on-the-web#progressive-rehydration
+[New Suspense SSR Architecture in React 18](https://github.com/reactwg/react-18/discussions/37)
 
-https://www.patterns.dev/posts/react-selective-hydration/
+[Rendering on the Web](https://web.dev/rendering-on-the-web/)
 
-https://www.youtube.com/watch?v=TQQPAU21ZUw&t=216s&ab_channel=MetaOpenSource
+[Data Fetching with React Server Components](https://www.youtube.com/watch?v=TQQPAU21ZUw)
 
-https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html
+[How to Upgrade to React 18](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html)
