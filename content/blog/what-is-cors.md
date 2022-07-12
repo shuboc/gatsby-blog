@@ -1,5 +1,5 @@
 ---
-title: "跨來源資源共用 (CORS) 是什麼? 如何設定 CORS?"
+title: "CORS 是什麼? 如何設定 CORS?"
 tags: ["javascript", "web browser", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2020-07-03"

@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Class (類別)"
+title: "深入淺出 JavaScript ES6 Class (類別)"
 tags: ["javascript", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2019-03-05"
