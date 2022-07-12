@@ -204,7 +204,7 @@ SSL/TLS 證書包含了以下重要資訊：
 
 * Client Random: 從客戶端發送到伺服器的隨機字串。
 * Server Random: 從伺服器發送到客戶端的隨機字串。
-* Premaster Secret: 一個隨機字串，經過一些運算得出。在某些版本的 TLS handshake 中，客戶端生成 premaster secret 並加密後送至伺服器；某些版本的 TLS handshake 中，客戶端和伺服器分別使用相同的演算法和參數算出相同的 premaster secrect。
+* Premaster Secret: 一個隨機字串，經過一些運算得出。在某些版本的 TLS handshake 中，客戶端生成 premaster secret 並加密後送至伺服器；某些版本的 TLS handshake 中，客戶端和伺服器分別使用相同的演算法和參數算出相同的 premaster secret。
 * Master Secret: 客戶端和伺服器透過組合 client random, server random, premaster secret 運算出 master secret。
 
 客戶端和伺服器可以用 master secret 計算出四個 session key，分別是：
