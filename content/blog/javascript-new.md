@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JavaScript new 運算子及建構函式的用法"
+title: "[教學] JavaScript new 運算子及建構函式的用法"
 tags: ["javascript", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2016-04-23"

@@ -1,5 +1,5 @@
 ---
-title: "JavaScript this 是什麼？"
+title: "[教學] JavaScript this 的用法"
 tags: ["javascript", "frontend interview"]
 redirect_from:
   - /what-is-this/

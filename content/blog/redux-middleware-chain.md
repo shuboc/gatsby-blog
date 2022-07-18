@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Redux Middleware Chain"
+title: "[教學] Redux Middleware Chain"
 tags: [react]
 last_modified_at: 2020/10/15
 date: "2016-12-26"

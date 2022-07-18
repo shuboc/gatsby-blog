@@ -1,5 +1,5 @@
 ---
-title: "瀏覽器轉譯/渲染原理 (Browser Rendering)"
+title: "[教學] 瀏覽器轉譯/渲染(Browser Rendering)原理"
 tags: ["web browser", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2016-11-27"

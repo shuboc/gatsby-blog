@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Promise 的用法"
+title: "[教學] JavaScript Promise 的用法"
 tags: ["javascript", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2017-05-20"

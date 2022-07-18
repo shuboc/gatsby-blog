@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Closure (閉包)"
+title: "[教學] JavaScript Closure (閉包)"
 tags: ["javascript", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2018-03-04"

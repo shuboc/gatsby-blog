@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Redux Selector"
+title: "[教學] Redux Selector"
 tags: [react]
 last_modified_at: 2018/12/29
 date: "2016-11-12"

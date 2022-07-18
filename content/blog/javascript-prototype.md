@@ -1,5 +1,5 @@
 ---
-title: "JavaScript Prototype (原型) 是什麼？"
+title: "[教學] JavaScript Prototype (原型) 的用法"
 tags: ["javascript", "frontend interview"]
 last_modified_at: 2021/12/31
 date: "2020-05-09"
@@ -83,7 +83,7 @@ dog.eat(); // Eat!
 
 而 JavaScript 中，我們可以透過 prototype 達成同樣的效果。和 class 繼承最大的差別在於：JavaScript 中物件是繼承自 prototype，而 prototype 本身也是一個物件。繼承自 prototype 就好比你在創造物件時有一個可以效仿的實體，而 class 則像是一張參考的藍圖。
 
-> 延伸閱讀：[深入淺出 JavaScript ES6 Class (類別)](/javascript-class)
+> 延伸閱讀：[[教學] 深入淺出 JavaScript ES6 Class (類別)](/javascript-class)
 
 ## Constructor Function (建構函式) 的 Prototype
 
@@ -99,7 +99,7 @@ const dog = new Animal('Barley');
 
 如果想知道用 `new` 建立新物件的詳細原理，可以看一下這篇：
 
-> 延伸閱讀：[JavaScript new、Function Constructor (建構函式) 及 Object.create()](/javascript-new)
+> 延伸閱讀：[[教學] JavaScript new、Function Constructor (建構函式) 及 Object.create()](/javascript-new)
 
 然而只有屬性的物件並不是太有用，我們希望建立出來的新物件有一些方法 (method) 可以呼叫。那我們該如何幫新物件增加方法呢？這時候 prototype 就可以派上用場了。
 
@@ -187,7 +187,7 @@ Dog.prototype = Object.create(Animal.prototype);
 
 如果不熟悉 `Object.create()` 的讀者，可以看一下這篇唷。
 
-> 延伸閱讀：[JavaScript new、Function Constructor (建構函式) 及 Object.create()](/javascript-new)
+> 延伸閱讀：[[教學] JavaScript new、Function Constructor (建構函式) 及 Object.create()](/javascript-new)
 
 這個做法還會衍生一個問題，就是 `Dog.prototype.constructor` 的值會變成 `Animal`，因為 `Dog.prototype` 繼承 `Animal.prototype`，而 `Animal.prototype.constructor === Animal`。
 
@@ -205,7 +205,7 @@ Object.defineProperty(Dog.prototype, 'constructor', {
 
 如果想看 JavaScript Class 的教學，可以看這篇：
 
-> 延伸閱讀：[JavaScript ES6 Class](/javascript-class)
+> 延伸閱讀：[[教學] JavaScript ES6 Class](/javascript-class)
 
 ## Reference
 
