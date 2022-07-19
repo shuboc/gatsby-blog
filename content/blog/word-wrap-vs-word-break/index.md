@@ -1,5 +1,5 @@
 ---
-title: "如何用 CSS 強制文字換行: word-break, word-wrap, overflow-wrap"
+title: "[教學] word-break, word-wrap, overflow-wrap 的差別是什麼? 如何用 CSS 強制文字換行?"
 tags: ["css"]
 date: "2022-03-08"
 ---

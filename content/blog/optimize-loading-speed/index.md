@@ -1,5 +1,5 @@
 ---
-title: "網頁載入效能優化 (Web Performance Optimization) (加速 30% 真實案例分享)"
+title: "[教學] 網頁載入速度效能優化 (加速 30% 真實案例分享)"
 tags: ["javascript", "webpack", "performance"]
 last_modified_at: 2020/10/15
 date: "2020-08-06"

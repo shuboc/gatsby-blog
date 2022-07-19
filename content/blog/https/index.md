@@ -1,5 +1,5 @@
 ---
-title: "HTTP 和 HTTPS 是什麼? HTTP 和 HTTPS 的差別是什麼?"
+title: "[教學] HTTPS 是什麼? HTTP 和 HTTPS 的差別是什麼?"
 tags: ["web browser", "frontend interview"]
 date: "2022-07-11"
 image: ./tls-ssl-handshake.webp

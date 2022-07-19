@@ -1,5 +1,5 @@
 ---
-title: "從瀏覽器網址列輸入URL按下enter發生了什麼？ (What happens when you type a URL in the browser and press enter?)"
+title: "經典前端面試題：從瀏覽器網址列輸入 URL 按下 enter 發生了什麼？"
 tags: ["web browser", "frontend interview"]
 date: "2022-05-02"
 ---

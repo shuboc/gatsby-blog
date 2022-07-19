@@ -1,5 +1,5 @@
 ---
-title: "二元堆積 (Binary Heap)、最小堆積 (Min Heap)、最大堆積 (Max Heap) (附 python 實作)"
+title: "[教學] 二元堆積 (Binary Heap)、最小堆積 (Min Heap) 與最大堆積 (Max Heap)"
 tags: ["data structure", "algorithm"]
 date: "2022-03-07"
 ---
