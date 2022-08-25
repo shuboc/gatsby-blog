@@ -342,8 +342,8 @@ for (var i = 0; i < 3; ++i) {
   (function(j) {
     setTimeout(() => {
       console.log(j);
-    }, j)
-  })(i * 1000);
+    }, j * 1000)
+  })(i);
 }
 ```
 
