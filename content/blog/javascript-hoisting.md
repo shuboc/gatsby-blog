@@ -32,33 +32,37 @@ JavaScript 在 ES6 let 和 const 問世之前，都是用 var 來定義變數，
 
 ```JavaScript
 {
-  let name = "John";
-  console.log(name); // John
+  let myName = "John";
+  console.log(myName); // John
 }
-console.log(name); // undefined
+console.log(myName); // ReferenceError: myName is not defined
 ```
 
-首先，大括弧內用 `let` 宣告了一個變數 `name`，值等於 `"John"`，然後用 `console.log()` 印出 `name`，結果等於 `"John"`。在大括弧結束後，我們用 `console.log()` 把 `name` 的內容印出來，結果得到 `undefined`。
+首先，大括弧內用 `let` 宣告了一個變數 `myName`，值等於 `"John"`，然後用 `console.log()` 印出 `myName`，結果等於 `"John"`。在大括弧結束後，我們呼叫 `console.log(myName)`，結果瀏覽器拋出 `ReferenceError` 的例外。也就是說，`myName` 這個變數只有在大括弧，也就是區塊內才看得到。離開了這個作用域，這個變數就消失了。
 
-也就是說，`name` 這個變數只有在大括弧，也就是區塊內才看得到。離開了這個作用域，這個變數就消失了。
+同樣的，在 `if` / `for` / `while` 的大括號中宣告的變數也只存在大括號之中。
 
-同樣的原理也適用於 `if` / `for` / `while`。下面的例子中，我們可以看到 `name` 只存在 `if` 的大括號之間，`i` 只存在 `for` 迴圈的大括號之間。：
+下面的例子中，我們可以看到 `myName` 只存在 `if` 的大括號之間。離開了大括號，瀏覽器便拋出了 `ReferenceError` 例外。
 
 ```JavaScript
 if (true) {
-  let name = "John";
+  let myName = "John";
 }
-console.log(name); // undefined
+console.log(myName); // ReferenceError: myName is not defined
+```
 
+下面的例子中，`i` 只存在 `for` 迴圈的大括號之間。離開了大括號，瀏覽器便拋出 `ReferenceError` 例外：
+
+```JavaScript
 for (let i = 0; i < 3; i++) {
   console.log(i); // 0, 1, 2
 }
-console.log(i); // undefined
+console.log(i); // ReferenceError: i is not defined
 ```
 
 ## var 的函式作用域 (function-level scope)
 
-接下來我們要介紹 `var` 的作用域是**函式作用域 (function-level scope)**。
+用 `var` 宣告的變數的作用域是**函式作用域 (function-level scope)**。
 
 換句話說，**用 var 宣告的變數，只有在「函式」裡可以看得到。**
 
@@ -66,73 +70,79 @@ console.log(i); // undefined
 
 ```JavaScript
 {
-  var name = "John";
+  var myName = "John";
 }
-console.log(name); // John
+console.log(myName); // John
 ```
 
-我們用 `var` 在大括號裡面宣告一個變數 `name`，並且給他一個值 `"John"`，大括號結束以後呼叫 `console.log()`，結果印出 `"John"`。
+我們用 `var` 在大括號裡面宣告一個變數 `myName`，並且給他一個值 `"John"`，大括號結束以後呼叫 `console.log(myName)`，結果印出 `"John"`。
 
-為什麼會這樣呢？我們不是把 name 寫在大括號裡面了嗎？
+為什麼會這樣呢？我們不是把 `myName` 寫在大括號裡面了嗎？為什麼離開了大括號，`myName` 變數依然存在呢？
 
-原因是，因為用 `var` 宣告的變數，只有在定義它的函式裡面可以看得到它，但這裡沒有函式，所以**這裏的 `name` 是一個 global 變數**。這段程式碼就等同於我們在最開始宣告了一個 global 的 `name` 的變數：
+原因是 **`var` 宣告的變數的作用域是函式作用域**，換句話說，用 `var` 宣告的變數，只有在定義它的函式裡面可以看得到它，但這裡沒有函式，所以**這裏的 `myName` 是一個 global 變數。**
+
+這段程式碼就等同於我們在最開始宣告了一個 global 的 `myName` 的變數：
 
 ```JavaScript
-var name;
+var myName;
 {
-  name = "John";
+  myName = "John";
 }
-console.log(name); // John
+console.log(myName); // John
 ```
 
-事實上，這裏的大括弧並沒有任何作用，就算拿掉了也會印出一樣的結果。這表示用大括弧將一個用 `var` 宣告的變數包起來，並沒有辦法讓它變成一個區域變數，大括弧對於 `var` 沒有辦法形成一個作用域，只有函式才可以。
+簡單的說，**用大括弧將一個用 `var` 宣告的變數包起來，並沒有辦法讓它變成一個區域變數**；相反地，**用大括弧把 ES6 `let` 或 `const` 宣告的變數包起來，它們就變成區域變數了。**
 
-相反地，用大括弧把 ES6 `let` 或 `const` 宣告的變數包起來，它們就變成區域變數了。
+那要如何讓 `var` 變成一個區域變數呢？答案是需要用一個函式把它包起來。
 
-那要如何讓 `var` 變成一個區域變數呢？
-
-**當我們在一個函式內用 var 宣告變數，那這個變數就變成了一個區域變數，只能在函式內才看得到。**
+**當我們在一個函式內用 var 宣告變數，這個變數就會變成一個區域變數，只存在此函式中。**
 
 讓我用下面這個例子來說明：
 
 ```JavaScript
 function printName() {
-  if (true) {
-    var name = "John";
-  }
-  console.log(name); // John
+  var myName = "John";
+  console.log(myName);
 }
-printName();
-console.log(name); // undefined
+printName(); // John
+console.log(myName); // ReferenceError: myName is not defined
 ```
 
-我們在 `printName()` 函式裡面用 `var` 宣告了變數 `name`，然後呼叫 `console.log()` 把它印出來。當我們呼叫 `printName()` 的時候，由於 `name` 宣告在 `printName()` 之中，所以我們在 `printName()` 裡面可以看得到它，會印出 `"John"`；但是當我們在 global scope 要印出 `name` 的時候，就找不到這個變數了。
+我們在 `printName()` 函式裡面用 `var` 宣告了變數 `myName`，然後呼叫 `console.log(myName)` 把它印出來。
 
-同樣的原理也適用於 `for` / `while` / `if`。
+當我們呼叫 `printName()` 的時候，由於 `myName` 宣告在 `printName()` 函式之中，所以我們在 `printName()` 函式裡面可以看得到 `myName`，會印出 `"John"`。
 
-下面的例子中，在 `for` / `while` / `if` 內用 `var` 宣告的變數，也會變成 global 變數。我們可以看到在 `if` 結束之後，`name` 的值依然是 `"John"`，而 `for` 迴圈結束之後，`i` 等於 3。
+但是當我們在 global scope 要印出 `myName` 的時候，因為 `myName` 只存在 `printName()` 裡，global scope 裏面是找不到這個變數的，所以瀏覽器會拋出 `ReferenceError`例外。
+
+同樣的原理也適用於 `for` / `while` / `if`。下面的例子中，在 `if` 內用 `var` 宣告的變數，也會變成 global 變數。在 `if` 結束之後，`myName` 的值依然是 `"John"`。
 
 ```JavaScript
 if (true) {
-  var name = "John";
+  var myName = "John";
 }
-console.log(name); // John
+console.log(myName); // John
+```
 
+在 for 迴圈宣告的 `var` 變數 `i` ，在 for 迴圈結束之後依然存在，其值等於 3。
+
+```JavaScript
 for (var i = 0; i < 3; ++i) {
   console.log(i) // 0, 1, 2
 }
 console.log(i); // 3
 ```
 
-事實上 `name` 和 `i` 都是 global 變數，上面那段程式碼等義於下面這段程式碼：
+事實上 `myName` 和 `i` 都是 global 變數，上面那段程式碼等義於下面這段程式碼：
 
 ```JavaScript
-var name;
+var myName;
 if (true) {
-  name = "John";
+  myName = "John";
 }
-console.log(name); // John
+console.log(myName); // John
+```
 
+```JavaScript
 var i;
 for (i = 0; i < 3; ++i) {
   console.log(i) // 0, 1, 2
@@ -142,13 +152,13 @@ console.log(i); // 3
 
 ## var 可以重複宣告
 
-接著要來介紹 `var` 和 ES6 `let` `const` 很不一樣的地方，也就是「`var` 可以重複宣告」。這是什麼意思呢？
+接著要來介紹 `var` 和 ES6 `let` / `const` 很不一樣的地方，也就是「`var` 可以重複宣告」。這是什麼意思呢？
 
-如果用 `let` 宣告變數的話，同一個大括弧裡面只能宣告一次，第二次宣告就會拋出錯誤：
+如果用 `let` 宣告變數的話，同一個大括弧裡面只能宣告一次，第二次宣告就會拋出例外：
 
 ```JavaScript
-let name = "John";
-let name = "Kevin"; // SyntaxError: 'name' has already been declared
+let myName = "John";
+let myName = "Kevin"; // Uncaught SyntaxError: Identifier 'myName' has already been declared
 ```
 
 非常地符合直覺，對吧？相反地，用 `var` 有個神奇特性，就是可以重複宣告。
@@ -158,50 +168,52 @@ let name = "Kevin"; // SyntaxError: 'name' has already been declared
 我們來看下面這個例子：
 
 ```JavaScript
-var name = "John";
-var name = "Kevin";
-var name;
-console.log(name); // Kevin
+var myName = "John";
+var myName = "Kevin";
+var myName;
+console.log(myName); // Kevin
 ```
 
-可以看到第一行用 `var` 宣告了一個 `name` 變數，並給他初始值 `"John"`；第二行重複宣告了 `name`，並且也給它一個值 `"Kevin"`，這邊會怎麼運作呢？
+可以看到第一行用 `var` 宣告了一個 `myName` 變數，並給他初始值 `"John"`；第二行重複宣告了 `myName`，並且也給它一個值 `"Kevin"`，這邊會怎麼運作呢？
 
-答案是第二行的 `var name;` 宣告會被忽略，但是 `name = "Kevin";` 的動作還是會執行。
+答案是第二行的 `var myName;` 宣告會被忽略，但是 `myName = "Kevin";` 的動作還是會執行。
 
-第三行又宣告了 `var name;`，但沒有給它任何值；這裏發生的事情是：宣告會被直接略過，同時因為這裏並沒有給它一個新值，所以並不會讓它的值變成 `undefined`。(這裏非常 tricky!)
+第三行又宣告了 `var myName;`，但沒有給它任何值；這裏發生的事情是：宣告會被直接略過，同時因為這裏並沒有給它一個新值，所以並不會讓它的值變成 `undefined`。(這裏非常 tricky!)
 
 上面那段程式碼等同於：
 
 ```JavaScript
-var name = "John";
-name = "Kevin";
-console.log(name); // Kevin
+var myName = "John";
+myName = "Kevin";
+console.log(myName); // Kevin
 ```
 
 ## var 可以在使用之後才被宣告
 
 另外一個關於 `var` 的神奇特性是：**用 var 宣告的變數可以「先使用，後宣告」。**什麼意思呢？
 
-我們來看這個例子，在函式的第一行就直接使用 `name` 變數，直到第三行才宣告 `name` 變數，這樣是完全合法的：
+我們來看這個例子，在函式的第一行就直接使用 `myName` 變數，直到第三行才宣告 `myName` 變數，這樣是完全合法的：
 
 ```JavaScript
 function printName() {
-  name = "John";
-  console.log(name); // John
-  var name;
+  myName = "John";
+  console.log(myName);
+  var myName;
 }
+printName(); // John
 ```
 
-甚至我們把宣告 `name` 放在不會被執行到的 `if` 裡面也是合法的！
+甚至我們把宣告 `myName` 放在不會被執行到的 `if` 裡面也是合法的！
 
 ```JavaScript
 function printName() {
-  name = "John";
+  myName = "John";
   if (false) {
-    var name;
+    var myName;
   }
-  console.log(name); // John
+  console.log(myName);
 }
+printName(); // John
 ```
 
 只要有宣告 `var` 變數，則不管先使用或是先宣告，都是合法的。反之，如果完全沒有宣告，就會有錯誤。
@@ -218,10 +230,11 @@ function printName() {
 
 ```JavaScript
 function printName() {
-  var name;
-  name = "John";
-  console.log(name); // John
+  var myName;
+  myName = "John";
+  console.log(myName);
 }
+printName(); // John
 ```
 
 也就是說，不論你宣告 `var` 變數的位置在哪，宣告的動作一律都會被「抬升」到函式的最頂端，這個特性就叫做 **hoisting (提升)**。
@@ -232,26 +245,27 @@ function printName() {
 
 ```JavaScript
 function printName() {
-  console.log(name); // undefined
-  var name = "John";
-  console.log(name); // John
+  console.log(myName); // undefined
+  var myName = "John";
+  console.log(myName); // John
 }
+printName();
 ```
 
-宣告 `name` 的動作會被提升 (hoist) 至函式的最開始，剛宣告完的 `name` 的值會是 `undefined`，因為我們沒有給他初始值。
+宣告 `myName` 的動作會被提升 (hoist) 至函式的最開始，剛宣告完的 `myName` 的值會是 `undefined`，因為我們沒有給他初始值。
 
-接著第一行印出 `name` 的結果會是 `undefined`，因為第二行 `name = "John"` 的動作並沒有跟著提升 (hoist)，而是在他原本的位置（第二行），所以第二行執行完它的值才會變成 `"John"`。
+接著第一行印出 `myName` 的結果會是 `undefined`，因為第二行 `myName = "John"` 的動作並沒有跟著提升 (hoist)，而是在他原本的位置（第二行），所以第二行執行完它的值才會變成 `"John"`。
 
-到了第三行，`name` 印出來的值才會是 `"John"`。
+到了第三行，`myName` 印出來的值才會是 `"John"`。
 
 所以上面這段程式等同於：
 
 ```JavaScript
 function printName() {
-  var name;
-  console.log(name); // undefined
-  name = "John";
-  console.log(name); // John
+  var myName;
+  console.log(myName); // undefined
+  myName = "John";
+  console.log(myName); // John
 }
 ```
 
@@ -266,13 +280,13 @@ function printName() {
   console.log("John");
 }
 
-printName();
+printName(); // John
 ```
 
 但是因為函式也有 hoisting 的特性，所有的函式宣告都會被提升到最前面，所以以下的寫法是合法的：
 
 ```JavaScript
-printName();
+printName(); // John
 
 function printName() {
   console.log("John");
@@ -305,32 +319,32 @@ IIFE 就是宣告一個函式把你要做的事包起來，然後馬上執行。
 
 ```JavaScript
 (function() {
-  var name = "John";
-  console.log(name); // John
+  var myName = "John";
+  console.log(myName); // John
 })();
 
-console.log(name); // undefined
+console.log(myName); // Uncaught ReferenceError: myName is not defined
 ```
 
-上面的例子中，因為 `name` 被包在一個函式裡面，所以它並不是一個 global 變數；它的作用域僅限於函式內部。所以外面的 `console.log` 看不到 `name` 變數。
+上面的例子中，因為 `myName` 被包在一個函式裡面，所以它並不是一個 global 變數；它的作用域僅限於函式內部。所以global scope 看不到 `myName` 變數。
 
-IIFE 在過去某些情況下很有用，例如我們想利用一個 `for` 迴圈每隔一秒印出一個數字：
+IIFE 在過去某些情況下很有用，例如我們想利用一個 `for` 迴圈每隔一秒分別印出0, 1, 2：
 
 ```JavaScript
 for (var i = 0; i < 3; ++i) {
   setTimeout(() => {
-    console.log(i);
+    console.log(i); // 3, 3, 3
   }, i * 1000)
 }
 ```
 
-這樣寫是錯的，因為根據 hoisting 的原則，`i` 會是一個 global 變數。上面的程式碼等同於：
+這樣寫是錯的，會每個一秒印出一個3。因為根據 hoisting 的原則，`i` 會是一個 global 變數。上面的程式碼等同於：
 
 ```JavaScript
 var i;
 for (i = 0; i < 3; ++i) {
   setTimeout(() => {
-    console.log(i);
+    console.log(i); // 3, 3, 3
   }, i * 1000)
 }
 ```
@@ -341,7 +355,7 @@ for (i = 0; i < 3; ++i) {
 for (var i = 0; i < 3; ++i) {
   (function(j) {
     setTimeout(() => {
-      console.log(j);
+      console.log(j); // 0, 1, 2
     }, j * 1000)
   })(i);
 }
@@ -354,7 +368,7 @@ for (var i = 0; i < 3; ++i) {
 ```JavaScript
 for (let i = 0; i < 3; ++i) {
   setTimeout(() => {
-    console.log(i);
+    console.log(i); // 0, 1, 2
   }, i * 1000)
 }
 ```
