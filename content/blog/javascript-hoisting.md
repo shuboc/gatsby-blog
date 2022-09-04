@@ -269,6 +269,7 @@ function printName() {
   myName = "John";
   console.log(myName); // John
 }
+printName();
 ```
 
 ## 函式的 hoisting
