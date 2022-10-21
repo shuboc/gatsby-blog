@@ -1,5 +1,5 @@
 ---
-title: "Polite Ways to Ask People to Repeat Themselves"
+title: "如何用英文請對方再說一次？"
 tags: ["english"]
 date: "2022-10-21"
 ---
