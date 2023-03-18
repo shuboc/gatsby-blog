@@ -1,5 +1,5 @@
 ---
-title: "[教學] CSR 和 SSR 的差別是什麼? CSR 和 SSR 的超詳細比較!"
+title: "[教學] SSR (Server-Side Rendering) 是什麼? CSR 和 SSR 的差別是什麼? CSR 和 SSR 的超詳細比較!"
 tags: ["web browser", "performance", "frontend interview"]
 date: "2022-07-12"
 ---
