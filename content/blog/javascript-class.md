@@ -1,7 +1,6 @@
 ---
 title: "[教學] JavaScript ES6 Class：深入淺出類別概念與應用"
 tags: ["javascript", "frontend interview"]
-last_modified_at: 2020/10/15
 date: "2019-03-05"
 ---
 

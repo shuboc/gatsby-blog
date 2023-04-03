@@ -1,7 +1,6 @@
 ---
 title: "[教學] Web Share API - Navigator.share() 介紹"
 tags: ["javascript", "web browser"]
-last_modified_at: 2020/10/15
 date: "2020-03-28"
 ---
 

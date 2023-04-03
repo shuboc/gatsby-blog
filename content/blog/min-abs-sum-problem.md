@@ -1,7 +1,6 @@
 ---
 title: "Min Abs Sum"
 tags: [algorithm, dynamic programming]
-last_modified_at: 2020/10/15
 date: "2017-04-01"
 ---
 

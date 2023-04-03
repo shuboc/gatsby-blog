@@ -1,7 +1,6 @@
 ---
 title: "[教學] 響應式圖片 (Responsive Images): img srcset 用法介紹"
 tags: [rwd, web browser]
-last_modified_at: 2020/10/21
 date: "2017-04-27"
 ---
 

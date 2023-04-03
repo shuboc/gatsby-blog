@@ -1,7 +1,6 @@
 ---
 title: "0 mod n Sum Subset Problem"
 tags: [algorithm]
-last_modified_at: 2020/10/15
 date: "2017-03-27"
 ---
 

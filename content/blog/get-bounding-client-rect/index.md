@@ -1,7 +1,6 @@
 ---
 title: "getBoundingClientRect 的用法"
 tags: ["javascript", "web browser"]
-last_modified_at: 2020/10/15
 date: "2019-12-15"
 ---
 

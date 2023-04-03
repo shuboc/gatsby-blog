@@ -1,7 +1,6 @@
 ---
 title: "[教學] 如何用 Intersection Observer API 實作 Infinite Scroll/Lazy Loading"
 tags: ["javascript", "web browser"]
-last_modified_at: 2020/10/15
 date: "2019-12-21"
 ---
 

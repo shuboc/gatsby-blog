@@ -1,7 +1,6 @@
 ---
 title: "[教學] JavaScript Prototype (原型) 的用法"
 tags: ["javascript", "frontend interview"]
-last_modified_at: 2021/12/31
 date: "2020-05-09"
 ---
 

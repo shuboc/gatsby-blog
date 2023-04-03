@@ -1,7 +1,6 @@
 ---
 title: "[教學] Cookie 介紹：使用 JavaScript 操作 document.cookie 的實用指南"
 tags: ["javascript", "web browser", "frontend interview"]
-last_modified_at: 2020/10/15
 date: "2020-06-19"
 ---
 

@@ -2,7 +2,6 @@
 layout: post
 title: "[教學] CSS 氣泡提示框 (tooltip/speech bubble/bubble with arrow/balloon)"
 tags: [css]
-last_modified_at: 2020/10/15
 date: "2016-05-08"
 ---
 

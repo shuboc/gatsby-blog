@@ -1,7 +1,6 @@
 ---
 title: "[筆記] 如何正確實作 JavaScript Array Random Shuffle 亂數排序演算法"
 tags: ["javascript"]
-last_modified_at: 2020/10/15
 date: "2019-03-14"
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "[教學] JavaScript call 和 apply 的差異"
 tags: ["javascript", "frontend interview"]
-last_modified_at: 2020/10/15
 date: "2018-08-11"
 ---
 
