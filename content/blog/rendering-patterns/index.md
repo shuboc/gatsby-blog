@@ -1,10 +1,10 @@
 ---
-title: "[教學] SSR (Server-Side Rendering) 是什麼? CSR 和 SSR 的差別是什麼? CSR 和 SSR 的超詳細比較!"
+title: "[教學] SSR 與 CSR 深度解析：從渲染方式到效能優化"
 tags: ["web browser", "performance", "frontend interview"]
 date: "2022-07-12"
 ---
 
-CSR (Client-Side Rendering，客戶端渲染) 表示所有的頁面渲染 (render) 都透過瀏覽器端的 JavaScript 來完成。SSR (Server-Side Rendering，伺服器端渲染) 表示伺服器收到使用者的請求之後，在伺服器端生成完整的 HTML，再回傳給使用者。
+本文詳細比較 SSR (Server-Side Rendering，伺服器端渲染) 與 CSR (Client-Side Rendering，客戶端渲染) 的特點和優缺點，並探討如何優化效能。了解渲染技術背後的原理，以便選擇適合您專案的策略。
 
 ## 目錄
 

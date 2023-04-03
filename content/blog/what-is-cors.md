@@ -1,11 +1,11 @@
 ---
-title: "[教學] CORS 是什麼? 如何設定 CORS?"
+title: "[教學] 跨來源資源共用（CORS）解析：如何正確設定 CORS？"
 tags: ["javascript", "web browser", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2020-07-03"
 ---
 
-當我們在 JavaScript 中透過 fetch 或 XMLHttpRequest 存取資源時，需要遵守 CORS (Cross-Origin Resource Sharing，跨來源資源共用)。瀏覽器在發送請求之前會先發送 preflight request (預檢請求)，確認伺服器端設定正確的 Access-Control-Allow-Methods、Access-Control-Allow-Headers 及 Access-Control-Allow-Origin 等 header，才會實際發送請求。使用 cookie 的情況下還需額外設定 Access-Control-Allow-Credentials header。
+了解 CORS (Cross-Origin Resource Sharing) 的概念和設定方法，確保您的網站能在遵守同源政策的前提下正確處理跨來源請求。學習如何設定 Access-Control-Allow-Methods、Access-Control-Allow-Headers、Access-Control-Allow-Origin 等 header，以及在使用 cookie 時的額外設定。
 
 ## 目錄
 

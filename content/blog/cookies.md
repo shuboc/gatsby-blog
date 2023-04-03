@@ -1,11 +1,11 @@
 ---
-title: "[教學] Cookie 是什麼？如何用 JavaScript get/set document.cookie?"
+title: "[教學] Cookie 介紹：使用 JavaScript 操作 document.cookie 的實用指南"
 tags: ["javascript", "web browser", "frontend interview"]
 last_modified_at: 2020/10/15
 date: "2020-06-19"
 ---
 
-這篇文章會介紹什麼是 cookie，教你如何用 JavaScript 讀取及設定 cookie 的方法，以及 Path、Domain、Max-Age、Expires、Secure、HttpOnly、SameSite 等參數的使用方法，最後介紹關於 cookie 的安全性議題。
+了解什麼是 cookie，學習如何使用 JavaScript 讀取和設定 cookie，掌握 Path、Domain、Max-Age、Expires、Secure、HttpOnly、SameSite 等參數的應用，並深入探討 cookie 安全性議題。
 
 ## 目錄
 

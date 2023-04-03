@@ -1,10 +1,10 @@
 ---
-title: "[教學] word-break, word-wrap, overflow-wrap 的差別是什麼? 如何用 CSS 強制文字換行?"
+title: "[教學] CSS 文字換行技巧：word-break、word-wrap、overflow-wrap 的區別與應用"
 tags: ["css"]
 date: "2022-03-08"
 ---
 
-在使用者可以留言的網站中，經常會出現長連結或者是太長的英文字使得文字超出頁面範圍，讓網站跑版。這時候我們可以用 CSS 做到強制文字換行的效果，可以使用的屬性有 word-break, word-wrap, overflow-wrap 等，他們的用法是什麼，又有什麼不一樣呢？
+學習如何用 CSS 屬性 word-break、word-wrap、overflow-wrap 實現強制文字換行，解決長連結和過長英文文字導致網站跑版的問題。探討這些屬性的不同用法和應用場景，確保網站在各種情況下保持良好的排版效果。
 
 ## 目錄
 

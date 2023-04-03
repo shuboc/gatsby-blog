@@ -1,11 +1,11 @@
 ---
-title: "[教學] HTTPS 是什麼? HTTP 和 HTTPS 的差別是什麼?"
+title: "[教學] HTTPS 揭秘：網站安全的關鍵技術"
 tags: ["web browser", "frontend interview"]
 date: "2022-07-11"
 image: ./tls-ssl-handshake.webp
 ---
 
-HTTPS (HyperText Transfer Protocol Secure，超文本傳輸安全通訊協定) 是一種網際網路通訊協定，可確保資料在使用者的電腦和網站之間傳輸時，保有完整性和機密性。HTTPS 透過 HTTP 的格式進行通訊，並用 TLS 協議加密通訊內容，其功能包含了身份認證、加密以及內容完整性驗證。
+HTTPS 是一種網際網路通訊協定，可確保資料在使用者的電腦和網站之間傳輸時的安全性。本文深入探討 HTTPS 背後的技術原理，包括對稱加密、非對稱加密和 TLS，展示為何 HTTPS 是確保網路通信安全的關鍵所在。
 
 ## 目錄
 

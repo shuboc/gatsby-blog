@@ -1,11 +1,11 @@
 ---
-title: "什麼是 clientHeight, clientWidth, offSetHeight, offsetWidth, scrollHeight, scrollWidth, scrollTop, scrollLeft"
+title: "[教學] DOM 元素尺寸與位置：clientHeight, clientWidth, offsetHeight, offsetWidth, scrollHeight, scrollWidth, scrollTop, scrollLeft 詳解"
 tags: ["javascript", "web browser"]
 last_modified_at: 2020/10/15
 date: "2019-12-14"
 ---
 
-在 JavaScript 中要取得DOM元素的寬度或高度，可以利用 clientHeight, clientWidth, offSetHeight, offsetWidth, scrollHeight, scrollWidth, scrollTop, scrollLeft 等屬性，這篇文章整理了不同屬性之間的區別以及應用。下次遇到時再也不會分不清楚了！
+本文詳細介紹 JavaScript 中常用的 DOM 元素尺寸和位置屬性，包括 clientHeight, clientWidth, offsetHeight, offsetWidth, scrollHeight, scrollWidth, scrollTop, scrollLeft 等，以及它們的區別和應用。讓您在實際應用中能輕鬆運用這些屬性！
 
 ## 目錄
 
