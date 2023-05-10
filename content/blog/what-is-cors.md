@@ -1,5 +1,5 @@
 ---
-title: "[教學] 跨來源資源共用（CORS）解析：如何正確設定 CORS？"
+title: "[教學] 深入了解跨來源資源共用 (CORS): 如何正確設定 CORS？"
 tags: ["javascript", "web browser", "frontend interview"]
 date: "2020-07-03"
 ---

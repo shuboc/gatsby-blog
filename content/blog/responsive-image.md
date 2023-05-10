@@ -1,5 +1,5 @@
 ---
-title: "[教學] 響應式圖片 (Responsive Images): img srcset 用法介紹"
+title: "[教學] 響應式圖片完全指南：掌握 img srcset 的使用技巧"
 tags: [rwd, web browser]
 date: "2017-04-27"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "[教學] Cookie 介紹：使用 JavaScript 操作 document.cookie 的實用指南"
+title: "[教學] Cookie 是什麼：如何使用 JavaScript 操作 document.cookie"
 tags: ["javascript", "web browser", "frontend interview"]
 date: "2020-06-19"
 ---
