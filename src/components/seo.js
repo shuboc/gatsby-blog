@@ -38,7 +38,15 @@ const Seo = ({ description, lang, meta, title, image, url, steps }) => {
     "@type": "HowTo",
     "name": title,
     "description": description,
-    "step": steps
+    "step": steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "name": step.name,
+      "itemListElement": {
+        "@type": "HowToDirection",
+        "text": step.text
+      },
+      "position": index + 1
+    }))
   }
 
   return (
