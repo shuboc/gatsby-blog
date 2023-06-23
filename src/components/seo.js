@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import coverImg from '../images/cover.jpg'
 
-const Seo = ({ description, lang, meta, title, image, url }) => {
+const Seo = ({ description, lang, meta, title, image, url, steps }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -32,6 +32,14 @@ const Seo = ({ description, lang, meta, title, image, url }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+
+  const schemaOrgJSONLD = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": title,
+    "description": description,
+    "step": steps
+  }
 
   return (
     <Helmet
@@ -86,7 +94,9 @@ const Seo = ({ description, lang, meta, title, image, url }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
+    </Helmet>
   )
 }
 

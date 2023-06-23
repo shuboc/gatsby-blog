@@ -2,6 +2,13 @@
 title: "[教學] 深入了解 CORS (跨來源資源共用): 如何正確設定 CORS？"
 tags: ["javascript", "web browser", "frontend interview"]
 date: "2020-07-03"
+steps:
+  - name: "認清是否為簡單跨來源請求"
+    text: "如果是簡單跨來源請求，在後端 GET/POST/HEAD 方法本身加上 Access-Control-Allow-Origin header。"
+  - name: "處理非簡單跨來源請求"
+    text: "如果非簡單跨來源請求，在後端 OPTIONS 加上 Access-Control-Allow-Methods 及 Access-Control-Allow-Headers header。在後端方法本身加上 Access-Control-Allow-Origin header。"
+  - name: "如何使用 cookie"
+    text: "需要使用 cookie 的情況下，前端要加上 credentials: 'include' 或是 withCredentials 參數，後端要加上 Access-Control-Allow-Credentials header，而且 Access-Control-Allow-Origin header 不能用 *。"
 ---
 
 這篇文章將會帶你了解 CORS (Cross-Origin Resource Sharing) 的概念和設定方法，確保您的網站能在遵守同源政策的前提下正確處理跨來源請求。學習如何設定 Access-Control-Allow-Methods、Access-Control-Allow-Headers、Access-Control-Allow-Origin 等 header，以及在使用 cookie 時的額外設定。

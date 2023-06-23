@@ -19,6 +19,7 @@ const BlogPostTemplate = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.image && data.site.siteMetadata.siteUrl + post.frontmatter.image?.publicURL}
         url={data.site.siteMetadata?.siteUrl + location.pathname}
+        steps={post.frontmatter.steps}
       />
       <article
         className="blog-post"
@@ -104,6 +105,10 @@ export const pageQuery = graphql`
         tags
         image {
           publicURL
+        }
+        steps {
+          name
+          text
         }
       }
     }
