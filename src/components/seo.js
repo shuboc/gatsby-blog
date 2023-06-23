@@ -33,22 +33,6 @@ const Seo = ({ description, lang, meta, title, image, url, steps }) => {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
 
-  const schemaOrgJSONLD = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": title,
-    "description": description,
-    "step": steps.map((step, index) => ({
-      "@type": "HowToStep",
-      "name": step.name,
-      "itemListElement": {
-        "@type": "HowToDirection",
-        "text": step.text
-      },
-      "position": index + 1
-    }))
-  }
-
   return (
     <Helmet
       htmlAttributes={{
@@ -103,7 +87,27 @@ const Seo = ({ description, lang, meta, title, image, url, steps }) => {
         },
       ].concat(meta)}
     >
-      <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
+      {steps && (
+        <script type="application/ld+json">
+          {
+            JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": title,
+              "description": description,
+              "step": steps.map((step, index) => ({
+                "@type": "HowToStep",
+                "name": step.name,
+                "itemListElement": {
+                  "@type": "HowToDirection",
+                  "text": step.text
+                },
+                "position": index + 1
+              }))
+            })
+          }
+        </script>
+      )}
     </Helmet>
   )
 }
