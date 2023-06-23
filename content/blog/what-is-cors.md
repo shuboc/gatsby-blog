@@ -1,10 +1,10 @@
 ---
-title: "[教學] 深入了解跨來源資源共用 (CORS): 如何正確設定 CORS？"
+title: "[教學] 深入了解 CORS (跨來源資源共用): 如何正確設定 CORS？"
 tags: ["javascript", "web browser", "frontend interview"]
 date: "2020-07-03"
 ---
 
-了解 CORS (Cross-Origin Resource Sharing) 的概念和設定方法，確保您的網站能在遵守同源政策的前提下正確處理跨來源請求。學習如何設定 Access-Control-Allow-Methods、Access-Control-Allow-Headers、Access-Control-Allow-Origin 等 header，以及在使用 cookie 時的額外設定。
+這篇文章將會帶你了解 CORS (Cross-Origin Resource Sharing) 的概念和設定方法，確保您的網站能在遵守同源政策的前提下正確處理跨來源請求。學習如何設定 Access-Control-Allow-Methods、Access-Control-Allow-Headers、Access-Control-Allow-Origin 等 header，以及在使用 cookie 時的額外設定。
 
 ## 目錄
 
