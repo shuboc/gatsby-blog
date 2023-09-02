@@ -207,5 +207,6 @@ module.exports = {
           shortname: `shuboc`
       }
     },
+    'gatsby-plugin-netlify',
   ],
 }
