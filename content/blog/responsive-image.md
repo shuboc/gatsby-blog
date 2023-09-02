@@ -1,5 +1,5 @@
 ---
-title: "[教學] 響應式圖片完全指南：掌握 img srcset 的使用技巧"
+title: "[教學] 如何使用 img srcset 讓圖片在 RWD 網頁顯示適當解析度"
 tags: [rwd, web browser]
 date: "2017-04-27"
 ---
