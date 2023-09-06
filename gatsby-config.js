@@ -160,7 +160,7 @@ module.exports = {
             }
           }
         `,
-        resolveSiteUrl: () => `https://shubo.io/`,
+        resolveSiteUrl: () => `https://www.shubo.io/`,
         resolvePages: ({
           allSitePage: { nodes: allPages },
           allMarkdownRemark: { nodes: allMarkdownRemarkNodes },
