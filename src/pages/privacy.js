@@ -9,7 +9,7 @@ const PrivacyPage = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-        <Seo title="Privacy Policy" />
+        <Seo title="Privacy Policy" url={data.site.siteMetadata?.siteUrl + location.pathname} />
         <h2>Privacy Policy</h2>
         <p>Your privacy is important to us. It is shubo.io&#39;s policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including across our website, <a href="https://shubo.io">https://shubo.io</a>, and other sites we own and operate. </p>
         <p>This policy is effective as of 7 June 2022 and was last updated on 7 June 2022. </p>
@@ -76,6 +76,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
   }

@@ -16,6 +16,7 @@ const Tags = ({ pageContext, data, location }) => {
       <Seo
         title={tagHeader}
         description={description}
+        url={data.site.siteMetadata?.siteUrl + location.pathname}
       />
       <h1>{tagHeader}</h1>
       <ul>
@@ -41,6 +42,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     allMarkdownRemark(

@@ -87,6 +87,7 @@ const Seo = ({ description, lang, meta, title, image, url, steps }) => {
         },
       ].concat(meta)}
     >
+      <link rel="canonical" href={url} />
       {steps && (
         <script type="application/ld+json">
           {

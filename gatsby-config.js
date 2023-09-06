@@ -6,7 +6,7 @@ module.exports = {
       summary: `軟體工程師, 喜歡研究前端效能優化等議題`,
     },
     description: `程式設計筆記、教學和讀書心得`,
-    siteUrl: `https://shubo.io/`,
+    siteUrl: `https://www.shubo.io/`,
     social: {
       twitter: `shubo_tw`,
     },

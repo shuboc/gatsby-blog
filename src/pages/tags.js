@@ -10,7 +10,7 @@ const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
     site: {
-      siteMetadata: { title },
+      siteMetadata: { title, siteUrl },
     },
   },
   location
@@ -21,6 +21,7 @@ const TagsPage = ({
       <Seo
         title="標籤列表"
         description={tags}
+        url={siteUrl + location.pathname}
       />
       <div>
         <h1>標籤列表</h1>
@@ -63,6 +64,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     allMarkdownRemark(limit: 2000) {
