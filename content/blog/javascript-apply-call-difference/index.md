@@ -56,7 +56,7 @@ someFunction.apply(obj, [1, 2, 3]);
 JavaScript 中 `call()` 是 Function 物件的另一個方法，用法是：
 
 ```jsx
-someFunction.apply(context, arg1, arg2, ...)
+someFunction.call(context, arg1, arg2, ...)
 ```
 
 其中 `context` 是呼叫這個 function 所使用的 `this` 值，而 `arg1`, `arg2`, ... 則是呼叫這個 function 時的參數。
