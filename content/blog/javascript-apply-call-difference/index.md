@@ -1,7 +1,8 @@
 ---
 title: "[教學] 如何使用 JavaScript 的 call 和 apply"
 tags: ["javascript", "frontend interview"]
-date: "2024-02-15"
+date: "2018-08-11"
+image: ./cover.png
 ---
 
 這篇教學會介紹 JavaScript 中 apply() 和 call() 的使用方法，以及運用到 apply() 和 call() 的應用，包括 Call Forwarding、Cache 和 Method Borrowing。
