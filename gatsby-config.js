@@ -117,7 +117,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "Shubo 的程式開發筆記 RSS Feed",
           },
         ],
       },
@@ -125,7 +125,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `Shubo 的程式開發筆記`,
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,
