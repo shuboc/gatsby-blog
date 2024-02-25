@@ -117,7 +117,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Shubo 的程式開發筆記 RSS Feed",
+            title: "Shubo 的程式開發筆記",
           },
         ],
       },
