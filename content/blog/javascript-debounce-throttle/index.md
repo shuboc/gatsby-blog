@@ -153,7 +153,7 @@ function debounce(callback, delay) {
 
 到這裡我們就成功地自己手寫出 debounce 了！🙌
 
-### (Optional) 如何用 JavaScript 手寫實作 debounce？【進階篇】加上 immediate/leading 選項
+<!-- ### (Optional) 如何用 JavaScript 手寫實作 debounce？【進階篇】加上 immediate/leading 選項
 
 現在讓問題再更複雜一點，我們要如何實作有 immediate/leading 的版本呢？
 
@@ -230,7 +230,7 @@ function debounce(callback, delay, immediate = false) {
 }
 ```
 
-到這裡我們就完成了一個包含 immediate/leading 功能的 debounce！給自己掌聲👏
+到這裡我們就完成了一個包含 immediate/leading 功能的 debounce！給自己掌聲👏 -->
 
 ## Throttle 介紹
 
@@ -332,7 +332,7 @@ function throttle(callback, delay) {
 
 到這裡我們就成功地自己手寫出 throttle 了！🙌
 
-### (Optional) 如何用 JavaScript 手寫實作 throttle 函數？【進階篇】
+<!-- ### (Optional) 如何用 JavaScript 手寫實作 throttle 函數？【進階篇】
 
 在上面的實作中，我們會等 `delay` 毫秒之後才執行第一次的 callback。我們可能還想要實作一些進階需求，例如：
 
@@ -486,7 +486,7 @@ function throttle(callback, delay) {
 }
 ```
 
-到此結束，請給看到這裡的自己一點掌聲👏！
+到此結束，請給看到這裡的自己一點掌聲👏！ -->
 
 ## Debounce 和 Throttle 的比較
 
