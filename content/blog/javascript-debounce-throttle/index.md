@@ -1,5 +1,5 @@
 ---
-title: "一次搞懂前端開發者必學的Debounce與Throttle (手把手教學)"
+title: "一次搞懂前端開發者不可不知的Debounce與Throttle (手把手教學)"
 tags: ["javascript", "frontend interview"]
 date: "2024-02-26"
 image: ./cover.webp
