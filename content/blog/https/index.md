@@ -1,11 +1,11 @@
 ---
-title: "[教學] HTTPS 揭秘：網站安全的關鍵技術"
+title: "每個軟體工程師都應該懂的HTTPS：深入淺出加密原理、TLS協議"
 tags: ["web browser", "frontend interview"]
 date: "2022-07-11"
 image: ./tls-ssl-handshake.webp
 ---
 
-HTTPS 是一種網際網路通訊協定，可確保資料在使用者的電腦和網站之間傳輸時的安全性。本文深入探討 HTTPS 背後的技術原理，包括對稱加密、非對稱加密和 TLS，展示為何 HTTPS 是確保網路通信安全的關鍵所在。
+HTTPS 不僅是資訊安全中不可或缺的要角，對軟體工程師而言也是很必要的知識。簡單的說，HTTPS 是安全版本的 HTTP。HTTP 和 HTTPS 的差別在於，HTTPS 使用 TLS 協議來加密 HTTP 請求和回應。TLS 連線會使用非對稱加密以及對稱加密的技術。建立 TLS 連線的第一步是由 TLS handshake (TLS 握手) 開始。透過 TLS handshake 完成密鑰交換後，就可以安全地使用 session key 來對資料傳輸作加密。快點進這篇文章，跟我一起來了解 HTTPS 到底是什麼吧！
 
 ## 目錄
 
