@@ -347,6 +347,10 @@ img {
   }
 }
 
+.side-nav .highlight {
+  font-weight: bold;
+}
+
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
 }

@@ -12,7 +12,39 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
-  // TODO: Use effect to add IntersectionObserver to titles and highlight the corresponding ones in TOC
+  // Add IntersectionObserver to titles and highlight the corresponding ones in TOC
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // highlight the corresponding TOC part
+            const toRemoveHighlight = document.querySelector('.side-nav a.highlight');
+            if (toRemoveHighlight) {
+              toRemoveHighlight.classList.remove('highlight')
+            }
+            const toHighlight = document.querySelector(`.side-nav a[href="#${encodeURIComponent(entry.target.id)}"]`)
+            if (toHighlight) {
+              toHighlight.classList.add('highlight')
+            }
+          }
+        });
+      },
+      { rootMargin: '0% 0% -80% 0%' }
+    );
+
+    const headingElements = document.querySelectorAll('.blog-post h2, h3, h4, h5, h6');
+
+    headingElements.forEach((element) => {
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      headingElements.forEach((element) => {
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, []);
 
   return (
     <Layout location={location} title={siteTitle}>
