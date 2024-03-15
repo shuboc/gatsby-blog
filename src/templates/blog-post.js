@@ -12,6 +12,8 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
+  // TODO: Use effect to add IntersectionObserver to titles and highlight the corresponding ones in TOC
+
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
@@ -21,6 +23,7 @@ const BlogPostTemplate = ({ data, location }) => {
         url={data.site.siteMetadata?.siteUrl + location.pathname}
         steps={post.frontmatter.steps}
       />
+      <nav className="side-nav" dangerouslySetInnerHTML={{ __html: post.tableOfContents}} />
       <article
         className="blog-post"
         itemScope
@@ -98,6 +101,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

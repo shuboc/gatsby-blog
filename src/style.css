@@ -331,6 +331,22 @@ img {
   margin: var(--spacing-0);
 }
 
+.side-nav {
+  display: none;
+}
+
+@media (min-width: 84rem) {
+  .side-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: calc(50% + var(--maxWidth-wrapper) / 2);
+    height: 100vh;
+    overflow-y: auto;
+    padding: var(--spacing-5)
+  }
+}
+
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
 }
