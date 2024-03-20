@@ -58,3 +58,7 @@ def triangles(A):
 
     return result
 ~~~
+
+## Reference
+
+[Caterpillar Method - Codility](https://codility.com/media/train/13-CaterpillarMethod.pdf)
