@@ -4,7 +4,7 @@ tags: ["web browser", "frontend interview"]
 date: "2019-04-06"
 ---
 
-現代瀏覽器提供了 preload、prefetch 和 preconnect 等功能，能讓開發者指定 link tag 的 rel 屬性提示瀏覽器提前下載圖片、JS、CSS等資源，以達到優化效能的效果。這篇文章將會教你這三種 resource hint 技巧的使用方法與時機，讓你了解如何優化資源的下載順序並提升網頁載入效能。
+現代瀏覽器提供了 preload、prefetch 和 preconnect 等功能，能讓開發者指定 link tag 的 rel 屬性提示瀏覽器提前下載圖片、JS、CSS等資源，以達到最佳化效能的效果。這篇文章將會教你這三種 resource hint 技巧的使用方法與時機，讓你了解如何最佳化資源的下載順序並提升網頁載入效能。
 
 ## 目錄
 
@@ -74,7 +74,7 @@ date: "2019-04-06"
 
 對於 script 而言，一般來說會放在 html 的最後面，所以有可能會等到 parse 完整個 html 才會開始下載，但又希望越早被下載越好。
 
-如果是重要的資源，那 `preload` 可能是比較好的優化方式。相較之下，同樣是可以非同步下載資源，`async` script 會 block `onload` event。
+如果是重要的資源，那 `preload` 可能是比較好的最佳化方式。相較之下，同樣是可以非同步下載資源，`async` script 會 block `onload` event。
 
 ### Font 字體
 

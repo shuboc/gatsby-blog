@@ -32,7 +32,7 @@ not dead
 
 而使用 `@babel/preset-env` 的情況下，只要設置好 [browserslist](https://github.com/browserslist/browserslist) 即可，它會根據你的 browserslist 設定，決定要將哪些語法轉換和 polyfill 引入，不需要手動一個一個去檢視每個語法 transform 或是 preset 是否需要被引入，相對之下方便許多。
 
-另外 `@babel/preset-env` 也可以幫助我們優化 bundle 檔案大小。舉個極端的例子來說，假設今天你的業務需求只需要支援最新的 Chrome，那使用 `@babel/preset-env` 的情況下，它可能就不會幫你引入太多的 polyfill，最終產生的 bundle 檔案就會比較小。
+另外 `@babel/preset-env` 也可以幫助我們最佳化 bundle 檔案大小。舉個極端的例子來說，假設今天你的業務需求只需要支援最新的 Chrome，那使用 `@babel/preset-env` 的情況下，它可能就不會幫你引入太多的 polyfill，最終產生的 bundle 檔案就會比較小。
 
 ## @babel/preset-env 設定
 
@@ -100,7 +100,7 @@ var a = new Promise();
 
 ## 進階篇：@babel/plugin-transform-runtime
 
-如果想要進一步優化產生出的 bundle size，可以使用 [`@babel/plugin-transform-runtime`](https://babeljs.io/docs/en/babel-plugin-transform-runtime)。
+如果想要進一步最佳化產生出的 bundle size，可以使用 [`@babel/plugin-transform-runtime`](https://babeljs.io/docs/en/babel-plugin-transform-runtime)。
 
 **webpack.config.js**
 

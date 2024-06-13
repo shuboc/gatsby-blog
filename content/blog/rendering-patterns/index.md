@@ -1,10 +1,10 @@
 ---
-title: "[教學] SSR 與 CSR 深度解析：從渲染方式到效能優化"
+title: "[教學] SSR 與 CSR 深度解析：從渲染方式到效能最佳化"
 tags: ["web browser", "performance", "frontend interview"]
 date: "2022-07-12"
 ---
 
-本文詳細比較 SSR (Server-Side Rendering，伺服器端渲染) 與 CSR (Client-Side Rendering，客戶端渲染) 的特點和優缺點，並探討如何優化效能。了解渲染技術背後的原理，以便選擇適合您專案的策略。
+本文詳細比較 SSR (Server-Side Rendering，伺服器端渲染) 與 CSR (Client-Side Rendering，客戶端渲染) 的特點和優缺點，並探討如何最佳化效能。了解渲染技術背後的原理，以便選擇適合您專案的策略。
 
 ## 目錄
 
@@ -57,9 +57,9 @@ CSR 的缺點主要有以下兩點：
 * 載入速度通常較慢，尤其是在低階的行動裝置上。原因如前所述，因為 CSR 要等待 JavaScript 的下載及執行 render ，所以 CSR 頁面載入的前幾秒，頁面上會沒有東西或是只有一些骨架，使用者必須要等待一段時間才能看到頁面的內容，相對來說會是較差的使用者體驗。特別是在低階的行動裝置上，因為低階裝置的網路速度通常較慢，而且執行 JavaScript 會用到的 CPU 通常也較弱。
 * SEO 會較差，因為 CSR 的頁面對於爬蟲是比較不友善的。雖然爬蟲有辦法執行 JavaScript，但爬蟲也有一些 [JavaScript  render 頁面的限制](https://developers.google.com/search/docs/advanced/javascript/fix-search-javascript)。你可以用[行動裝置相容性測試](https://search.google.com/test/mobile-friendly)這個工具來測試一個 CSR 的頁面會如何被爬蟲 render 。
 
-### 如何優化 CSR 的效能
+### 如何最佳化 CSR 的效能
 
-CSR 透過適當的優化，可以達到可接受的效能，可使用的技巧包括：
+CSR 透過適當的最佳化，可以達到可接受的效能，可使用的技巧包括：
 
 * [保持 JavaScript bundle 體積在預算以內](https://medium.com/@addyosmani/start-performance-budgeting-dabde04cf6a3)。頁面初次載入所需的 JavaScript bundle 大小維持在 100 - 170KB 是一個不錯的參考值。
 * 使用 [preload](/preload-prefetch-preconnect#preload) 提前 JavaScript bundle 的下載。
@@ -72,7 +72,7 @@ CSR 透過適當的優化，可以達到可接受的效能，可使用的技巧�
 
 保持 JavaScript bundle 在預算內是非常困難的事情，因為 JavaScript bundle 的大小，通常會隨著應用的開發越長越大。其中一個可行的做法是採用 code splitting 的方法，也就是只在真正需要某個 JavaScript 的時候才去下載拆分出來的片段。[Webpack 等打包工具支援 code splitting](https://webpack.js.org/guides/code-splitting/)。
 
-如果想看一些 code splitting 的真實案例，可以參考我寫的這篇[網頁載入效能優化 (Web Performance Optimization) (加速 30% 真實案例分享)](/optimize-loading-speed/)
+如果想看一些 code splitting 的真實案例，可以參考我寫的這篇[網頁載入效能最佳化 (Web Performance Optimization) (加速 30% 真實案例分享)](/optimize-loading-speed/)
 
 ## SSR (Server-Side Rendering)
 
@@ -456,7 +456,7 @@ React 18 解決了三大問題：
 
 ## 結論
 
-本篇文章介紹了 CSR 和 SSR 的差別，以及介紹結合兩者的方案 SSR with Hydration，並提出一些做法能夠優化其效能，最後介紹了 React 18 對於 SSR 的支援。
+本篇文章介紹了 CSR 和 SSR 的差別，以及介紹結合兩者的方案 SSR with Hydration，並提出一些做法能夠最佳化其效能，最後介紹了 React 18 對於 SSR 的支援。
 
 ## 參考資料
 
