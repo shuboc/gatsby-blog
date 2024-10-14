@@ -1,5 +1,5 @@
 ---
-title: "[教學] 瀏覽器轉譯/渲染(Browser Rendering)原理"
+title: "瀏覽器渲染效能最佳化 (Browser Rendering Optimization)"
 tags: ["web browser", "frontend interview"]
 date: "2016-11-27"
 ---
