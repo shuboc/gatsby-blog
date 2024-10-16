@@ -1,5 +1,5 @@
 ---
-title: "[教學] JavaScript Prototype (原型) 的用法"
+title: "JavaScript Prototype (原型) 是什麼？"
 tags: ["javascript", "frontend interview"]
 date: "2020-05-09"
 ---
