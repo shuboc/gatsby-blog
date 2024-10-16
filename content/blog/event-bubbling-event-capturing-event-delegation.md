@@ -13,7 +13,7 @@ date: "2018-02-25"
 
 # Event Bubbling
 
-Event Bubbling指的是當某個事件發生在某個DOM element上（如：點擊），這個事件會觸發DOM elemtn的event handler，接下來會再觸發他的parent的event handler，以及parent的parent的event handler...直到最上層。
+Event Bubbling指的是當某個事件發生在某個DOM element上（如：點擊），這個事件會觸發DOM element的event handler，接下來會再觸發他的parent的event handler，以及parent的parent的event handler...直到最上層。
 
 以下的例子中，點擊`p`會依序觸發p -> div -> form的`onclick` handler。
 
