@@ -1,5 +1,5 @@
 ---
-title: "[教學] JavaScript Array 陣列操作方法: map(), forEach(), filter(), find(), every(), some(), reduce()"
+title: "JavaScript Array 陣列操作方法: map(), forEach(), filter(), find(), every(), some(), reduce()"
 tags: ["javascript"]
 image: ./cover.jpg
 date: "2020-08-23"

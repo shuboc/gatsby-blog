@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[教學] CSS 平行四邊形 (parallelogram)"
+title: "CSS 平行四邊形 (parallelogram)"
 tags: [css]
 date: "2016-06-30"
 ---

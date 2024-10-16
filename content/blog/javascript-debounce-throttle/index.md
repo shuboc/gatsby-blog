@@ -119,7 +119,7 @@ function debounce(callback, delay) {
 }
 ```
 
-如果不熟悉 `callback.apply(this, args)` 的用法可以看這篇：[[教學] 如何使用 JavaScript 的 call 和 apply](/javascript-apply-call-difference/)。
+如果不熟悉 `callback.apply(this, args)` 的用法可以看這篇：[如何使用 JavaScript 的 call 和 apply](/javascript-apply-call-difference/)。
 
 接著，我們希望可以再延遲 `delay` ms 之後再執行。因此我們用 `setTimeout` 來達成這個目標：
 

@@ -1,5 +1,5 @@
 ---
-title: "[教學] 如何將 React Native Android App 打包成 apk 並發布上架至 Google Play Store (2020年更新)"
+title: "如何將 React Native Android App 打包成 apk 並發布上架至 Google Play Store (2020年更新)"
 tags: ["react", "react native", "android"]
 date: "2019-01-02"
 ---

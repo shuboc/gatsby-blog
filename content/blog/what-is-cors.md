@@ -1,5 +1,5 @@
 ---
-title: "[教學] 深入了解 CORS (跨來源資源共用): 如何正確設定 CORS？"
+title: "深入了解 CORS (跨來源資源共用): 如何正確設定 CORS？"
 tags: ["javascript", "web browser", "frontend interview"]
 date: "2020-07-03"
 steps:
@@ -258,7 +258,7 @@ fetch('https://othersite.com/data/', {
 為什麼呢？因為帶有 cookie 的請求非常強大，如果請求攜帶的 cookie 是 session token，那這個請求可以以你的身份做很多機敏的事情，像是存取你的隱私資料、從你的銀行帳戶轉帳等。
 
 > 想了解 cookie 跨域相關的議題，可以參考以下文章：
-> 延伸閱讀：[[教學] Cookie 與 document.cookie](/cookies/#samesite)
+> 延伸閱讀：[Cookie 與 document.cookie](/cookies/#samesite)
 
 所以瀏覽器端針對跨來源請求的 cookie 也做了規範。
 

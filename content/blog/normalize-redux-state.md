@@ -1,5 +1,5 @@
 ---
-title: "[教學] 正規化 (Normalize) Redux State"
+title: "正規化 (Normalize) Redux State"
 tags: [react]
 date: "2017-01-07"
 ---

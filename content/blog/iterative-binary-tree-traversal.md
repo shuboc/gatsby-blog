@@ -1,5 +1,5 @@
 ---
-title: "[教學] 三種 Iterative Binary Tree Traversal 的方法 (Inorder, Preorder, Postorder)"
+title: "三種 Iterative Binary Tree Traversal 的方法 (Inorder, Preorder, Postorder)"
 tags: [algorithm, data structure]
 date: "2017-04-17"
 ---

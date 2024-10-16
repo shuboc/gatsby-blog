@@ -1,5 +1,5 @@
 ---
-title: "[教學] Preload, Prefetch 和 Preconnect 的差異"
+title: "Preload, Prefetch 和 Preconnect 的差異"
 tags: ["web browser", "frontend interview"]
 date: "2019-04-06"
 ---

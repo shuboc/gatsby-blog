@@ -1,5 +1,5 @@
 ---
-title: "[教學] Quick Sort 演算法原理與實作"
+title: "Quick Sort 演算法原理與實作"
 tags: ["javascript", "algorithm"]
 date: "2019-03-21"
 ---

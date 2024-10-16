@@ -1,5 +1,5 @@
 ---
-title: "[教學] DOM 元素尺寸與位置：clientHeight, clientWidth, offsetHeight, offsetWidth, scrollHeight, scrollWidth, scrollTop, scrollLeft 詳解"
+title: "DOM 元素尺寸與位置：clientHeight, clientWidth, offsetHeight, offsetWidth, scrollHeight, scrollWidth, scrollTop, scrollLeft 詳解"
 tags: ["javascript", "web browser"]
 date: "2019-12-14"
 ---

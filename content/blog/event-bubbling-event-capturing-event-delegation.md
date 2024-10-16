@@ -1,5 +1,5 @@
 ---
-title: "[教學] 瀏覽器事件：Event Bubbling, Event Capturing 及 Event Delegation"
+title: "瀏覽器事件：Event Bubbling, Event Capturing 及 Event Delegation"
 tags: ["javascript", "web browser", "frontend interview"]
 date: "2018-02-25"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "[教學] 如何使用 JavaScript 的 call 和 apply"
+title: "如何使用 JavaScript 的 call 和 apply"
 tags: ["javascript", "frontend interview"]
 date: "2018-08-11"
 image: ./cover.png

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[教學] Redux 如何和 React Router 搭配使用"
+title: "Redux 如何和 React Router 搭配使用"
 tags: [react]
 date: "2016-10-16"
 ---

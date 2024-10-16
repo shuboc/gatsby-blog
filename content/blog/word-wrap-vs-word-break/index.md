@@ -1,5 +1,5 @@
 ---
-title: "[教學] CSS 文字換行技巧：word-break、word-wrap、overflow-wrap 的區別與應用"
+title: "CSS 文字換行技巧：word-break、word-wrap、overflow-wrap 的區別與應用"
 tags: ["css"]
 date: "2022-03-08"
 ---

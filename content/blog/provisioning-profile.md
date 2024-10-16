@@ -1,5 +1,5 @@
 ---
-title: "[教學] Provisioning profile 是什麼? 如何設定 provisioning profile?"
+title: "Provisioning profile 是什麼? 如何設定 provisioning profile?"
 tags: ["ios"]
 date: "2022-01-17"
 ---

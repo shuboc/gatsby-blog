@@ -1,5 +1,5 @@
 ---
-title: "[教學] Binary Search 二元搜尋法"
+title: "Binary Search 二元搜尋法"
 tags: ["algorithm"]
 date: "2022-04-26"
 ---

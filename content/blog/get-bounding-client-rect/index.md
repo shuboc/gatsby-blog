@@ -1,5 +1,5 @@
 ---
-title: "[教學] 深入了解 getBoundingClientRect() 函數，輕鬆獲得元素的大小和位置"
+title: "深入了解 getBoundingClientRect() 函數，輕鬆獲得元素的大小和位置"
 tags: ["javascript", "web browser"]
 date: "2019-12-15"
 ---

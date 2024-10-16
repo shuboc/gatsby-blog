@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[教學] CSS iOS 風格開關 (CSS iOS toggle)"
+title: "CSS iOS 風格開關 (CSS iOS toggle)"
 tags: [css]
 date: "2016-05-23"
 ---

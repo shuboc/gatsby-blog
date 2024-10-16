@@ -1,5 +1,5 @@
 ---
-title: "[教學] SSR 與 CSR 深度解析：從渲染方式到效能最佳化"
+title: "SSR 與 CSR 深度解析：從渲染方式到效能最佳化"
 tags: ["web browser", "performance", "frontend interview"]
 date: "2022-07-12"
 ---

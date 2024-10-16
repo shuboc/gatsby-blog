@@ -1,5 +1,5 @@
 ---
-title: "[教學] Webpack基礎設定 (支援ES6、ESLint)"
+title: "Webpack基礎設定 (支援ES6、ESLint)"
 tags: [webpack, react]
 date: "2017-02-04"
 ---

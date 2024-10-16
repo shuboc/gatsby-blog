@@ -1,5 +1,5 @@
 ---
-title: "[教學] 如何使用 img srcset 讓圖片在 RWD 網頁顯示適當解析度"
+title: "如何使用 img srcset 讓圖片在 RWD 網頁顯示適當解析度"
 tags: [rwd, web browser]
 date: "2017-04-27"
 ---

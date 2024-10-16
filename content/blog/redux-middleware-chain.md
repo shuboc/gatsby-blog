@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[教學] Redux Middleware Chain"
+title: "Redux Middleware Chain"
 tags: [react]
 date: "2016-12-26"
 ---

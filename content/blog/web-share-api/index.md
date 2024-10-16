@@ -1,5 +1,5 @@
 ---
-title: "[教學] Web Share API - Navigator.share() 介紹"
+title: "Web Share API - Navigator.share() 介紹"
 tags: ["javascript", "web browser"]
 date: "2020-03-28"
 ---
@@ -59,7 +59,7 @@ if (navigator.share) {
 
 最後這個 function 回傳值是一個 promise，所以我們可以分別對成功或是失敗的情況做額外處理。
 
-> 延伸閱讀：[[教學] 深入淺出 JavaScript Promise](/javascript-promise/)
+> 延伸閱讀：[深入淺出 JavaScript Promise](/javascript-promise/)
 
 ## Canonical URL
 

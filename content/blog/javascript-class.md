@@ -1,5 +1,5 @@
 ---
-title: "[教學] JavaScript ES6 Class：深入淺出類別概念與應用"
+title: "JavaScript ES6 Class：深入淺出類別概念與應用"
 tags: ["javascript", "frontend interview"]
 date: "2019-03-05"
 ---
