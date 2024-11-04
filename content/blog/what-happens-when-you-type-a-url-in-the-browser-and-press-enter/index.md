@@ -44,6 +44,8 @@ DNS (Domain Name System) 是用來儲存網域對應到的 IP 位址的服務。
 
 瀏覽器向 server 發出一個 HTTP request，會包含方法 (GET)、網址、以及其他資訊例如 User-Agent, Accept, Connection: Keep-Alive, Host, Cookie 等 header。
 
+關於 HTTPS 如何運作，詳情可以看這篇：[每個軟體工程師都應該懂的HTTPS：深入淺出加密原理、TLS協議](/https/)
+
 ## 伺服器處理請求並返回
 
 伺服器端經過一些處理之後，將資料以 HTTP response 回應，其中包含 HTTP status code (狀態碼)以及一些其他訊息，例如 Content-Encoding, Cache-Control (瀏覽器如何快取頁面), Cookie 等 header。
@@ -90,6 +92,8 @@ DOM tree 和 CSSOM tree 組合成 render tree (渲染樹)，render tree 只包�
 
 這些步驟越快，初次渲染的速度也就越快。
 
+關於瀏覽器渲染頁面的原理，以及如何最佳化渲染頁面的過程，可參考[瀏覽器渲染效能最佳化 (Browser Rendering Optimization)](/browser-rendering/)
+
 ## 參考資料
 
 [What happens when you type a URL into your browser? - AWS](https://aws.amazon.com/blogs/mobile/what-happens-when-you-type-a-url-into-your-browser/)
@@ -100,4 +104,4 @@ DOM tree 和 CSSOM tree 組合成 render tree (渲染樹)，render tree 只包�
 
 [Render-tree Construction, Layout, and Paint](https://web.dev/critical-rendering-path-render-tree-construction/)
 
-[軟體工程師的修煉與成長 (10) — 四維的技術能力](https://vgod.medium.com/%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E4%BF%AE%E7%85%89%E8%88%87%E6%88%90%E9%95%B7-10-%E5%9B%9B%E7%B6%AD%E7%9A%84%E6%8A%80%E8%A1%93%E8%83%BD%E5%8A%9B-1602882aec33)：提到為什麼這個面試題目很重要，雖然我還沒什麼體會
+[軟體工程師的修煉與成長 (10) — 四維的技術能力](https://vgod.medium.com/%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E4%BF%AE%E7%85%89%E8%88%87%E6%88%90%E9%95%B7-10-%E5%9B%9B%E7%B6%AD%E7%9A%84%E6%8A%80%E8%A1%93%E8%83%BD%E5%8A%9B-1602882aec33)
