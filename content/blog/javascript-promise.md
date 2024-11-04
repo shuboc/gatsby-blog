@@ -158,7 +158,7 @@ Promise 的錯誤處理有兩種寫法，其中第二種比較好：
 
 在promise裡面呼叫 `resolve(value)`，或是 `.then(function() { return value })` 都有可能發生錯誤，例如：
 
-1. `value === undefined`
+1. `value` 變數未定義
 2. `value` 是一個 *rejected* 的 Promise
 
 參考：[Promises: resolve is not the opposite of reject](https://jakearchibald.com/2014/resolve-not-opposite-of-reject/)
@@ -298,7 +298,7 @@ const arrayOfFetchPromises = urls.map(function(url) {
   return fetch(url)
 })
 
-const sequence = Promise.resolve()
+let sequence = Promise.resolve()
 arrayOfFetchPromises.forEach(function(fetchPromise) {
   sequence = sequence.then(function() {
     return fetchPromise.then(processData)
