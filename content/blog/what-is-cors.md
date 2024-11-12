@@ -160,12 +160,13 @@ Access-Control-Expose-Headers: X-MY-CUSTOM-HEADER, X-MY-OTHER-CUSTOM-HEADER
 
 ### Preflight Request (預檢請求)
 
-什麼是 preflight request 呢？
+什麼是 preflight request 呢？簡單的說，它是瀏覽器在發送實際的請求之前，一個預先確認這個請求是否符合 CORS 規範的「預請求」。
 
-Preflight request 是一個 http OPTIONS 方法，會帶有兩個 request header：`Access-Control-Request-Method` 和 `Access-Control-Request-Headers`。
+Preflight request 是一個 http OPTIONS 方法，會帶有以下幾個 request header：
 
+* `Origin`: 請求來源，如 https://shubo.io。
 * `Access-Control-Request-Method`： 非「簡單」跨來源請求的 HTTP 方法。
-* `Access-Control-Request-Headers` 非「簡單」跨來源請求帶有的非「簡單」header。
+* `Access-Control-Request-Headers`: 非「簡單」跨來源請求帶有的非「簡單」header。
 
 比方說我發送的非「簡單」跨來源請求是這樣：
 
@@ -203,10 +204,13 @@ Access-Control-Request-Headers: X-MY-CUSTOM-HEADER, Content-Type
 
 那收到 preflight request 時，Server 該做什麼呢？
 
-Server 必須告訴瀏覽器：我允許的方法和 header 有哪些。因此 Server 的回應必須帶有以下兩個 header:
+Server 必須告訴瀏覽器：我允許的方法和 header 有哪些。
+
+因此 Server 的回應應為 status code = 200，空 body，以及必須帶有以下幾個 header:
 
 * `Access-Control-Allow-Methods`: 允許的 HTTP 方法。
 * `Access-Control-Allow-Headers`: 允許的非「簡單」header。
+* `Access-Control-Allow-Origin`: `*` 或者是請求來源，例如 https://shubo.io 以允許實際的請求。
 
 當瀏覽器看到跨來源請求的方法和 header 都有被列在允許的方法和 header 中，就表示可以實際發送請求了！
 
@@ -299,7 +303,7 @@ Access-Control-Allow-Credentials: true
 如果你偷懶地用了 `Access-Control-Allow-Origin: *`，就會無情地收到來自瀏覽器的錯誤：
 
 ```plaintext
-The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when therequest's credentials mode is 'include'. Origin http://localhost:8080 is therefore not allowed access. Thecredentials mode of requests initiated by the XMLHttpRequest is controlled by the withCredentials attribute.
+The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'. Origin http://localhost:8080 is therefore not allowed access. The credentials mode of requests initiated by the XMLHttpRequest is controlled by the withCredentials attribute.
 ```
 
 ## 總結
