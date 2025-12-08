@@ -300,7 +300,7 @@ SNI 是 TLS handshake 過程中的 client hello 訊息的一部分，包含了�
 
 注意到 SNI 是未加密的，只有在整個 TLS handshake 完成後，通信的內容才是有加密的。這表示任何人都可以知道客戶端正在跟哪個網域進行通訊，這讓攻擊者有機可趁，例如攻擊者可以製作網域名稱和內容相近的釣魚網站。
 
-ESNI (Encrypyed ESI) 透過加密來保護使用者。伺服器將 public key 加到他的 DSN 紀錄中，客戶端可以用 public key 對 ESI 的部分加密，只有特定的伺服器可以解密。
+ESNI (Encrypyed ESI) 透過加密來保護使用者。伺服器將 public key 加到他的 DNS 紀錄中，客戶端可以用 public key 對 ESI 的部分加密，只有特定的伺服器可以解密。
 
 然而光靠 ESNI 並沒有辦法阻止有心人士知道客戶端正在跟哪個網站連線。由於 DNS 是明文的，所以第三者還是可以知道你打算跟哪個網站連線。一些機制可以提供進一步的保護，像是 DNSSEC 可以確定我們連到一個可信的 DNS 伺服器；DNS over HTTPS/DNS over TLS 可以確保 DNS 查詢是有加密的。
 
