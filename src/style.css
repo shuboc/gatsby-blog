@@ -487,6 +487,8 @@ ul > li > p {
 
 /* Post header */
 .post-header {
+  border-bottom: 1px solid var(--color-sage-divider);
+  padding-bottom: var(--spacing-6);
   margin-bottom: var(--spacing-8);
 }
 
@@ -529,25 +531,12 @@ ul > li > p {
 .post-header__byline {
   font-size: 0.8rem;
   color: var(--color-text-muted);
-  margin: 0 0 0.75rem 0;
-}
-
-.post-header__rule {
-  width: 28px;
-  height: 3px;
-  background-color: var(--color-sage);
-  border-radius: 2px;
-  margin-bottom: 0.75rem;
-}
-
-.post-header__tags {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
   margin: 0;
 }
 
-.post-header__tags a {
+.post-header__byline a {
   color: var(--color-sage);
+  text-decoration: none;
 }
 
 /* Post body */
