@@ -281,9 +281,6 @@ img {
   padding: var(--spacing-10) var(--spacing-5);
 }
 
-.global-wrapper[data-is-root-path="true"] .bio {
-  margin-bottom: var(--spacing-20);
-}
 
 .global-header {
   margin-bottom: var(--spacing-12);
@@ -324,18 +321,40 @@ img {
 .bio {
   display: flex;
   align-items: center;
-  margin-bottom: var(--spacing-16);
-}
-
-.bio p {
-  margin-bottom: var(--spacing-0);
+  gap: 0.75rem;
+  padding-bottom: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+  border-bottom: 1px solid var(--color-sage-divider);
 }
 
 .bio-avatar {
-  margin-right: var(--spacing-4);
-  margin-bottom: var(--spacing-0);
-  min-width: 50px;
-  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-sage);
+  color: var(--color-bg);
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bio-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.bio-name {
+  font-size: 0.875rem;
+  color: var(--color-heading);
+}
+
+.bio-summary {
+  font-size: 0.8rem;
+  color: var(--color-sage);
 }
 
 .blog-post header {
