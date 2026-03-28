@@ -1,18 +1,10 @@
 /* CSS Custom Properties Definitions */
 
 :root {
-  --maxWidth-none: "none";
-  --maxWidth-xs: 20rem;
-  --maxWidth-sm: 24rem;
-  --maxWidth-md: 28rem;
-  --maxWidth-lg: 32rem;
-  --maxWidth-xl: 36rem;
-  --maxWidth-2xl: 42rem;
-  --maxWidth-3xl: 48rem;
-  --maxWidth-4xl: 56rem;
-  --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-2xl);
-  --spacing-px: "1px";
+  --maxWidth-wrapper: 42rem;
+
+  /* Spacing scale (keep as-is — used by existing rules below) */
+  --spacing-px: 1px;
   --spacing-0: 0;
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
@@ -27,13 +19,8 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
-    Times, serif;
-  --font-body: var(--fontFamily-sans);
-  --font-heading: var(--fontFamily-sans);
+
+  /* Font scale (keep — used by existing heading rules) */
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
@@ -45,7 +32,6 @@
   --lineHeight-tight: 1.1;
   --lineHeight-normal: 1.5;
   --lineHeight-relaxed: 1.625;
-  /* 1.200 Minor Third Type Scale */
   --fontSize-0: 0.833rem;
   --fontSize-1: 1rem;
   --fontSize-2: 1.2rem;
@@ -54,12 +40,22 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
-  --color-text: #2e353f;
-  --color-text-light: #4f5969;
-  --color-heading: #1a202c;
-  --color-heading-black: black;
-  --color-accent: #d1dce5;
+
+  /* Sage palette */
+  --color-sage: #6b8f6e;
+  --color-sage-light: #e8ede5;
+  --color-sage-divider: #ddeadb;
+  --color-bg: #f7f9f5;
+  --color-surface: #ffffff;
+  --color-heading: #1e2d1f;
+  --color-text: #2e3829;
+  --color-text-secondary: #4a6b4c;
+  --color-text-muted: #8aaa8c;
+  --color-card-shadow: rgba(107, 143, 110, 0.10);
+
+  /* Font */
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* HTML elements */
@@ -81,6 +77,8 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.8;
 }
 
 footer {
@@ -88,7 +86,7 @@ footer {
 }
 
 hr {
-  background: var(--color-accent);
+  background: var(--color-sage-divider);
   height: 1px;
   border: 0;
 }
@@ -121,7 +119,7 @@ h6 {
 h1 {
   font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
-  color: var(--color-heading-black);
+  color: var(--color-heading);
 }
 
 h2 {
@@ -198,12 +196,12 @@ li > ul {
 }
 
 blockquote {
-  color: var(--color-text-light);
+  color: var(--color-text-secondary);
   margin-left: calc(-1 * var(--spacing-6));
   margin-right: var(--spacing-8);
   padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
-  border-left: var(--spacing-1) solid var(--color-primary);
-  font-size: var(--fontSize-2);
+  border-left: 3px solid var(--color-sage);
+  font-size: var(--fontSize-1);
   font-style: italic;
   margin-bottom: var(--spacing-8);
 }
@@ -225,18 +223,39 @@ table {
 }
 
 table thead tr th {
-  border-bottom: 1px solid var(--color-accent);
+  border-bottom: 1px solid var(--color-sage-divider);
 }
 
 /* Link */
 
 a {
-  color: var(--color-primary);
+  color: var(--color-sage);
 }
 
 a:hover,
 a:focus {
-  text-decoration: none;
+  text-decoration: underline;
+}
+
+code {
+  background: var(--color-sage-light);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.9em;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.gatsby-highlight {
+  background: var(--color-sage-light);
+  border-radius: 6px;
+  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-4);
+  overflow: auto;
 }
 
 video {
@@ -280,7 +299,7 @@ img {
 
 .post-list-item h2 {
   font-size: var(--fontSize-4);
-  color: var(--color-primary);
+  color: var(--color-sage);
   margin-bottom: var(--spacing-2);
   margin-top: var(--spacing-0);
 }
@@ -349,10 +368,6 @@ img {
 
 .side-nav .highlight {
   font-weight: bold;
-}
-
-.gatsby-highlight {
-  margin-bottom: var(--spacing-8);
 }
 
 .token.operator {
