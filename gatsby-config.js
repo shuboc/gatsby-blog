@@ -8,7 +8,7 @@ module.exports = {
     description: `程式設計筆記、教學和讀書心得`,
     siteUrl: `https://www.shubo.io/`,
     social: {
-      twitter: `shubo_tw`,
+      twitter: ``,
     },
   },
   plugins: [

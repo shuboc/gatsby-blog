@@ -10,6 +10,7 @@ import Seo from "../components/seo"
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const authorName = data.site.siteMetadata?.author?.name || ``
   const { previous, next } = data
 
   // Add IntersectionObserver to titles and highlight the corresponding ones in TOC
@@ -73,7 +74,7 @@ const BlogPostTemplate = ({ data, location }) => {
             {post.frontmatter.title}
           </h1>
           <p className="post-header__byline">
-            Shubo
+            {authorName}
             {post.frontmatter.tags?.map((tag) => (
               <React.Fragment key={tag}>
                 {" "}·{" "}<Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>
@@ -140,6 +141,9 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         siteUrl
+        author {
+          name
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {
