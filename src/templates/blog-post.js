@@ -61,11 +61,26 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-          <p>
-            分類標籤：{post.frontmatter.tags.map((tag, i) => <React.Fragment key={i}><Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>{' '}</React.Fragment>)}
+        <header className="post-header">
+          <div className="post-header__meta">
+            {post.frontmatter.tags?.[0] && (
+              <span className="post-header__category">
+                {post.frontmatter.tags[0]}
+              </span>
+            )}
+            <span className="post-header__date">{post.frontmatter.date}</span>
+          </div>
+          <h1 className="post-header__title" itemProp="headline">
+            {post.frontmatter.title}
+          </h1>
+          <p className="post-header__byline">Shubo</p>
+          <div className="post-header__rule" />
+          <p className="post-header__tags">
+            {post.frontmatter.tags.map((tag, i) => (
+              <React.Fragment key={i}>
+                <Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>{" "}
+              </React.Fragment>
+            ))}
           </p>
         </header>
         <section
