@@ -6,6 +6,7 @@ npm run build      # Production build
 npm run serve      # Serve production build locally
 npm run clean      # Clear Gatsby cache (use when things break unexpectedly)
 npm run format     # Prettier format all JS/JSON/MD files
+npm run lint       # ESLint check on src/**/*.js
 ```
 
 There are no automated tests. Visual verification via `gatsby develop` is the expected workflow.
