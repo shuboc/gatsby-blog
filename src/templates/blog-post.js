@@ -76,8 +76,8 @@ const BlogPostTemplate = ({ data, location }) => {
           <p className="post-header__byline">Shubo</p>
           <div className="post-header__rule" />
           <p className="post-header__tags">
-            {post.frontmatter.tags.map((tag, i) => (
-              <React.Fragment key={i}>
+            {post.frontmatter.tags?.map((tag) => (
+              <React.Fragment key={tag}>
                 <Link to={`/tags/${kebabCase(tag)}`}>{tag}</Link>{" "}
               </React.Fragment>
             ))}
