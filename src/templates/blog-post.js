@@ -55,7 +55,6 @@ const BlogPostTemplate = ({ data, location }) => {
         url={data.site.siteMetadata?.siteUrl + location.pathname}
         steps={post.frontmatter.steps}
       />
-      <nav className="side-nav" dangerouslySetInnerHTML={{ __html: post.tableOfContents}} />
       <article
         className="blog-post"
         itemScope

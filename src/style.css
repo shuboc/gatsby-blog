@@ -384,6 +384,84 @@ img {
   font-weight: bold;
 }
 
+/* Inline TOC */
+.toc {
+  position: relative;
+  background: var(--color-sage-light);
+  border-left: 3px solid var(--color-sage);
+  border-radius: 0 6px 6px 0;
+  padding: var(--spacing-5) var(--spacing-6) var(--spacing-5) var(--spacing-6);
+  margin: 0 0 var(--spacing-8) 0;
+}
+
+.toc::before {
+  content: "Contents";
+  display: block;
+  font-size: 0.65rem;
+  font-weight: var(--fontWeight-semibold);
+  color: var(--color-sage);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: var(--spacing-3);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--color-sage-divider);
+}
+
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: toc-h2;
+}
+
+.toc > ul > li {
+  counter-increment: toc-h2;
+  margin-bottom: var(--spacing-2);
+}
+
+.toc > ul > li > a::before {
+  content: counter(toc-h2) ". ";
+  color: var(--color-sage);
+  font-weight: var(--fontWeight-semibold);
+  font-size: var(--fontSize-xs);
+  min-width: 1.5rem;
+  display: inline-block;
+}
+
+.toc a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--fontSize-sm);
+  line-height: 1.5;
+  transition: color 0.15s ease;
+}
+
+.toc a:hover {
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+/* Nested h3+ items */
+.toc ul ul {
+  margin-top: var(--spacing-1);
+  padding-left: var(--spacing-5);
+  counter-reset: toc-h3;
+}
+
+.toc ul ul li {
+  counter-increment: toc-h3;
+  margin-bottom: var(--spacing-1);
+}
+
+.toc ul ul a {
+  font-size: var(--fontSize-xs);
+  color: var(--color-text-muted);
+}
+
+.toc ul ul a:hover {
+  color: var(--color-text-secondary);
+}
+
 .token.operator {
   background: none !important;
 }
