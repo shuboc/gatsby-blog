@@ -19,17 +19,28 @@ const Tags = ({ pageContext, data, location }) => {
         url={data.site.siteMetadata?.siteUrl + location.pathname}
       />
       <h1>{tagHeader}</h1>
-      <ul>
+      <div className="post-card-list">
         {edges.map(({ node }) => {
           const { slug } = node.fields
-          const { title } = node.frontmatter
+          const title = node.frontmatter.title
+          const category = node.frontmatter.tags?.[0] || null
+          const excerpt = node.frontmatter.description || node.excerpt
+
           return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
+            <Link key={slug} to={slug} className="post-card">
+              <div className="post-card__meta">
+                {category && (
+                  <span className="post-card__category">{category}</span>
+                )}
+                <span className="post-card__date">{node.frontmatter.date}</span>
+              </div>
+              <h2 className="post-card__title">{title}</h2>
+              <p className="post-card__excerpt">{excerpt}</p>
+              <span className="post-card__read-more">Read more &#8594;</span>
+            </Link>
           )
         })}
-      </ul>
+      </div>
       <Link to="/tags">所有標籤</Link>
     </Layout>
   )
@@ -53,11 +64,15 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt
           fields {
             slug
           }
           frontmatter {
+            date(formatString: "MMM DD, YYYY")
             title
+            description
+            tags
           }
         }
       }
