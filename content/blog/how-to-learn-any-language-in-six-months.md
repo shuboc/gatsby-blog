@@ -8,6 +8,9 @@ date: "2024-03-31"
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/d0yGdNEWdn0?si=qQ9wfw1g-xE0wMIj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+```toc
+```
+
 ## The 2 Things that Really don't matter
 
 ### 1. Talent

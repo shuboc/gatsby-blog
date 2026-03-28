@@ -13,6 +13,9 @@ Amazon EC2 (Elastic Compute Cloud) 是一種 virtual server。他有以下好處
 
 相對的，傳統的 on-premise 做法中，當你需要機器去執行你的應用程式時，你需要決定要買哪種實體 server，下訂以後可能需要數週到數月才會到貨，到貨之後還需要安裝進 data center，且需要設定及管理。
 
+```toc
+```
+
 ## How AWS works
 
 1. 啟動：你可以從模板中選擇要啟動的虛擬機器，包含作業系統、應用程式及硬體組態等。你也可以設定可流入/流出的 network traffic 來管控網路安全。

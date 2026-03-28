@@ -6,6 +6,10 @@ date: "2024-11-22"
 
 AWS 在各地有 Region 提供各種服務，一個 Region 中有多個 Availability Zone 使服務具高可用性。AWS Cloudfront 是 AWS 提供的 CDN 服務，讓使用者可以就近取得內容。
 
+
+```toc
+```
+
 ## Region (區域)
 
 AWS 在世界各地有互相獨立的提供服務的區域，稱為 Region。例如：Tokyo, Paris, Sao Paulo, Dublin, Ohio...等。

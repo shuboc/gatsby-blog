@@ -6,6 +6,9 @@ date: "2024-11-15"
 
 ELB (Elastic Load Balancing) 是 AWS 的一個服務，它的功能是把進來的流量平均分配給各個資源，例如 Amazon EC2 instances。
 
+```toc
+```
+
 ## Elastic Load Balancing
 
 ELB 有以下特點：

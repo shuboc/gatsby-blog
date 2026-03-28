@@ -4,6 +4,9 @@ tags: ["aws"]
 date: "2024-11-18"
 ---
 
+```toc
+```
+
 ## Monolithic applications and microservices
 
 一個應用通常是由很多小組件組合而成。這些組件可能包含了資料庫、商業邏輯、UI等等。

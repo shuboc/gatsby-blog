@@ -6,6 +6,9 @@ date: "2024-11-20"
 
 除了 AWS EC2 之外，AWS 還提供了其他有用的計算服務，例如 Lambda, ECS, EKS, Fargate。
 
+```toc
+```
+
 ## Serverless computing
 
 先前學過的 Amazon EC2 是一種在雲端運行的虛擬伺服器。如果要在 EC2 執行我們的應用程式，我們需要：

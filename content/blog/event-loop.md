@@ -6,6 +6,9 @@ date: "2024-12-30"
 
 Event loop 是一個持續運行的機制，負責監控 Call Stack 是否為空，並依序從 Microtask Queue 和 Task Queue 中選取任務放入 Call Stack 執行。此外，它也協調瀏覽器的渲染操作，確保在必要時刷新畫面。
 
+```toc
+```
+
 ## JavaScript 是單執行緒語言
 
 要解釋 event loop，首先要知道 JavaScript 是一個單執行緒 (single-threaded) 的語言。
