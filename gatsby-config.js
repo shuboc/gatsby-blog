@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Shubo 的程式開發筆記`,
+    title: `shubo 的程式開發筆記`,
     author: {
-      name: `Shubo Chao`,
+      name: `shubo`,
       summary: `軟體工程師，目前大多專注於前端開發`,
     },
     description: `程式設計筆記、教學和讀書心得`,
@@ -117,7 +117,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Shubo 的程式開發筆記",
+            title: "shubo 的程式開發筆記",
           },
         ],
       },
@@ -125,7 +125,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Shubo 的程式開發筆記`,
+        name: `shubo 的程式開發筆記`,
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,
