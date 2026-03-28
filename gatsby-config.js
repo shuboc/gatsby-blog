@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `shubo 的程式開發筆記`,
+    title: `Shubo 的程式開發筆記`,
     author: {
       name: `shubo`,
       summary: `軟體工程師，目前大多專注於前端開發`,

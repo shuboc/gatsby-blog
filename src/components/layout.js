@@ -34,7 +34,7 @@ const Layout = ({ location, children }) => {
         {children}
       </main>
       <footer className="site-footer">
-        &#169; {new Date().getFullYear()} Shubo
+        &#169; {new Date().getFullYear()} shubo
       </footer>
     </div>
   )
