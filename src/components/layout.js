@@ -21,10 +21,14 @@ const Layout = ({ location, children }) => {
         <Link to="/" className="site-nav__logo">{siteTitle}</Link>
         <div className="site-nav__links">
           {isRootPath ? (
-            <Link to="/about" className="site-nav__link">About</Link>
+            <>
+              <Link to="/tags" className="site-nav__link">Tags</Link>
+              <Link to="/about" className="site-nav__link">About</Link>
+            </>
           ) : (
             <>
               <Link to="/" className="site-nav__link">&#8592; All posts</Link>
+              <Link to="/tags" className="site-nav__link">Tags</Link>
               <Link to="/about" className="site-nav__link">About</Link>
             </>
           )}
