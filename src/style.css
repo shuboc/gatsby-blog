@@ -597,7 +597,7 @@ ul > li > p {
 }
 
 .post-card__title {
-  font-size: 1.1rem;
+  font-size: var(--fontSize-2);
   font-weight: var(--fontWeight-bold);
   color: var(--color-heading);
   margin: 0 0 0.4rem 0;
