@@ -443,7 +443,7 @@ img {
   content: counter(toc-h2) ". ";
   color: var(--color-sage);
   font-weight: var(--fontWeight-semibold);
-  font-size: var(--fontSize-xs);
+  font-size: var(--fontSize-sm);
   min-width: 1.5rem;
   display: inline-block;
 }
@@ -451,7 +451,7 @@ img {
 .toc a {
   color: var(--color-text-secondary);
   text-decoration: none;
-  font-size: var(--fontSize-sm);
+  font-size: var(--fontSize-1);
   line-height: 1.5;
   transition: color 0.15s ease;
 }
@@ -474,7 +474,7 @@ img {
 }
 
 .toc ul ul a {
-  font-size: var(--fontSize-xs);
+  font-size: var(--fontSize-sm);
   color: var(--color-text-muted);
 }
 
