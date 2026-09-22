@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import coverImg from '../images/cover.jpg'
 
-const Seo = ({ description, lang, meta, title, image, url, steps }) => {
+const Seo = ({ description, lang, meta, title, image, url, steps, type, datePublished, dateModified, keywords }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,6 +21,9 @@ const Seo = ({ description, lang, meta, title, image, url, steps }) => {
             title
             siteUrl
             description
+            author {
+              name
+            }
             social {
               twitter
             }
@@ -32,6 +35,21 @@ const Seo = ({ description, lang, meta, title, image, url, steps }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+
+  const articleMeta = type === `article` ? [
+    {
+      property: `article:published_time`,
+      content: datePublished,
+    },
+    {
+      property: `article:modified_time`,
+      content: dateModified || datePublished,
+    },
+    ...(keywords || []).map(kw => ({
+      property: `article:tag`,
+      content: kw,
+    })),
+  ] : []
 
   return (
     <Helmet
@@ -59,7 +77,7 @@ const Seo = ({ description, lang, meta, title, image, url, steps }) => {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: type === `article` ? `article` : `website`,
         },
         {
           property: `og:url`,
@@ -85,7 +103,7 @@ const Seo = ({ description, lang, meta, title, image, url, steps }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ].concat(articleMeta).concat(meta)}
     >
       <link rel="canonical" href={url} />
       {steps && (
@@ -109,6 +127,28 @@ const Seo = ({ description, lang, meta, title, image, url, steps }) => {
           }
         </script>
       )}
+      {type === `article` && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": title,
+            "description": metaDescription,
+            "datePublished": datePublished,
+            "dateModified": dateModified || datePublished,
+            "url": url,
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": url,
+            },
+            "author": {
+              "@type": "Person",
+              "name": site.siteMetadata.author?.name || `shubo`,
+            },
+            ...(keywords && keywords.length > 0 && { "keywords": keywords }),
+          })}
+        </script>
+      )}
     </Helmet>
   )
 }
@@ -124,6 +164,10 @@ Seo.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  type: PropTypes.oneOf([`article`, `website`]),
+  datePublished: PropTypes.string,
+  dateModified: PropTypes.string,
+  keywords: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default Seo
