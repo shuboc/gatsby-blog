@@ -55,6 +55,10 @@ const BlogPostTemplate = ({ data, location }) => {
         image={post.frontmatter.image && data.site.siteMetadata.siteUrl + post.frontmatter.image?.publicURL}
         url={data.site.siteMetadata?.siteUrl + location.pathname}
         steps={post.frontmatter.steps}
+        type="article"
+        datePublished={post.frontmatter.dateISO}
+        dateModified={post.fields.gitAuthorTime}
+        keywords={post.frontmatter.tags}
       />
       <article
         className="blog-post"
@@ -151,9 +155,13 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       tableOfContents
+      fields {
+        gitAuthorTime
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        dateISO: date
         description
         tags
         image {
