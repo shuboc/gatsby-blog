@@ -1,5 +1,6 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import avatar from "../images/about-avatar.jpg"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -20,11 +21,19 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      <div className="bio-avatar" aria-hidden="true">
-        {author.name.charAt(0).toUpperCase()}
-      </div>
+      <Link to="/about/" tabIndex={-1} aria-hidden="true">
+        <img
+          className="bio-avatar"
+          src={avatar}
+          alt=""
+          width={60}
+          height={60}
+        />
+      </Link>
       <div className="bio-text">
-        <strong className="bio-name">{author.name}</strong>
+        <Link to="/about/" className="bio-name">
+          <strong>{author.name}</strong>
+        </Link>
         {author.summary && (
           <span className="bio-summary">{author.summary}</span>
         )}

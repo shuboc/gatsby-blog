@@ -26,6 +26,7 @@ const Seo = ({ description, lang, meta, title, image, url, steps, type, datePubl
             }
             social {
               twitter
+              linkedin
             }
           }
         }
@@ -144,6 +145,10 @@ const Seo = ({ description, lang, meta, title, image, url, steps, type, datePubl
             "author": {
               "@type": "Person",
               "name": site.siteMetadata.author?.name || `shubo`,
+              "url": `${site.siteMetadata.siteUrl.replace(/\/$/, ``)}/about/`,
+              ...(site.siteMetadata.social?.linkedin && {
+                "sameAs": [site.siteMetadata.social.linkedin],
+              }),
             },
             ...(keywords && keywords.length > 0 && { "keywords": keywords }),
           })}

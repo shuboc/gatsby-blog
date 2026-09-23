@@ -9,6 +9,7 @@ module.exports = {
     siteUrl: `https://www.shubo.io/`,
     social: {
       twitter: ``,
+      linkedin: `https://www.linkedin.com/in/shubochao/`,
     },
   },
   plugins: [
