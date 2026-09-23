@@ -378,6 +378,8 @@ img {
   font-size: var(--fontSize-2);
   color: var(--color-text-secondary);
   margin: var(--spacing-0);
+  text-align: start;
+  text-wrap: pretty;
 }
 
 .blog-post-nav ul {

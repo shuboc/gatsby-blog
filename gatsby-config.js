@@ -3,7 +3,7 @@ module.exports = {
     title: `Shubo 的程式開發筆記`,
     author: {
       name: `shubo`,
-      summary: `軟體工程師，目前大多專注於前端開發`,
+      summary: `資深前端工程師，最近在探索 AI 時代的軟體開發方式`,
     },
     description: `程式設計筆記、教學和讀書心得`,
     siteUrl: `https://www.shubo.io/`,
