@@ -161,7 +161,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        dateISO: date
+        dateISO: date(formatString: "YYYY-MM-DD[T00:00:00+08:00]")
         description
         tags
         image {
